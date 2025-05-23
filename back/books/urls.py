@@ -11,4 +11,7 @@ urlpatterns = [
     path("<int:book_pk>/threads/<int:thread_pk>/comments/create_comment/", views.create_comment),
     path("<int:book_pk>/threads/<int:thread_pk>/comments/<int:comment_pk>/", views.get_update_delete_comment),
     path("search/", views.search_books),
+
+    # 더미데이터 삽입
+    path("insert/", views.insert),
 ]

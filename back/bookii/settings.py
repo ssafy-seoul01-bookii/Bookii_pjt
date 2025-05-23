@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -36,8 +35,24 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
+    # app
     "books",
     "accounts",
+
+    # cors
+    'corsheaders',
+
+    # token
+    'rest_framework.authtoken',
+    
+    # dj-rest-auth
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
     "django_extensions",
     "rest_framework",
     'django.contrib.admin',
@@ -49,6 +64,12 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # dj-rest-auth
+    'allauth.account.middleware.AccountMiddleware',
+
+    # cors
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -143,4 +164,26 @@ MEDIA_URL = "media/"
 
 
 # 사용자 계정 커스텀을 위한 설정
-# AUTH_USER_MODEL = "accounts.User"
+AUTH_USER_MODEL = "accounts.User"
+
+
+
+# CORS 설정
+CORS_ALLOWED_ORIGINS = [
+    'http://127.0.0.1:5173',
+    'http://localhost:5173',
+]
+
+
+
+# dj-rest-auth
+SITE_ID = 1
+
+
+
+# .env
+import environ
+env = environ.Env()
+env.read_env(BASE_DIR / ".env")
+GPT_API_KEY = env("GPT_API_KEY")
+ALADDIN_API_KEY = env("ALADDIN_API_KEY")

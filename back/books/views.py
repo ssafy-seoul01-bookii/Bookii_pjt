@@ -4,9 +4,11 @@ from rest_framework import status
 
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.db.models import Count, Q
+from django.core.files.base import ContentFile
 
 from .models import Category, Book, Thread, Comment
 from .serializers import CategoryListSerializer, BookListSerializer, BookDetailSerializer, ThreadListSerializer, ThreadDetailSerializer, CommentDetailSerializer, ThreadCreateSerializer, CommentCreateSerializer
+from .utils import get_author_info, get_book_audio_file
 
 @api_view(["GET"])
 def get_categories(request):
@@ -91,3 +93,70 @@ def search_books(request):
     )
     serializer = BookListSerializer(books, many=True)
     return Response(serializer.data)
+
+# 더미데이터 삽입을 위한 함수
+import requests
+from datetime import datetime
+import os
+TTB_KEY = os.environ.get("ALADDIN_API_KEY")
+@api_view(["GET"])
+def insert(request):
+    def search_books(query, max_results=10):
+        url = "https://www.aladin.co.kr/ttb/api/ItemSearch.aspx"
+        params = {
+            "ttbkey": TTB_KEY,
+            "Query": query,
+            "QueryType": "Keyword",
+            "MaxResults": max_results,
+            "start": 1,
+            "SearchTarget": "Book",
+            "output": "js",
+            "Version": "20131101"
+        }
+
+        response = requests.get(url, params=params)
+        
+        if response.status_code == 200:
+            items = response.json().get("item", [])
+            books = []
+
+            for item in items:
+                book = {
+                    "title": item.get("title"),
+                    "author": item.get("author", ""),
+                    "description": item.get("description", ""),
+                    "isbn": item.get("isbn13", item.get("isbn")),
+                    "cover": item.get("cover"),
+                    "publisher": item.get("publisher"),
+                    "pub_date": None
+                }
+
+                pub_date_str = item.get("pubDate")
+                if pub_date_str:
+                    try:
+                        book["pub_date"] = datetime.strptime(pub_date_str, "%Y-%m-%d").date()
+                    except ValueError:
+                        pass  # 날짜 형식이 잘못됐을 경우 생략
+
+                books.append(book)
+
+            return books
+        else:
+            raise Exception(f"API 호출 실패: {response.status_code}")
+
+    books = search_books("인공지능")
+    for book in books:
+        print(book)
+        book_for_data = Book()
+        book_for_data.title = book["title"]
+        book_for_data.description = book["description"]
+        book_for_data.isbn = book["isbn"]
+        book_for_data.author_name = book["author"]
+        book_for_data.cover_img_url = book["cover"]
+        book_for_data.publisher = book["publisher"]
+        book_for_data.pub_date = book["pub_date"]
+        book_for_data.author_info = get_author_info(book_for_data.author_name)
+        mp3_fp = get_book_audio_file(book_for_data.author_name, book_for_data.title)
+        book_for_data.audio_file.save(f"{book_for_data.title}_ai_summary.mp3", ContentFile(mp3_fp.read()))
+        book_for_data.save()
+    return Response({"message": "ok"}, status=status.HTTP_200_OK)
