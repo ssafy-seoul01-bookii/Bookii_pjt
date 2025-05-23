@@ -1,13 +1,8 @@
-<template>
-  <div>
-
-  </div>
+<!-- 테스트
+ <template>
+  <SignUpModal />
 </template>
 
 <script setup>
-
-</script>
-
-<style lang="scss" scoped>
-
-</style>
+import SignUpModal from '@/components/modals/SignUpModal.vue'
+</script> -->
