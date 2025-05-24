@@ -1,3 +1,5 @@
+<!-- BookDetailView.vue -->
+
 <template>
   <div>
 

@@ -1,3 +1,5 @@
+<!-- ThreadUpdateView.vue -->
+
 <template>
   <div>
 

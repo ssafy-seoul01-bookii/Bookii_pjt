@@ -1,3 +1,5 @@
+<!-- FollowingList.vue -->
+
 <template>
   <div>
 

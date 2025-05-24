@@ -1,3 +1,5 @@
+<!-- BaseModal.vue -->
+
 <template>
   <div>
 

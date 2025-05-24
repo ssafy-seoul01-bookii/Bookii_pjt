@@ -1,4 +1,5 @@
-<!-- 테스트 -->
+<!-- navbar2.vue -->
+
 <template>
   <nav>
     <button @click="goToSignUp">회원가입</button>

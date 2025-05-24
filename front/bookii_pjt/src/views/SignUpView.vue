@@ -1,8 +1,13 @@
-<!-- 테스트
+<!-- SignUpView.vue -->
+
  <template>
   <SignUpModal />
 </template>
 
 <script setup>
 import SignUpModal from '@/components/modals/SignUpModal.vue'
-</script> -->
+</script>
+
+<style lang="scss" scoped>
+
+</style>

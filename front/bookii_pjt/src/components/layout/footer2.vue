@@ -1,3 +1,5 @@
+<!-- footer2.vue -->
+
 <template>
   <div>
 

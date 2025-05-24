@@ -1,3 +1,5 @@
+<!-- BookListItem.vue -->
+
 <template>
   <div>
 

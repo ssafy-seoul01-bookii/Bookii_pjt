@@ -1,3 +1,5 @@
+<!-- TagSearchView.vue -->
+
 <template>
   <div>
 

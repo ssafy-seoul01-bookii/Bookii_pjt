@@ -1,3 +1,5 @@
+<!-- SocialSignUp.vue -->
+
 <template>
   <div>
 

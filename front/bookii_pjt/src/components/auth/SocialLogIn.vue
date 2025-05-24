@@ -1,3 +1,5 @@
+<!-- SocialLogIn.vue -->
+
 <template>
   <div>
 

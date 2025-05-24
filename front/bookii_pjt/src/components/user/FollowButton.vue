@@ -1,3 +1,5 @@
+<!-- FollowButton.vue -->
+
 <template>
   <div>
 
