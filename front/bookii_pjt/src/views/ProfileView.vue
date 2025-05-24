@@ -1,3 +1,5 @@
+<!-- ProfileView.vue -->
+
 <template>
   <div>
 

@@ -1,3 +1,5 @@
+<!-- HomeView.vue -->
+
 <template>
   <div>
     <h1>home</h1>

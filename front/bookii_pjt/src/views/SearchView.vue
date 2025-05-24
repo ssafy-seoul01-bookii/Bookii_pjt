@@ -1,3 +1,5 @@
+<!-- SearchView.vue -->
+
 <template>
   <div>
 

@@ -1,3 +1,5 @@
+// index.js
+
 import { createRouter, createWebHistory } from 'vue-router'
 // View파일 import
 // Home
@@ -40,7 +42,7 @@ const routes = [
   {
     path: '/profile/:username/edit',
     name: 'profile-edit',
-    component: ProfileView,
+    component: ProfileUpdateView,
     meta: { isModal: true }
   },
   {
