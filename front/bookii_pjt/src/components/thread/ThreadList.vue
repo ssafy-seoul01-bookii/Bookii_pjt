@@ -7,13 +7,13 @@
       <button class="scroll-btn left" @click="prev" :disabled="currentIndex <= 0">〈</button>
 
     <!-- 쓰레드 아이템(한 번에 세 개씩) -->
-    <ul class="thread-list-items">
+    <div class="thread-list-items">
       <ThreadListItem
         v-for="thread in visibleThreads"
         :key="thread.id"
         :thread="thread"
       />
-    </ul>
+    </div>
 
       <button class="scroll-btn right" @click="next" :disabled="currentIndex + visibleCount >= (props.threads?.length || 0)">〉</button>
     </div>
@@ -24,23 +24,29 @@
 import { ref, computed } from 'vue'
 import ThreadListItem from './ThreadListItem.vue'
 
+
 const props = defineProps({
   threads: Array,
   title: String
 })
 
-const visibleCount = 3
+const visibleCount = computed(() =>
+  Math.min(3, props.threads?.length || 0)
+)
+
 const currentIndex = ref(0)
 
 const visibleThreads = computed(() =>
-  (props.threads || []).slice(currentIndex.value, currentIndex.value + visibleCount)
+  (props.threads || []).slice(currentIndex.value, currentIndex.value + visibleCount.value)
 )
 
+
 const next = () => {
-  if (currentIndex.value + visibleCount < props.threads.length) {
+  if (currentIndex.value + visibleCount.value < props.threads.length) {
     currentIndex.value++
   }
 }
+
 const prev = () => {
   if (currentIndex.value > 0) {
     currentIndex.value--
@@ -64,6 +70,7 @@ const prev = () => {
   gap: 1rem;
   overflow-x: auto;
   padding: 0;
+  margin: 0;
 }
 
 .scroll-btn {
