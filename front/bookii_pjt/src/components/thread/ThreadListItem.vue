@@ -1,7 +1,7 @@
 <!-- ThreadListItem.vue -->
 
 <template>
-  <li class="thread-card">
+  <li class="thread-card" @click="openThreadDetail">
     <p class="quote-icon">“</p>
     <p class="username">From_{{ thread.user_name || 'Unknown' }}</p>
     <p class="content">{{ thread.content }}</p>
@@ -13,12 +13,33 @@
 </template>
 
 <script setup>
-defineProps({
+import { useRouter, useRoute } from 'vue-router'
+import { useUserStore } from '@/stores/user'
+import { useUIStore } from '@/stores/ui'
+import { computed } from 'vue'
+import {nextTick } from 'vue'
+
+const props = defineProps({
   thread: {
     type: Object,
     required: true,
   }
 })
+
+const route = useRoute()
+const router = useRouter()
+const userStore = useUserStore()
+const ui = useUIStore()
+
+const user = computed(() =>
+  userStore.users.find(u => u.id === props.thread.user_id)
+)
+
+const openThreadDetail = async () => {
+  ui.setBackgroundRoute(router.currentRoute.value.fullPath)  // ✅ 진짜 현재 경로!
+  await nextTick()
+  router.push({ name: 'thread-detail', params: { id: props.thread.id } })
+}
 </script>
 
 <style scoped>

@@ -12,8 +12,13 @@
     </div>
 
     <!-- 모달 뷰 (기본) -->
+    <!-- 개별 모달 크기 동적 사용 -->
     <router-view v-slot="{ Component }">
-      <BaseModal class="modal-layer" v-if="isModalRoute">
+      <BaseModal
+        class="modal-layer"
+        v-if="isModalRoute"
+        :modalClass="modalClassName"
+      >
         <component :is="Component"/>
       </BaseModal>
     </router-view>
@@ -66,7 +71,7 @@ const backgroundMap = {
 const backgroundComponent = computed(() => {
   // 1️⃣ 일반 페이지 라우팅: route.name 기반 렌더링
   if (!isModalRoute.value) {
-    return backgroundMap[route.name] || HomeView
+    return backgroundMap[route.name ?? ''] || HomeView
   }
   // 2️⃣ route.meta.background가 명시되어 있으면 우선 적용
   if (route.meta.background && backgroundMap[route.meta.background]) {
@@ -84,6 +89,8 @@ const backgroundComponent = computed(() => {
   return HomeView
 })
 
+// 모달 크기 분기 처리
+const modalClassName = computed(() => route.meta.modalClass || '')
 </script>
 
 <!-- 전역 스타일로 추가 -->
