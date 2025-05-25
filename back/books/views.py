@@ -8,7 +8,7 @@ from django.core.files.base import ContentFile
 
 from .models import Category, Book, Thread, Comment
 from .serializers import CategoryListSerializer, BookListSerializer, BookDetailSerializer, ThreadListSerializer, ThreadDetailSerializer, CommentDetailSerializer, ThreadCreateSerializer, CommentCreateSerializer
-from .utils import get_author_info, get_book_audio_file
+from .utils import get_author_info, get_book_audio_file, get_bestseller_list, get_item_new_special_list, get_new_category, get_keyword_list, get_thread_cover_img
 
 @api_view(["GET"])
 def get_categories(request):
@@ -95,68 +95,44 @@ def search_books(request):
     return Response(serializer.data)
 
 # 더미데이터 삽입을 위한 함수
-import requests
-from datetime import datetime
-import os
-TTB_KEY = os.environ.get("ALADDIN_API_KEY")
 @api_view(["GET"])
 def insert(request):
-    def search_books(query, max_results=10):
-        url = "https://www.aladin.co.kr/ttb/api/ItemSearch.aspx"
-        params = {
-            "ttbkey": TTB_KEY,
-            "Query": query,
-            "QueryType": "Keyword",
-            "MaxResults": max_results,
-            "start": 1,
-            "SearchTarget": "Book",
-            "output": "js",
-            "Version": "20131101"
-        }
+    bestseller_list = get_bestseller_list()
+    item_new_special_list = get_item_new_special_list()
 
-        response = requests.get(url, params=params)
-        
-        if response.status_code == 200:
-            items = response.json().get("item", [])
-            books = []
-
-            for item in items:
-                book = {
-                    "title": item.get("title"),
-                    "author": item.get("author", ""),
-                    "description": item.get("description", ""),
-                    "isbn": item.get("isbn13", item.get("isbn")),
-                    "cover": item.get("cover"),
-                    "publisher": item.get("publisher"),
-                    "pub_date": None
-                }
-
-                pub_date_str = item.get("pubDate")
-                if pub_date_str:
-                    try:
-                        book["pub_date"] = datetime.strptime(pub_date_str, "%Y-%m-%d").date()
-                    except ValueError:
-                        pass  # 날짜 형식이 잘못됐을 경우 생략
-
-                books.append(book)
-
-            return books
-        else:
-            raise Exception(f"API 호출 실패: {response.status_code}")
-
-    books = search_books("인공지능")
-    for book in books:
-        print(book)
+    for bestseller in bestseller_list:
         book_for_data = Book()
-        book_for_data.title = book["title"]
-        book_for_data.description = book["description"]
-        book_for_data.isbn = book["isbn"]
-        book_for_data.author_name = book["author"]
-        book_for_data.cover_img_url = book["cover"]
-        book_for_data.publisher = book["publisher"]
-        book_for_data.pub_date = book["pub_date"]
-        book_for_data.author_info = get_author_info(book_for_data.author_name)
-        mp3_fp = get_book_audio_file(book_for_data.author_name, book_for_data.title)
-        book_for_data.audio_file.save(f"{book_for_data.title}_ai_summary.mp3", ContentFile(mp3_fp.read()))
-        book_for_data.save()
+        book_for_data.title = bestseller["title"]
+        book_for_data.description = bestseller["description"]
+        book_for_data.isbn = bestseller["isbn"]
+        book_for_data.cover_img_url = bestseller["cover"]
+        book_for_data.publisher = bestseller["publisher"]
+        book_for_data.pub_date = bestseller["pub_date"]
+
+        # category 정보
+        print(f"category: {get_new_category(bestseller['category'])}")
+        print(f"keywords: {get_keyword_list(bestseller['title'])}")
+        content = """
+                    인류의 3분의 1이 하루도 안 돼서 사라졌다.
+                    진격의 거인은 3 세력 간의 싸움을 그려낸 명작이다.
+                    땅울림을 겪은 인류는 얼마나 두려웠을까?
+                    아니면 괴롭힘을 당하고, 오랜 시간 핍박을 받은 에르디아인들은 어떤 마음이었을까?
+                    누가 잘못한 것일까?
+                    나는 잘 모르겠다.
+                    """
+        print(f"cover_img: {get_thread_cover_img(content)}")
+
+        # # audio 파일
+        # mp3_fp = get_book_audio_file(book_for_data.author_name, book_for_data.title)
+        # book_for_data.audio_file.save(f"{book_for_data.title}_ai_summary.mp3", ContentFile(mp3_fp.read()))
+
+        # # author 정보
+        # book_for_data.author_name = bestseller["author"]
+        # book_for_data.author_info = get_author_info(book_for_data.author_name)
+        
+        # book_for_data.save()
+
+    # for item_new_special in item_new_special_list:
+    #     print(item_new_special)
+        
     return Response({"message": "ok"}, status=status.HTTP_200_OK)
