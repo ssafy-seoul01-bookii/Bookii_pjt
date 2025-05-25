@@ -2,6 +2,7 @@
 
 <template>
   <div class="book-list">
+    <!-- 슬라이딩 버튼 -->
     <div class="scroll-wrapper">
       <button class="scroll-btn left" @click="prev" :disabled="currentIndex === 0">〈</button>
 

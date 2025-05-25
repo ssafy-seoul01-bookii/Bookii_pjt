@@ -3,10 +3,8 @@
 <template>
   <div class="thread-list">
     <!-- 슬라이딩 버튼 -->
-    <div class="controls">
-      <button @click="prev" :disabled="currentIndex === 0"><</button>
-      <button @click="next" :disabled="currentIndex + visibleCount >= threads.length">></button>
-    </div>
+    <div class="scroll-wrapper">
+      <button class="scroll-btn left" @click="prev" :disabled="currentIndex <= 0">〈</button>
 
     <!-- 쓰레드 아이템(한 번에 세 개씩) -->
     <ul class="thread-list-items">
@@ -16,6 +14,9 @@
         :thread="thread"
       />
     </ul>
+
+      <button class="scroll-btn right" @click="next" :disabled="currentIndex + visibleCount >= (props.threads?.length || 0)">〉</button>
+    </div>
   </div>
 </template>
 
@@ -48,14 +49,14 @@ const prev = () => {
 </script>
 
 <style scoped>
-.thread-list {
-  margin: 1rem 0;
+.scroll-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
-.controls {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 0.5rem;
+.thread-list {
+  margin: 1rem 0;
 }
 
 .thread-list-items {
@@ -63,5 +64,26 @@ const prev = () => {
   gap: 1rem;
   overflow-x: auto;
   padding: 0;
+}
+
+.scroll-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+
+  &.left {
+    margin-right: 1rem;
+  }
+
+  &.right {
+    margin-left: 1rem;
+  }
+
+  &:disabled {
+    color: #ccc;
+    cursor: default;
+  }
 }
 </style>
