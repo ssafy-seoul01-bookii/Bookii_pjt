@@ -36,8 +36,11 @@
         <BookList :books="book.books"/>
       </div>
       <div>
-        <h3>평점 3.5 이상 정렬 책</h3>
-        <BookList :books="book.books"/>
+        <!-- <h3>평점 3.5 이상 정렬 책</h3>
+        <BookList :books="book.books"/> -->
+        <!-- 쓰레드 테스트용 -->
+        <h3>쓰레드 테스트</h3>
+        <ThreadList :threads="thread.threads"/>
       </div>
      </template>
 
@@ -51,6 +54,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { useUIStore } from '@/stores/ui'
 import { useUserStore } from '@/stores/user'
 import { useBookStore } from '@/stores/book'
+import { useThreadStore } from '@/stores/thread'
 
 import Footer1 from '@/components/layout/footer1.vue'
 import Footer2 from '@/components/layout/footer2.vue'
@@ -62,6 +66,7 @@ const route = useRoute()
 const user = useUserStore()
 const ui = useUIStore()
 const book = useBookStore()
+const thread = useThreadStore()
 
 // 로그인여부 판단
 const isLoggedIn = computed(() => !!user.accessToken)
