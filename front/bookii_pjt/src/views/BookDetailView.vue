@@ -60,9 +60,6 @@
       <!-- recommend로 변경 필요 -->
       <BookList :books="recommendedBooks"/>
     </div>
-
-    <Footer2/>
-
   </div>
 </template>
 

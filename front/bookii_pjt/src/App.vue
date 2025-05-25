@@ -7,7 +7,9 @@
     <Navbar2 />
 
     <!-- 배경 뷰 (현재 모달 진입 전의 페이지) -->
-    <component :is="backgroundComponent" />
+    <div class="main-content">
+      <component :is="backgroundComponent" />
+    </div>
 
     <!-- 모달 뷰 (기본) -->
     <router-view v-slot="{ Component }">
@@ -22,6 +24,9 @@
         <component :is="Component"/>
       </BaseModal>
     </router-view>
+
+    <!-- 공통 푸터 -->
+    <Footer2/>
   </div>
 </template>
 
@@ -33,6 +38,7 @@ import { useUIStore } from '@/stores/ui'
 import BaseModal from '@/components/modals/BaseModal.vue'
 import Navbar1 from '@/components/layout/navbar1.vue'
 import Navbar2 from '@/components/layout/navbar2.vue'
+import Footer2 from '@/components/layout/footer2.vue'
 
 import HomeView from '@/views/HomeView.vue'
 import BookDetailView from '@/views/BookDetailView.vue'
@@ -90,9 +96,13 @@ html, body {
 }
 
 .app-wrapper {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
 }
 
 .modal-layer {

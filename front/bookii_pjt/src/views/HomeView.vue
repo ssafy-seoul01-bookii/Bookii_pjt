@@ -75,8 +75,6 @@
         <ThreadList :threads="thread.threads"/>
       </div>
      </template>
-
-    <Footer2/>
   </div>
 </template>
 
@@ -90,7 +88,6 @@ import { useThreadStore } from '@/stores/thread'
 import { onMounted, onBeforeUnmount } from 'vue'
 
 import Footer1 from '@/components/layout/footer1.vue'
-import Footer2 from '@/components/layout/footer2.vue'
 import BookList from '@/components/book/BookList.vue'
 import ThreadList from '@/components/thread/ThreadList.vue'
 
