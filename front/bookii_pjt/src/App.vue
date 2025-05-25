@@ -58,8 +58,10 @@ const backgroundMap = {
 }
 
 const backgroundComponent = computed(() => {
-  // 1️⃣ modal이 아니거나 저장된 배경경로가 없으면 홈 뷰 반환
-  if (!isModalRoute.value) return HomeView
+  // 1️⃣ 일반 페이지 라우팅: route.name 기반 렌더링
+  if (!isModalRoute.value) {
+    return backgroundMap[route.name] || HomeView
+  }
   // 2️⃣ route.meta.background가 명시되어 있으면 우선 적용
   if (route.meta.background && backgroundMap[route.meta.background]) {
     return backgroundMap[route.meta.background]
