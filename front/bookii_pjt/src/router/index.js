@@ -23,7 +23,8 @@ const routes = [
   { path: '/', name: 'home', component: HomeView },
   { path: '/book/:bookId', name: 'book-detail', component: BookDetailView },
   { path: '/search', name: 'search', component: SearchView },
-  { path: '/search/tag/:tag', name: 'tag-search', component: TagSearchView },
+  // tag필수 해제
+  { path: '/search/tag/:tag?', name: 'tag-search', component: TagSearchView },
   { path: '/profile/:username', name: 'profile', component: ProfileView },
 
   // modal 라우트
