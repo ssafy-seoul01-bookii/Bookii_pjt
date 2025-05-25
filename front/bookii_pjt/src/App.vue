@@ -10,12 +10,16 @@
 
     <!-- 모달 뷰 (기본) -->
     <router-view v-slot="{ Component }">
-      <component :is="Component" v-if="isModalRoute" class="modal-layer" />
+      <BaseModal class="modal-layer" v-if="isModalRoute">
+        <component :is="Component"/>
+      </BaseModal>
     </router-view>
 
     <!-- 이중 모달 뷰 -->
     <router-view name="submodal" v-slot="{ Component }">
-      <component :is="Component" v-if="Component" class="submodal-layer" />
+      <BaseModal class="submodal-layer" v-if="Component">
+        <component :is="Component"/>
+      </BaseModal>
     </router-view>
   </div>
 </template>
@@ -24,6 +28,9 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useUIStore } from '@/stores/ui'
+
+import BaseModal from '@/components/modals/BaseModal.vue'
+import Navbar1 from '@/components/layout/navbar1.vue'
 import Navbar2 from '@/components/layout/navbar2.vue'
 
 import HomeView from '@/views/HomeView.vue'
@@ -31,51 +38,51 @@ import BookDetailView from '@/views/BookDetailView.vue'
 import SearchView from '@/views/SearchView.vue'
 import TagSearchView from '@/views/TagSearchView.vue'
 import ProfileView from '@/views/ProfileView.vue'
+import ThreadDetailView from '@/views/ThreadDetailView.vue'
 
 const route = useRoute()
 const ui = useUIStore()
 
-const isModalRoute = computed(() =>
-  [
-    '/signup',
-    '/login',
-    '/profile/',
-    '/thread/create',
-    '/thread/',
-    '/thread/:id/edit'
-  ].some(path => route.path.startsWith(path.replace(':id', '')))
-)
+// 1단계 모달 조건 (router meta 기반)
+const isModalRoute = computed(() => route.meta.isModal === true)
+
+// backgroundmap 지정(기본 백)
+const backgroundMap = {
+    'home': HomeView,
+    'book-detail': BookDetailView,
+    'search': SearchView,
+    'tag-search': TagSearchView,
+    'profile': ProfileView,
+    'thread-detail': ThreadDetailView,
+}
 
 const backgroundComponent = computed(() => {
-  const path = ui.backgroundRoute
+  // 1️⃣ modal이 아니거나 저장된 배경경로가 없으면 홈 뷰 반환
+  if (!isModalRoute.value) return HomeView
+  // 2️⃣ route.meta.background가 명시되어 있으면 우선 적용
+  if (route.meta.background && backgroundMap[route.meta.background]) {
+    return backgroundMap[route.meta.background]
+  }
 
-  if (!isModalRoute.value || !path) return HomeView
+  // 3️⃣ fallback: backgroundRoute(Pinia)에 따라 유추
+  const path = ui.backgroundRoute
+  if (!path) return HomeView
   if (path.startsWith('/book/')) return BookDetailView
   if (path.startsWith('/search/tag')) return TagSearchView
   if (path.startsWith('/search')) return SearchView
   if (path.startsWith('/profile')) return ProfileView
+  // 4️⃣ 최종 fallback
   return HomeView
 })
+
 </script>
 
 <style lang="scss" scoped>
 .modal-layer {
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: 1000;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .submodal-layer {
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: 1100;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 1);
 }
 </style>
