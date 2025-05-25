@@ -2,7 +2,7 @@
 
 <template>
   <div class="modal-wrapper" @click.self="close">
-    <div class="modal-content">
+    <div class="modal-content" :class="modalClass">
       <button class="close-btn" @click="close">x</button>
       <slot></slot>
     </div>
@@ -27,6 +27,14 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', handleEsc)
 })
+
+// Modal 크기 유동성 추가
+defineProps({
+  modalClass: {
+    type: String,
+    default: ''
+  }
+})
 </script>
 
 <style lang="scss" scoped>
@@ -41,11 +49,23 @@ onBeforeUnmount(() => {
 }
 
 .modal-content {
-  background: white;
-  border-radius: 8px;
+  /* 기본 스타일 (예: 좁은 폼용) */
+  width: 90%;
+  max-width: 420px;
   padding: 2rem;
-  min-width: 300px;
-  max-width: 90vw;
+  border-radius: 12px;
+  background: white;
+}
+
+.modal-narrow {
+  max-width: 420px;
+}
+
+.modal-wide {
+  width: 90vw;
+  max-width: 960px;
+  height: 80vh;
+  overflow-y: auto;
 }
 
 .close-btn {
