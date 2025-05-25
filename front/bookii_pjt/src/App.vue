@@ -1,7 +1,7 @@
 <!-- App.vue -->
 
 <template>
-  <div>
+  <div class="app-wrapper">
     <!-- 공통 네비게이션 -->
     <Navbar1 />
     <Navbar2 />
@@ -78,7 +78,21 @@ const backgroundComponent = computed(() => {
 
 </script>
 
-<style lang="scss" scoped>
+<!-- 전역 스타일로 추가 -->
+<style lang="scss">
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .modal-layer {
   z-index: 1000;
 }
