@@ -7,7 +7,7 @@ import App from './App.vue'
 import router from './router'
 
 // custom.scss import
-import '@/assets/custom.css'
+import '@/assets/custom.scss'
 
 const app = createApp(App)
 app.use(createPinia())
