@@ -47,7 +47,10 @@ const goToSearch = () => {
 }
 
 const goToLogin = () => {
-  router.push({ name: 'login' })
+  router.push({
+    name: 'login',
+    state: { background: router.currentRoute.value.fullPath }
+  })
 }
 
 const logout = () => {
