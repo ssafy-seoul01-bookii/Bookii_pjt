@@ -187,3 +187,10 @@ env = environ.Env()
 env.read_env(BASE_DIR / ".env")
 GPT_API_KEY = env("GPT_API_KEY")
 ALADDIN_API_KEY = env("ALADDIN_API_KEY")
+
+
+
+# 회원가입 커스텀 설정
+REST_AUTH = {
+    'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer',
+}

@@ -24,14 +24,14 @@ class Book(models.Model):
     title = models.CharField(max_length=30, default="Unknown",)
     description = models.TextField(default="Unknown",)
     isbn = models.CharField(max_length=15, default="Unknown",)
-    cover_img_url = models.ImageField(upload_to=PATH["Book"]["cover_img"], default=f"{PATH['Book']['cover_img']}/default_img.png",)
+    cover_img_url = models.ImageField(upload_to=PATH["Book"]["cover_img"], default=f"{PATH['Book']['cover_img']}default_img.png",)
     publisher = models.CharField(max_length=15, default="Unknown",)
     pub_date = models.DateField(default="Unknown",)
     author_name = models.CharField(max_length=15, default="Unknown",)
     author_info = models.TextField(default="Unknown",)
-    author_profile_img_url = models.ImageField(upload_to=PATH["Book"]["author_img"], default=f"{PATH['Book']['author_img']}/default_img.png",)
+    author_profile_img_url = models.ImageField(upload_to=PATH["Book"]["author_img"], default=f"{PATH['Book']['author_img']}default_img.png",)
     audio_file = models.FileField(upload_to=PATH["Book"]["audio_file"], blank=True,)
-    rank = models.PositiveIntegerField(
+    rank = models.FloatField(
         validators=[
             MaxValueValidator(5),
             MinValueValidator(0),
@@ -44,8 +44,8 @@ class Thread(models.Model):
     user = models.ForeignKey(to="accounts.User", on_delete=models.CASCADE, related_name="user_threads",)
     title = models.CharField(max_length=30, default="Unknown",)
     content = models.TextField(default="Unknown",)
-    cover_img_url = models.ImageField(upload_to=PATH["Thread"]["cover_img"], default=f"{PATH['Thread']['cover_img']}/default_img.png",)
-    reading_date = models.DateField()
+    cover_img_url = models.ImageField(upload_to=PATH["Thread"]["cover_img"], default=f"{PATH['Thread']['cover_img']}default_img.png",)
+    reading_date = models.DateField(blank=True, null=True,)
     created_at = models.DateTimeField(auto_now_add=True,)
     updated_at = models.DateTimeField(auto_now=True,)
     like_users = models.ManyToManyField(
@@ -53,7 +53,7 @@ class Thread(models.Model):
         through="books.Thread_like",
         related_name="like_threads",
     )
-    rank = models.PositiveIntegerField(
+    rank = models.FloatField(
         blank=True,
         validators=[
             MaxValueValidator(5),

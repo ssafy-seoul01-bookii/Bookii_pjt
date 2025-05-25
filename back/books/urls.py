@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from . import creates
 
 urlpatterns = [
     path("categories/", views.get_categories),
@@ -13,5 +14,9 @@ urlpatterns = [
     path("search/", views.search_books),
 
     # 더미데이터 삽입
-    path("insert/", views.insert),
+    path("insert_books/", creates.insert_books),
+    path("insert_categories/", creates.insert_categories),
+    path("insert_keywords/", creates.insert_keywords),
+    path("insert_threads/", creates.insert_threads),
+    path("insert_books_rank/", creates.insert_books_rank),
 ]
