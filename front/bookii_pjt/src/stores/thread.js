@@ -15,7 +15,10 @@ export const useThreadStore = defineStore('thread', () => {
       cover_img_url: 'https://via.placeholder.com/100x100?text=Thread1',
       created_at: '2024-05-01',
       updated_at: '2024-05-01',
-      rank: 5
+      rank: 5,
+      like_count: 10,
+      comment_count: 4,
+      user_name: 'Jin'
     },
     {
       id: 2,
@@ -26,7 +29,10 @@ export const useThreadStore = defineStore('thread', () => {
       cover_img_url: 'https://via.placeholder.com/100x100?text=Thread2',
       created_at: '2024-05-02',
       updated_at: '2024-05-02',
-      rank: 4
+      rank: 4,
+      like_count: 6,
+      comment_count: 2,
+      user_name: 'Hyun'
     },
     {
       id: 3,
@@ -37,7 +43,10 @@ export const useThreadStore = defineStore('thread', () => {
       cover_img_url: 'https://via.placeholder.com/100x100?text=Thread3',
       created_at: '2024-05-03',
       updated_at: '2024-05-03',
-      rank: 4
+      rank: 4,
+      like_count: 3,
+      comment_count: 1,
+      user_name: 'Eunji'
     },
     {
       id: 4,
@@ -48,7 +57,10 @@ export const useThreadStore = defineStore('thread', () => {
       cover_img_url: 'https://via.placeholder.com/100x100?text=Thread4',
       created_at: '2024-05-04',
       updated_at: '2024-05-04',
-      rank: 5
+      rank: 5,
+      like_count: 9,
+      comment_count: 6,
+      user_name: 'Min'
     },
     {
       id: 5,
@@ -59,7 +71,10 @@ export const useThreadStore = defineStore('thread', () => {
       cover_img_url: 'https://via.placeholder.com/100x100?text=Thread5',
       created_at: '2024-05-05',
       updated_at: '2024-05-05',
-      rank: 5
+      rank: 5,
+      like_count: 8,
+      comment_count: 3,
+      user_name: 'Yoon'
     },
     {
       id: 6,
@@ -70,7 +85,10 @@ export const useThreadStore = defineStore('thread', () => {
       cover_img_url: 'https://via.placeholder.com/100x100?text=Thread6',
       created_at: '2024-05-06',
       updated_at: '2024-05-06',
-      rank: 4
+      rank: 4,
+      like_count: 5,
+      comment_count: 2,
+      user_name: 'Sumin'
     },
     {
       id: 7,
@@ -81,7 +99,10 @@ export const useThreadStore = defineStore('thread', () => {
       cover_img_url: 'https://via.placeholder.com/100x100?text=Thread7',
       created_at: '2024-05-07',
       updated_at: '2024-05-07',
-      rank: 5
+      rank: 5,
+      like_count: 7,
+      comment_count: 3,
+      user_name: 'Jisoo'
     },
     {
       id: 8,
@@ -92,7 +113,10 @@ export const useThreadStore = defineStore('thread', () => {
       cover_img_url: 'https://via.placeholder.com/100x100?text=Thread8',
       created_at: '2024-05-08',
       updated_at: '2024-05-08',
-      rank: 5
+      rank: 5,
+      like_count: 11,
+      comment_count: 5,
+      user_name: 'Kyun'
     }
   ])
 
