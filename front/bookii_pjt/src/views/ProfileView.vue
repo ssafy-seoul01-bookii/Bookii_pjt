@@ -38,10 +38,7 @@
         :key="thread.id"
         class="thread-item"
         ref="setLastItem(index)"
-      >
-      <router-link
-        :to="{ name: 'thread-detail', params: { id: thread.id } }"
-        class="thread-link"
+        @click="openThreadDetail(thread)"
       >
         <img :src="thread.cover_img_url" alt="thread 이미지" />
         <div class="overlay">
@@ -50,7 +47,6 @@
             ❤️ {{ thread.like_count }} &nbsp;&nbsp; 💬 {{ thread.comment_count }}
           </div>
         </div>
-      </router-link>
       </div>
       </section>
     </div>
@@ -62,10 +58,12 @@ import { useRoute, useRouter } from 'vue-router'
 import { ref, computed, watch, onMounted } from 'vue'
 import { useUserStore } from '@/stores/user'
 import { useThreadStore } from '@/stores/thread'
+import { useUIStore } from '@/stores/ui'
 
 const route = useRoute()
 const router = useRouter()
 
+const uiStore = useUIStore()
 const userStore = useUserStore()
 const threadStore = useThreadStore()
 
@@ -148,6 +146,12 @@ const toggleFollow = () => {
     currentUser.value.following = [...list, targetId]
   }
 }
+
+// ThreadDetail 용
+const openThreadDetail = (thread) => {
+  uiStore.setBackgroundRoute(router.currentRoute.value.fullPath)
+  router.push({ name: 'thread-detail', params: { id: thread.id } })
+}
 </script>
 
 <style scoped>
@@ -221,22 +225,16 @@ const toggleFollow = () => {
 }
 
 .thread-item {
+  display: block;
   position: relative;
   width: 100%;
+  height: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
 }
 
-/* 링크 전체를 감싸도록 */
-.thread-link {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
 /* 이미지 */
-.thread-link img {
+.thread-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -244,7 +242,7 @@ const toggleFollow = () => {
 }
 
 /* 호버 시 확대 */
-.thread-link:hover img {
+.thread-item:hover img {
   transform: scale(1.03);
 }
 
@@ -260,7 +258,7 @@ const toggleFollow = () => {
   transition: opacity 0.3s;
 }
 
-.thread-link:hover .overlay {
+.thread-item:hover .overlay {
   opacity: 1;
 }
 

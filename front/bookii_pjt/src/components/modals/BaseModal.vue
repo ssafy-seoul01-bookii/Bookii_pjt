@@ -61,9 +61,16 @@ defineProps({
   max-width: 420px;
 }
 
-.modal-wide {
+.modal-medium {
   width: 90vw;
-  max-width: 960px;
+  max-width: 720px;
+  height: auto; /* 또는 필요 시 height: 80vh */
+  overflow-y: auto;
+}
+
+.modal-wide {
+  width: 95vw;
+  max-width: 1200px;
   height: 80vh;
   overflow-y: auto;
 }

@@ -32,37 +32,58 @@ const routes = [
     path: '/signup',
     name: 'signup',
     component: SignUpView,
-    meta: { isModal: true }
+    meta: { 
+      isModal: true,
+      modalClass: 'modal-narrow'
+    }
   },
   {
     path: '/login',
     name: 'login',
     component: LogInView,
-    meta: { isModal: true }
+    meta: { 
+      isModal: true,
+      modalClass: 'modal-narrow'
+    }
   },
   {
     path: '/profile/:username/edit',
     name: 'profile-edit',
     component: ProfileUpdateView,
-    meta: { isModal: true, background: 'profile' }
+    meta: {
+      isModal: true,
+      background: 'profile',
+      modalClass: 'modal-medium'
+    }
   },
   {
     path: '/thread/:id',
     name: 'thread-detail',
     component: ThreadDetailView,
-    meta: { isModal: true }
+    meta: {
+      isModal: true,
+      modalClass: 'modal-wide'
+    }
   },
   {
     path: '/thread/create',
     name: 'thread-create',
     component: ThreadCreateView,
-    meta: { isModal: true }
+    meta: {
+      isModal: true,
+      modalClass: 'modal-medium'
+    }
   },
   {
     path: '/thread/:id/edit',
     name: 'thread-edit',
     component: ThreadUpdateView,
-    meta: { isModal: true, isSubModal: true, background: 'thread-detail' }
+    meta: {
+      isModal: true,
+      isSubModal: true,
+      background: 'thread-detail',
+      modalClass: 'modal-medium'
+    }
   },
 ]
 
