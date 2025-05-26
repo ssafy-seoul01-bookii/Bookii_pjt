@@ -1,0 +1,212 @@
+[
+{
+    "model": "books.keyword",
+    "pk": 1,
+    "fields": {
+        "name": "성장"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 2,
+    "fields": {
+        "name": "감정"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 3,
+    "fields": {
+        "name": "사랑"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 4,
+    "fields": {
+        "name": "우정"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 5,
+    "fields": {
+        "name": "자기이해"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 6,
+    "fields": {
+        "name": "동기부여"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 7,
+    "fields": {
+        "name": "리더십"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 8,
+    "fields": {
+        "name": "창의성"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 9,
+    "fields": {
+        "name": "습관"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 10,
+    "fields": {
+        "name": "돈"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 11,
+    "fields": {
+        "name": "시간관리"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 12,
+    "fields": {
+        "name": "커리어"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 13,
+    "fields": {
+        "name": "심리"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 14,
+    "fields": {
+        "name": "철학"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 15,
+    "fields": {
+        "name": "역사"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 16,
+    "fields": {
+        "name": "문화"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 17,
+    "fields": {
+        "name": "여행"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 18,
+    "fields": {
+        "name": "요리"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 19,
+    "fields": {
+        "name": "건강"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 20,
+    "fields": {
+        "name": "과학기술"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 21,
+    "fields": {
+        "name": "AI"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 22,
+    "fields": {
+        "name": "환경"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 23,
+    "fields": {
+        "name": "미래"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 24,
+    "fields": {
+        "name": "교육"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 25,
+    "fields": {
+        "name": "감성"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 26,
+    "fields": {
+        "name": "창업"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 27,
+    "fields": {
+        "name": "자연"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 28,
+    "fields": {
+        "name": "가족"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 29,
+    "fields": {
+        "name": "명상"
+    }
+},
+{
+    "model": "books.keyword",
+    "pk": 30,
+    "fields": {
+        "name": "스토리텔링"
+    }
+}
+]
