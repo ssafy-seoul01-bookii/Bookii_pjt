@@ -1,91 +1,58 @@
 from rest_framework import serializers
-from .models import Category, Book, Thread, Comment
+from .models import Category, Book, Thread, Comment, Keyword
 
 class CategoryListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = "__all__"
 
+
+
+class KeywordListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Keyword
+        fields = "__all__"
+
+
+
 class BookListSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Book
-        fields = "__all__"
+    thread_count = serializers.SerializerMethodField()
 
-class BookDetailSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Book
-        fields = "__all__"
-
-    class ThreadDetailSerializer(serializers.ModelSerializer):
-        class Meta:
-            model = Thread
-            fields = (
-                "id",
-                "title",
-                "content",
-                "reading_date",
-            )
+    def get_thread_count(self, obj):
+        return obj.book_threads.count()
     
-    class CategoryDetailSerializer(serializers.ModelSerializer):
-        class Meta:
-            model = Category
-            fields = (
-                "id",
-                "name",
-            )
+    class Meta:
+        model = Book
+        fields = "__all__"
+
+
 
 class ThreadListSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Thread
-        fields = (
-            "id",
-            "title",
-            "book",
-        )
-    
-    class BookDetailSerializer(serializers.ModelSerializer):
-        class Meta:
-            model = Book
-            fields = (
-                "title",
-            )
-    
-    book = BookDetailSerializer(read_only=True)
+    comment_count = serializers.SerializerMethodField()
+    like_count = serializers.SerializerMethodField()
 
-class ThreadDetailSerializer(serializers.ModelSerializer):
+    def get_comment_count(self, obj):
+        return obj.thread_comments.count()
+    def get_like_count(self, obj):
+        return obj.like_users.count()
+    
     class Meta:
         model = Thread
         fields = "__all__"
+
+
+
+class CommentListSerializer(serializers.ModelSerializer):        
+    like_count = serializers.SerializerMethodField()
+
+    def get_like_count(self, obj):
+        return obj.comment_like_set.count()
     
-    class BookDetailSerializer(serializers.ModelSerializer):
-        class Meta:
-            model = Book
-            fields = (
-                "title",
-            )
-    
-    book = BookDetailSerializer(read_only=True)
+    class Meta:
+        model = Comment
+        fields = "__all__"
 
-    class CommentListSerializer(serializers.ModelSerializer):
-        class Meta:
-            model = Comment
-            fields = "__all__"
-    
-        class ThreadDetailSerializer(serializers.ModelSerializer):
-            class Meta:
-                model = Thread
-                fields = (
-                    "title",
-                )
-        
-        thread = ThreadDetailSerializer(read_only=True)
 
-    comments = CommentListSerializer(read_only=True, many=True)
-
-    num_of_comments = serializers.SerializerMethodField()
-
-    def get_num_of_comments(self, obj):
-        return obj.num_of_comments
 
 class ThreadCreateSerializer(serializers.ModelSerializer):
     class Meta:
@@ -93,22 +60,10 @@ class ThreadCreateSerializer(serializers.ModelSerializer):
         fields = (
             "title",
             "content",
-            "reading_date",
+            "rank",
         )
 
-class CommentDetailSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Comment
-        fields = "__all__"
-    
-    class ThreadDetailSerializer(serializers.ModelSerializer):
-        class Meta:
-            model = Thread
-            fields = (
-                    "title",
-                )
-    
-    thread = ThreadDetailSerializer(read_only =True)
+
 
 class CommentCreateSerializer(serializers.ModelSerializer):
     class Meta:

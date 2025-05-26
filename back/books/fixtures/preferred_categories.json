@@ -1,0 +1,442 @@
+[
+  {
+    "model": "books.preferred_category",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "category": 2
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "category": 7
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 3,
+    "fields": {
+      "user": 2,
+      "category": 6
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 4,
+    "fields": {
+      "user": 3,
+      "category": 4
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 5,
+    "fields": {
+      "user": 3,
+      "category": 5
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 6,
+    "fields": {
+      "user": 3,
+      "category": 6
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 7,
+    "fields": {
+      "user": 4,
+      "category": 1
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 8,
+    "fields": {
+      "user": 4,
+      "category": 7
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 9,
+    "fields": {
+      "user": 4,
+      "category": 8
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 10,
+    "fields": {
+      "user": 4,
+      "category": 5
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 11,
+    "fields": {
+      "user": 5,
+      "category": 8
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 12,
+    "fields": {
+      "user": 5,
+      "category": 7
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 13,
+    "fields": {
+      "user": 5,
+      "category": 3
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 14,
+    "fields": {
+      "user": 6,
+      "category": 6
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 15,
+    "fields": {
+      "user": 6,
+      "category": 4
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 16,
+    "fields": {
+      "user": 6,
+      "category": 3
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 17,
+    "fields": {
+      "user": 6,
+      "category": 7
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 18,
+    "fields": {
+      "user": 7,
+      "category": 6
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 19,
+    "fields": {
+      "user": 8,
+      "category": 2
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 20,
+    "fields": {
+      "user": 8,
+      "category": 1
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 21,
+    "fields": {
+      "user": 8,
+      "category": 7
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 22,
+    "fields": {
+      "user": 9,
+      "category": 4
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 23,
+    "fields": {
+      "user": 9,
+      "category": 8
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 24,
+    "fields": {
+      "user": 10,
+      "category": 3
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 25,
+    "fields": {
+      "user": 10,
+      "category": 5
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 26,
+    "fields": {
+      "user": 11,
+      "category": 8
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 27,
+    "fields": {
+      "user": 12,
+      "category": 8
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 28,
+    "fields": {
+      "user": 12,
+      "category": 3
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 29,
+    "fields": {
+      "user": 13,
+      "category": 8
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 30,
+    "fields": {
+      "user": 13,
+      "category": 5
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 31,
+    "fields": {
+      "user": 13,
+      "category": 2
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 32,
+    "fields": {
+      "user": 13,
+      "category": 4
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 33,
+    "fields": {
+      "user": 14,
+      "category": 5
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 34,
+    "fields": {
+      "user": 14,
+      "category": 6
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 35,
+    "fields": {
+      "user": 15,
+      "category": 8
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 36,
+    "fields": {
+      "user": 16,
+      "category": 6
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 37,
+    "fields": {
+      "user": 17,
+      "category": 8
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 38,
+    "fields": {
+      "user": 17,
+      "category": 5
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 39,
+    "fields": {
+      "user": 17,
+      "category": 4
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 40,
+    "fields": {
+      "user": 17,
+      "category": 7
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 41,
+    "fields": {
+      "user": 18,
+      "category": 3
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 42,
+    "fields": {
+      "user": 18,
+      "category": 6
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 43,
+    "fields": {
+      "user": 18,
+      "category": 2
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 44,
+    "fields": {
+      "user": 19,
+      "category": 6
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 45,
+    "fields": {
+      "user": 19,
+      "category": 3
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 46,
+    "fields": {
+      "user": 19,
+      "category": 5
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 47,
+    "fields": {
+      "user": 20,
+      "category": 1
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 48,
+    "fields": {
+      "user": 20,
+      "category": 8
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 49,
+    "fields": {
+      "user": 20,
+      "category": 2
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 50,
+    "fields": {
+      "user": 21,
+      "category": 1
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 51,
+    "fields": {
+      "user": 22,
+      "category": 3
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 52,
+    "fields": {
+      "user": 22,
+      "category": 7
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 53,
+    "fields": {
+      "user": 23,
+      "category": 3
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 54,
+    "fields": {
+      "user": 23,
+      "category": 5
+    }
+  },
+  {
+    "model": "books.preferred_category",
+    "pk": 55,
+    "fields": {
+      "user": 23,
+      "category": 1
+    }
+  }
+]
