@@ -2,20 +2,22 @@
 
 <template>
   <div class="thread-list">
-    <!-- 슬라이딩 버튼 -->
     <div class="scroll-wrapper">
       <button class="scroll-btn left" @click="prev" :disabled="currentIndex <= 0">〈</button>
 
-    <!-- 쓰레드 아이템(한 번에 세 개씩) -->
-    <div class="thread-list-items">
-      <ThreadListItem
-        v-for="thread in visibleThreads"
-        :key="thread.id"
-        :thread="thread"
-      />
-    </div>
+      <div class="thread-list-items">
+        <ThreadListItem
+          v-for="thread in visibleThreads"
+          :key="thread.id"
+          :thread="thread"
+        />
+      </div>
 
-      <button class="scroll-btn right" @click="next" :disabled="currentIndex + visibleCount >= (props.threads?.length || 0)">〉</button>
+      <button
+        class="scroll-btn right"
+        @click="next"
+        :disabled="currentIndex + visibleCount >= (props.threads?.length || 0)"
+      >〉</button>
     </div>
   </div>
 </template>
@@ -24,25 +26,20 @@
 import { ref, computed } from 'vue'
 import ThreadListItem from './ThreadListItem.vue'
 
-
 const props = defineProps({
   threads: Array,
   title: String
 })
 
-const visibleCount = computed(() =>
-  Math.min(3, props.threads?.length || 0)
-)
-
+const visibleCount = 3
 const currentIndex = ref(0)
 
 const visibleThreads = computed(() =>
-  (props.threads || []).slice(currentIndex.value, currentIndex.value + visibleCount.value)
+  (props.threads || []).slice(currentIndex.value, currentIndex.value + visibleCount)
 )
 
-
 const next = () => {
-  if (currentIndex.value + visibleCount.value < props.threads.length) {
+  if (currentIndex.value + visibleCount < (props.threads?.length || 0)) {
     currentIndex.value++
   }
 }

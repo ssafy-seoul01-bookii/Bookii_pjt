@@ -1,5 +1,7 @@
+<!-- ProfileView.vue -->
+
 <template>
-  <div class="profile-background">
+  <div class="profile-background" v-if="user">
     <div class="profile-view">
       <!-- 프로필 영역 -->
       <section class="profile-header">
@@ -14,42 +16,38 @@
           <p class="user-meta">
             성별: {{ user.gender === 'M' ? '남성' : '여성' }} | 나이: {{ user.age }}세
           </p>
-  
+
           <div class="action-buttons">
-            <!-- 항상 프로필 수정 버튼 표시 -->
-            <button @click="goToEdit">프로필 수정</button>
-            <!-- 항상 팔로우 버튼도 표시 -->
-            <button @click="toggleFollow">
+            <button v-if="isOwnProfile" @click="goToEdit">프로필 수정</button>
+            <button v-else @click="toggleFollow">
               {{ isFollowing ? '언팔로우' : '팔로우' }}
             </button>
           </div>
         </div>
       </section>
-  
+
       <!-- 탭 메뉴 디자인 -->
       <div class="profile-tabs">
-        <div class="tab active">
-          <span>쓰레드 🖋️</span>
-        </div>
+        <div class="tab active"><span>쓰레드 🖋️</span></div>
       </div>
-  
+
       <!-- 게시물 그리드 -->
       <section class="thread-grid">
-      <div
-        v-for="(thread, index) in visibleThreads"
-        :key="thread.id"
-        class="thread-item"
-        ref="setLastItem(index)"
-        @click="openThreadDetail(thread)"
-      >
-        <img :src="thread.cover_img_url" alt="thread 이미지" />
-        <div class="overlay">
-          <p class="title">{{ thread.title }}</p>
-          <div class="meta-bar">
-            ❤️ {{ thread.like_count }} &nbsp;&nbsp; 💬 {{ thread.comment_count }}
+        <div
+          v-for="(thread, index) in visibleThreads"
+          :key="thread.id"
+          class="thread-item"
+          ref="setLastItem(index)"
+          @click="openThreadDetail(thread)"
+        >
+          <img :src="thread.cover_img_url" alt="thread 이미지" />
+          <div class="overlay">
+            <p class="title">{{ thread.title }}</p>
+            <div class="meta-bar">
+              ❤️ {{ thread.like_count }} &nbsp;&nbsp; 💬 {{ thread.comment_count }}
+            </div>
           </div>
         </div>
-      </div>
       </section>
     </div>
   </div>
@@ -57,17 +55,19 @@
 
 <script setup>
 import { useRoute, useRouter } from 'vue-router'
-import { ref, computed, watch, onMounted } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useUserStore } from '@/stores/user'
 import { useThreadStore } from '@/stores/thread'
+import { useFollowStore } from '@/stores/follow'
 import { useUIStore } from '@/stores/ui'
 
 const route = useRoute()
 const router = useRouter()
 
-const uiStore = useUIStore()
 const userStore = useUserStore()
 const threadStore = useThreadStore()
+const followStore = useFollowStore()
+const uiStore = useUIStore()
 
 // 현재 URL의 사용자
 const username = route.params.username
@@ -75,20 +75,17 @@ const user = computed(() =>
   userStore.users.find(u => u.username === username)
 )
 
-// 현재 로그인된 사용자
-const currentUser = computed(() =>
-  userStore.users.find(u => u.username === userStore.accessToken)
-)
-
+// 본인 프로필 여부
 const isOwnProfile = computed(() =>
-  currentUser.value?.username === user.value?.username
+  userStore.userInfo?.username === user.value?.username
 )
 
+// 팔로우 여부 (follow.js에서 관리)
 const isFollowing = computed(() =>
-  currentUser.value?.following?.includes(user.value.id)
+  followStore.followings.includes(user.value?.id)
 )
 
-// 모든 쓰레드 → 유저 기준 필터링
+// 사용자 쓰레드
 const userThreads = computed(() =>
   threadStore.threads.filter(t => t.user_id === user.value?.id)
 )
@@ -116,10 +113,8 @@ const loadMore = () => {
   }
 }
 
-// 무한스크롤 옵저버 연결
 watch(lastItem, (el) => {
   if (observer.value) observer.value.disconnect()
-
   if (el) {
     observer.value = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) loadMore()
@@ -128,32 +123,16 @@ watch(lastItem, (el) => {
   }
 })
 
-// 프로필 수정 이동
+// 이동 및 팔로우
 const goToEdit = () => {
   router.push({ name: 'profile-edit', params: { username } })
 }
-
-// 쓰레드 디테일 이동
-const goToThread = (id) => {
-  router.push({ name: 'thread-detail', params: { id } })
-}
-
-// 팔로우 토글
-const toggleFollow = () => {
-  const targetId = user.value.id
-  const list = currentUser.value.following || []
-
-  if (list.includes(targetId)) {
-    currentUser.value.following = list.filter(id => id !== targetId)
-  } else {
-    currentUser.value.following = [...list, targetId]
-  }
-}
-
-// ThreadDetail 용
 const openThreadDetail = (thread) => {
   uiStore.setBackgroundRoute(router.currentRoute.value.fullPath)
   router.push({ name: 'thread-detail', params: { id: thread.id } })
+}
+const toggleFollow = () => {
+  followStore.toggleFollow(user.value.id)
 }
 </script>
 

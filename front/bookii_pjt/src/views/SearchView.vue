@@ -1,4 +1,3 @@
-<!-- views/SearchView.vue -->
 <template>
   <div class="search-view">
     <!-- 좌측: 태그 필터 -->
@@ -6,9 +5,9 @@
       <h3>태그검색</h3>
       <div class="filter-group">
         <p class="filter-title">카테고리</p>
-        <div v-for="genre in genreOptions" :key="genre">
-          <input type="checkbox" :value="genre" v-model="selectedTags" />
-          <label>{{ genre }}</label>
+        <div v-for="genre in categoryStore.categories" :key="genre.id">
+          <input type="checkbox" :value="genre.name" v-model="selectedTags" />
+          <label>{{ genre.name }}</label>
         </div>
       </div>
 
@@ -16,9 +15,9 @@
 
       <div class="filter-group">
         <p class="filter-title">키워드</p>
-        <div v-for="keyword in keywordOptions" :key="keyword">
-          <input type="checkbox" :value="keyword" v-model="selectedTags" />
-          <label>{{ keyword }}</label>
+        <div v-for="keyword in keywordStore.keywords" :key="keyword.id">
+          <input type="checkbox" :value="keyword.name" v-model="selectedTags" />
+          <label>{{ keyword.name }}</label>
         </div>
       </div>
     </aside>
@@ -45,17 +44,22 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useBookStore } from '@/stores/book'
+import { useCategoryStore } from '@/stores/category'
+import { useKeywordStore } from '@/stores/keyword'
 
 const route = useRoute()
+
 const bookStore = useBookStore()
+const categoryStore = useCategoryStore()
+const keywordStore = useKeywordStore()
 
 const query = ref(route.query.q || '')
+const selectedTags = ref([])
 
-// route.query.q가 바뀔 때마다 반영
-// SearchView에서 재검색 가능하게
+// 검색어 반영
 watch(
   () => route.query.q,
   (newQuery) => {
@@ -63,29 +67,24 @@ watch(
   }
 )
 
-const selectedTags = ref([])
-
-// 임시 장르/키워드 - 실제로는 백엔드에서 가져오거나 store에서 관리 가능
-const genreOptions = ['genre 1', 'genre 2', 'genre 3']
-const keywordOptions = [
-  '삶', '문학', '산문집', '자기계발', '명상',
-  '감정', '관계', '소설', '힐링'
-]
-
-// 검색어 기반 필터
 const searchedBooks = computed(() =>
   bookStore.books.filter(book =>
     book.title.toLowerCase().includes(query.value.toLowerCase())
   )
 )
 
-// 태그까지 필터
 const filteredBooks = computed(() => {
   if (selectedTags.value.length === 0) return searchedBooks.value
 
   return searchedBooks.value.filter(book =>
-    selectedTags.value.every(tag => book.tags.includes(tag))
+    selectedTags.value.every(tag => (book.tags ?? []).includes(tag))
   )
+})
+
+onMounted(() => {
+  bookStore.fetchBooks()
+  categoryStore.fetchCategories()
+  keywordStore.fetchKeywords()
 })
 </script>
 

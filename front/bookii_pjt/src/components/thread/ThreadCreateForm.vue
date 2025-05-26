@@ -37,14 +37,15 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import BaseModal from '@/components/modals/BaseModal.vue'
 import { useThreadStore } from '@/stores/thread'
 import { useBookStore } from '@/stores/book'
 import { useUserStore } from '@/stores/user'
 
 const route = useRoute()
-const bookId = Number(route.query.bookId) // ✅ query 방식으로 변경
+const router = useRouter()
+const bookId = Number(route.query.bookId)
 
 const threadStore = useThreadStore()
 const bookStore = useBookStore()
@@ -53,7 +54,9 @@ const userStore = useUserStore()
 const content = ref('')
 const rank = ref(5)
 
-const currentBook = computed(() => bookStore.books.find(b => b.id === bookId))
+const currentBook = computed(() =>
+  bookStore.books.find(b => b.id === bookId)
+)
 
 const coverImgUrl = computed(() =>
   currentBook.value?.cover_img_url ??
@@ -62,8 +65,8 @@ const coverImgUrl = computed(() =>
 
 const onSubmit = () => {
   const newThread = {
-    id: threadStore.threads.length + 1,
-    user_id: userStore.currentUserId ?? 1,
+    id: threadStore.threads.length + 1, // 실제 구현에선 서버에서 받아와야 안전
+    user_id: userStore.userInfo?.id ?? 1,
     book_id: bookId,
     title: content.value.slice(0, 20),
     content: content.value,
@@ -75,9 +78,8 @@ const onSubmit = () => {
     comment_count: 0
   }
 
-  threadStore.threads.push(newThread)
+  threadStore.addThread(newThread) // ✅ 메서드로 추출한 것 사용
 
-  // 작성 후 이동
   router.replace({ name: 'thread-detail', params: { id: newThread.id } })
 }
 </script>

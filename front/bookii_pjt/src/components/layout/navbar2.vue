@@ -18,7 +18,7 @@
           type="text"
           placeholder="책 제목 검색"
           @keydown.enter="goToSearch"
-          />
+        />
         <button @click="goToSearch">🔍</button>
       </div>
       <template v-if="isLoggedIn">
@@ -43,15 +43,15 @@ const uiStore = useUIStore()
 
 const isLoggedIn = computed(() => user.isLoggedIn)
 
-// searchText -> pinia에서 전역 관리
+// searchText → Pinia 전역 관리
 const searchText = computed({
   get: () => uiStore.searchText,
-  set: val => uiStore.searchText = val
+  set: val => (uiStore.searchText = val)
 })
 
-// 메뉴 버튼 클릭 이벤트 (필요 시 메뉴 확장 등 추가 가능)
+// 메뉴 버튼 클릭 이벤트 (필요 시 drawer 기능 등 추가 가능)
 const toggleMenu = () => {
-  console.log('햄버거 버튼 클릭됨') // 추후 drawer 등 연동 가능
+  console.log('햄버거 버튼 클릭됨')
 }
 
 const goToSearch = () => {
@@ -59,15 +59,13 @@ const goToSearch = () => {
 }
 
 const goToLogin = () => {
-  router.push({
-    name: 'login',
-    state: { background: router.currentRoute.value.fullPath }
-  })
+  uiStore.setBackgroundRoute(router.currentRoute.value.fullPath)
+  router.push({ name: 'login' })
 }
 
 const logout = () => {
-  user.clearSession()
-  router.replace({ path: router.currentRoute.value.fullPath, query: { t: Date.now() } })
+  user.logout()
+  router.push({ name: 'home' }) // ✅ 홈으로 강제 이동
 }
 </script>
 

@@ -1,24 +1,26 @@
+<!-- ProfileUpdateForm.vue -->
+
 <template>
   <form @submit.prevent="handleSubmit" class="form-container">
-    <!-- 프로필 이미지 미리보기 + 사용자명 -->
+    <!-- 프로필 이미지 + 유저명 -->
     <div class="profile-box">
       <img :src="form.profile_img_url" class="profile-img" />
       <div class="profile-meta">
         <p class="username">{{ form.username }}</p>
-        <p class="label">프로필 사진 변경은 이미지 URL을 붙여넣어 주세요.</p>
+        <p class="label">URL을 붙여넣으면 이미지가 변경됩니다.</p>
       </div>
     </div>
 
-    <!-- 이미지 URL 입력 -->
+    <!-- 이미지 URL -->
     <div class="form-group">
-      <label>프로필 이미지 URL</label>
-      <input v-model="form.profile_img_url" type="text" placeholder="https://..." />
+      <label for="img">프로필 이미지 URL</label>
+      <input id="img" v-model="form.profile_img_url" type="text" placeholder="https://example.com/image.jpg" />
     </div>
 
     <!-- 나이 -->
     <div class="form-group">
-      <label>나이</label>
-      <input v-model.number="form.age" type="number" min="0" />
+      <label for="age">나이</label>
+      <input id="age" v-model.number="form.age" type="number" min="0" />
     </div>
 
     <!-- 비평가 여부 -->
@@ -29,17 +31,17 @@
 
     <!-- 연간 독서량 -->
     <div class="form-group">
-      <label>연간 독서량 (권)</label>
-      <input v-model.number="form.annual_reading_amount" type="number" />
+      <label for="annual">연간 독서량 (권)</label>
+      <input id="annual" v-model.number="form.annual_reading_amount" type="number" min="0" />
     </div>
 
     <!-- 주간 평균 독서시간 -->
     <div class="form-group">
-      <label>주간 평균 독서 시간 (시간)</label>
-      <input v-model.number="form.weekly_avg_reading_time" type="number" step="0.1" />
+      <label for="weekly">주간 평균 독서 시간 (시간)</label>
+      <input id="weekly" v-model.number="form.weekly_avg_reading_time" type="number" step="0.1" min="0" />
     </div>
 
-    <!-- 저장 버튼 -->
+    <!-- 저장 -->
     <div class="form-group">
       <button type="submit" class="submit-btn">저장</button>
     </div>
@@ -49,14 +51,20 @@
 <script setup>
 import { ref, watch } from 'vue'
 
-const props = defineProps({ user: Object })
+const props = defineProps({
+  user: { type: Object, required: true }
+})
 const emit = defineEmits(['submit'])
 
 const form = ref({ ...props.user })
 
-watch(() => props.user, (newVal) => {
-  form.value = { ...newVal }
-})
+watch(
+  () => props.user,
+  (newVal) => {
+    form.value = { ...newVal }
+  },
+  { immediate: true }
+)
 
 const handleSubmit = () => {
   emit('submit', { ...form.value })
