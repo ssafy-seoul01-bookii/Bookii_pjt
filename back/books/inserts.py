@@ -13,9 +13,9 @@ import json
 
 from .models import Category, Keyword, Book_category, Book_keyword
 
-OPENAI_API_KEY= os.environ.get("ALADDIN_API_KEY")
+OPENAI_API_KEY= os.environ.get("GPT_API_KEY")
 TTB_KEY = os.environ.get("ALADDIN_API_KEY")
-client = OpenAI(api_key=os.environ.get("GPT_API_KEY"))
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 class Author_info(BaseModel):
     books: list[str]

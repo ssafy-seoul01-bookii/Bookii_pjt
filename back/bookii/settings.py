@@ -194,3 +194,7 @@ ALADDIN_API_KEY = env("ALADDIN_API_KEY")
 REST_AUTH = {
     'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer',
 }
+# 회원 상세 조회 커스텀 설정
+REST_AUTH_SERIALIZERS = {
+    'USER_DETAILS_SERIALIZER': 'accounts.serializers.CustomUserDetailsSerializer'
+}
