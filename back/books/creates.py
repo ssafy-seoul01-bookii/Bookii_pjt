@@ -7,6 +7,8 @@ from django.core.files.base import ContentFile
 import requests
 from io import BytesIO
 from PIL import Image, UnidentifiedImageError
+import os
+import re
 
 from .models import Category, Book, Keyword, Book_category, Book_keyword, Thread
 from .inserts import get_bestseller_list, get_item_new_special_list, get_new_category, get_keyword_list, get_author_info, get_book_audio_file, is_valid_url, get_thread_cover_img, insert_book_keyword, insert_book_category
@@ -176,7 +178,7 @@ def insert_books(request):
 def insert_threads(request):
     threads = Thread.objects.all()
     for thread in threads:
-        cover_url = get_thread_cover_img(thread.title)
+        cover_url = get_thread_cover_img(thread.content)
         print(cover_url)
         if is_valid_url(cover_url):
             try:
@@ -187,10 +189,11 @@ def insert_threads(request):
                     img.save(buffer, format="PNG")
                     thread.cover_img_url.save(
                         f"{thread.title[:10]}_cover.png", 
-                        ContentFile(buffer.getvalue())
+                        ContentFile(buffer.getvalue()),
                     )
             except (requests.RequestException, UnidentifiedImageError) as e:
                 print(f"[cover 저장 실패] {cover_url} - {e}")
+    return Response({"message": "ok"}, status=status.HTTP_200_OK)
 
 @api_view(["GET"])
 def insert_categories(request):
@@ -205,7 +208,7 @@ def insert_keywords(request):
     return Response({"message": "ok"}, status=status.HTTP_200_OK)
 
 @api_view(["GET"])
-def insert_books_rank(request):
+def insert_book_ranks(request):
     books = Book.objects.all()
     for book in books:
         total_rank = 0.0
@@ -217,4 +220,35 @@ def insert_books_rank(request):
                 cnt += 1
             book.rank = round(total_rank / cnt, 2)
             book.save()
+    return Response({"message": "ok"}, status=status.HTTP_200_OK)
+
+@api_view(["GET"])
+def insert_book_background_img(request):
+    books = Book.objects.all()
+    cnt = 1
+    for book in books:
+        new_title  = re.sub(r'[\\/*?:"<>|]', '', book.title[:10])
+        book.background_img_url = f"{new_title}_background_img_{cnt}.png"
+        book.save()
+        cnt += 1
+    return Response({"message": "ok"}, status=status.HTTP_200_OK)
+
+@api_view(["GET"])
+def change_book_background_img_file_name(request):
+    books = Book.objects.all()
+    cnt = 1
+    for book in books:
+        new_title  = re.sub(r'[\\/*?:"<>|]', '', book.title[:10])
+        
+        # 원본 파일 경로
+        old_path = rf"C:\Users\SSAFY\Desktop\title\{cnt}.png"
+
+        # 새 파일 경로 (이름 변경)
+        new_path = rf"C:\Users\SSAFY\Desktop\title\{new_title}_background_img_{cnt}.png"
+
+        # 이름 변경
+        os.rename(old_path, new_path)
+
+        cnt += 1
+    
     return Response({"message": "ok"}, status=status.HTTP_200_OK)

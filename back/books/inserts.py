@@ -264,6 +264,7 @@ def get_ai_thread_kw(context):
 
 def get_thread_cover_img(content):
     feelings = get_ai_thread_kw(content)
+    print(feelings)
     thread_cover_context = f"""
                             당신은 감정 5개를 바탕으로 이미지를 그려주는 ai 입니다.
                             창의적이고 감성적으로 표현해 주세요.

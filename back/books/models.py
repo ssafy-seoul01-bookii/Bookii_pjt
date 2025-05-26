@@ -6,6 +6,7 @@ PATH = {
         "cover_img": "books/book_covers/",
         "author_img": "books/author_imgs/",
         "audio_file": "books/audios/",
+        "background_img": "books/background_imgs/",
     },
     "Thread": {
         "cover_img": "threads/thread_covers/",
@@ -25,6 +26,7 @@ class Book(models.Model):
     description = models.TextField(default="Unknown",)
     isbn = models.CharField(max_length=15, default="Unknown",)
     cover_img_url = models.ImageField(upload_to=PATH["Book"]["cover_img"], default=f"{PATH['Book']['cover_img']}default_img.png",)
+    background_img_url = models.ImageField(upload_to=PATH["Book"]["background_img"], default=f"{PATH['Book']['background_img']}default_img.png",)
     publisher = models.CharField(max_length=15, default="Unknown",)
     pub_date = models.DateField(default="Unknown",)
     author_name = models.CharField(max_length=15, default="Unknown",)

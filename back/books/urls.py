@@ -18,5 +18,7 @@ urlpatterns = [
     path("insert_categories/", creates.insert_categories),
     path("insert_keywords/", creates.insert_keywords),
     path("insert_threads/", creates.insert_threads),
-    path("insert_books_rank/", creates.insert_books_rank),
+    path("insert_book_ranks/", creates.insert_book_ranks),
+    path("insert_book_background_img/", creates.insert_book_background_img),
+    path("change_book_background_img_file_name/", creates.change_book_background_img_file_name),
 ]

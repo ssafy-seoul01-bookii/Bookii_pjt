@@ -7,13 +7,14 @@
         "description": "혼탁한 정국마다 명료한 통찰을 전하며 ‘신경안정제’ 역할을 해준 우리 시대의 지식인 유시민. 그의 대표작 중 하나로 2009년 처음 출간되어 오랜 시간 사랑받아온 『청춘의 독서』가 고급 양장 제본의 특별증보판으로 독자들과 새롭게 만난다.",
         "isbn": "9788901294742",
         "cover_img_url": "books/book_covers/청춘의_독서_특별_cover.png",
+        "background_img_url": "청춘의 독서 (특별_background_img_1.png",
         "publisher": "웅진지식하우스",
         "pub_date": "2025-04-30",
         "author_name": "유시민 (지은이)",
         "author_info": "유시민은 대한민국의 작가이자 정치인이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/청춘의_독서_특별_summary.mp3",
-        "rank": 0
+        "rank": 3.28
     }
 },
 {
@@ -24,13 +25,14 @@
         "description": "어린 시절의 약속을 지켜, 아시로 미나의 옆에서 괴수 9호를 토벌하기 위해 움직이는 카프카. 격렬한 공방 중에 폭주 상태인 8호의 힘을 맞부딪쳐 9호의 실드를 깨고 핵을 꿰뚫자, 9호의 안에서 그 힘의 근원이 나타나는데…?!",
         "isbn": "9791142801778",
         "cover_img_url": "books/book_covers/괴수_8호_15__cover.png",
+        "background_img_url": "괴수 8호 15 (_background_img_2.png",
         "publisher": "서울미디어코믹스(서울문화사)",
         "pub_date": "2025-05-29",
         "author_name": "마츠모토 나오야 (지은이), 유유리 (옮긴이)",
         "author_info": "마츠모토 나오야는 일본의 소설가, 에세이스트, 극작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/괴수_8호_15__summary.mp3",
-        "rank": 0
+        "rank": 3.45
     }
 },
 {
@@ -41,13 +43,14 @@
         "description": "오랜 시간 빛나는 지성과 따스한 진심으로 어린이와 문학을 이야기해 온 김지은 평론가가 첫 번째 에세이 『어린이는 멀리 간다』를 펴낸다. 이 책은 김지은 평론가가 2020년부터 2023년까지 4년간 경향신문에 연재한 칼럼을 비롯해 다양한 지면을 통해 발표한 산문을 엄선해 묶었다.",
         "isbn": "9788936448943",
         "cover_img_url": "books/book_covers/어린이는_멀리_간다_cover.png",
+        "background_img_url": "어린이는 멀리 간다_background_img_3.png",
         "publisher": "창비",
         "pub_date": "2025-05-23",
         "author_name": "김지은 (지은이)",
         "author_info": "김지은은 대한민국의 소설가이자 에세이스트이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/어린이는_멀리_간다_summary.mp3",
-        "rank": 0
+        "rank": 3.0
     }
 },
 {
@@ -58,13 +61,14 @@
         "description": "김영하가 산문 『단 한 번의 삶』을 출간했다. 60만 명이 넘는 독자의 사랑을 받은 『여행의 이유』 이후 6년 만에 선보이는 산문집으로, 유료 이메일 구독 서비스 '영하의 날씨'에 2024년 연재되었던 글을 대폭 수정하고 다듬어 묶었다. '영하의 날씨'는 초기 구독자의 초대로만 가입이 가능한 서비스로 화제를 모으며 연재 당시 뜨거운 호응을 얻었다.",
         "isbn": "9791191114768",
         "cover_img_url": "books/book_covers/단_한_번의_삶_cover.png",
+        "background_img_url": "단 한 번의 삶_background_img_4.png",
         "publisher": "복복서가",
         "pub_date": "2025-04-06",
         "author_name": "김영하 (지은이)",
         "author_info": "김영하는 대한민국의 소설가이자 에세이스트이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/단_한_번의_삶_summary.mp3",
-        "rank": 0
+        "rank": 3.64
     }
 },
 {
@@ -75,13 +79,14 @@
         "description": "작품마다 치밀한 취재와 정교한 구성을 바탕으로 한 개성적인 캐릭터와 강렬하고도 서늘한 서사로 평단과 독자의 주목을 고루 받으며 새로운 세대의 리얼리즘을 열어가고 있다 평가받는 작가 성해나가 두번째 소설집 『혼모노』를 선보인다.",
         "isbn": "9788936439743",
         "cover_img_url": "books/book_covers/혼모노_cover.png",
+        "background_img_url": "혼모노_background_img_5.png",
         "publisher": "창비",
         "pub_date": "2025-03-28",
         "author_name": "성해나 (지은이)",
         "author_info": "성해나(1972년 10월 30일 ~ )는 대한민국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/혼모노_summary.mp3",
-        "rank": 0
+        "rank": 4.0
     }
 },
 {
@@ -92,13 +97,14 @@
         "description": "“역사적 트라우마를 정면으로 마주하고 인간 삶의 연약함을 드러내는 강렬하고 시적인 산문”이라는 선정 이유와 함께 2024년 노벨문학상을 수상한 작가 한강의 신작 『빛과 실』(2025)이 문학과지성사 산문 시리즈 &lt;문지 에크리&gt;의 아홉번째 책으로 출간되었다.",
         "isbn": "9788932043562",
         "cover_img_url": "books/book_covers/빛과_실_-_202_cover.png",
+        "background_img_url": "빛과 실 - 202_background_img_6.png",
         "publisher": "문학과지성사",
         "pub_date": "2025-04-18",
         "author_name": "한강 (지은이)",
         "author_info": "한강(韓江, 1970년 5월 27일~)은 대한민국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/빛과_실_-_202_summary.mp3",
-        "rank": 0
+        "rank": 3.4
     }
 },
 {
@@ -109,13 +115,14 @@
         "description": "섬세한 감수성과 치밀한 문장으로 인간 존재의 본질을 탐구해온 작가 한강의 여섯번째 장편소설. '상처의 구조에 대한 투시와 천착의 서사'를 통해 한강만이 풀어낼 수 있는 방식으로 1980년 5월을 새롭게 조명한다.",
         "isbn": "9788936434120",
         "cover_img_url": "books/book_covers/소년이_온다_-_2_cover.png",
+        "background_img_url": "소년이 온다 - 2_background_img_7.png",
         "publisher": "창비",
         "pub_date": "2014-05-19",
         "author_name": "한강 (지은이)",
         "author_info": "한강은 대한민국의 소설가이자 수필가다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/소년이_온다_-_2_summary.mp3",
-        "rank": 0
+        "rank": 3.4
     }
 },
 {
@@ -126,13 +133,14 @@
         "description": "성소수자 인권은 국제사회의 외교 무대에서 중요한 의제로 부상하고 있다. 이러한 흐름을 심층적으로 분석한 책인 『퀴어 디플로머시』는 캐나다 외교관인 저자의 외교 업무 수행 경험을 비롯해, 29명의 외교관, 인권 전문가, 유엔 관계자들과의 인터뷰 내용을 담고 있다.",
         "isbn": "9791192455686",
         "cover_img_url": "books/book_covers/퀴어_디플로머시_-_cover.png",
+        "background_img_url": "퀴어 디플로머시 -_background_img_8.png",
         "publisher": "한티재",
         "pub_date": "2025-05-26",
         "author_name": "더글러스 재노프 (지은이), 서정현 (옮긴이), 류민희 (감수)",
         "author_info": "더글러스 재노프는 미국의 철학자이자 인공 지능 연구자이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/퀴어_디플로머시_-_summary.mp3",
-        "rank": 0
+        "rank": 3.68
     }
 },
 {
@@ -143,13 +151,14 @@
         "description": "‘볼로냐 라가치상 특별상’, ‘일본 그림책 서점 대상’, ‘뉴욕 타임즈 최우수 그림책상’을 수상하며 전 세계에서 사랑받는 그림책 작가 요시타케 신스케의 신작으로, 마음이 지치고 힘들 때 소소하고 엉뚱한 행동을 하는 것만으로 우리 삶에 좋은 일이 생길 거라고 속삭여 주는 다정한 이야기다.",
         "isbn": "9791173321771",
         "cover_img_url": "books/book_covers/어쩌다_좋은_일이__cover.png",
+        "background_img_url": "어쩌다 좋은 일이 _background_img_9.png",
         "publisher": "주니어김영사",
         "pub_date": "2025-05-23",
         "author_name": "요시타케 신스케 (지은이), 고향옥 (옮긴이)",
         "author_info": "요시타케 신스케(吉竹伸介)는 일본의 작가이자 일러스트레이터이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/어쩌다_좋은_일이__summary.mp3",
-        "rank": 0
+        "rank": 3.64
     }
 },
 {
@@ -160,13 +169,14 @@
         "description": "",
         "isbn": "9791141134655",
         "cover_img_url": "books/book_covers/길고양이와_늑대_5_cover.png",
+        "background_img_url": "길고양이와 늑대 5_background_img_10.png",
         "publisher": "학산문화사(만화)",
         "pub_date": "2025-05-22",
         "author_name": "미츠바치 미유키 (지은이), 이슬 (옮긴이)",
         "author_info": "미츠바치 미유키는 일본의 소설가이자 각본가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/길고양이와_늑대_5_summary.mp3",
-        "rank": 0
+        "rank": 3.5
     }
 },
 {
@@ -177,13 +187,14 @@
         "description": "작가 양귀자가 1998년 펴낸 세 번째 장편소설로, 책이 나온 지 한 달 만에 무서운 속도로 베스트셀러 1위에 진입, 출판계를 놀라게 하고 그해 최고의 베스트셀러로 자리 잡으면서 ‘양귀자 소설의 힘’을 다시 한 번 유감없이 보여준 소설이다.",
         "isbn": "9788998441012",
         "cover_img_url": "books/book_covers/모순_-_개정판_cover.png",
+        "background_img_url": "모순 - 개정판_background_img_11.png",
         "publisher": "쓰다",
         "pub_date": "2013-04-01",
         "author_name": "양귀자 (지은이)",
         "author_info": "양귀자는 한국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/모순_-_개정판_summary.mp3",
-        "rank": 0
+        "rank": 3.25
     }
 },
 {
@@ -194,13 +205,14 @@
         "description": "힙합을 좋아하고 과감한 패션을 구사하는, 자유로운 소년 강현겸. 그는 소꿉친구인 채지율의 요구에 따라 매일 교문 앞에서 지율의 하교를 기다린다. 현겸이 학교에 나타나는 날이면 여학생들은 환호하며 그의 뒤꽁무니를 쫓곤 한다. 변성기도, 사춘기도 아직인 현겸을 보며 지율은 과연 현겸도 자신에게 이성으로서 호감을 느끼는지 불안해하는데...",
         "isbn": "9791141608040",
         "cover_img_url": "books/book_covers/언플러그드_보이_1_cover.png",
+        "background_img_url": "언플러그드 보이 1_background_img_12.png",
         "publisher": "문학동네",
         "pub_date": "2025-05-23",
         "author_name": "천계영 (지은이)",
         "author_info": "천계영은 대한민국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/언플러그드_보이_1_summary.mp3",
-        "rank": 0
+        "rank": 3.41
     }
 },
 {
@@ -211,13 +223,14 @@
         "description": "보수 성향의 ‘봉수 씨’와 진보 성향의 ‘진봉 씨’라는 50대 동갑내기 가상 인물이 등장한다. 이들의 대비되는 삶의 모습과 가치관은 보수와 진보의 세계관, 정치적 입장 차이를 극명하게 드러내 준다.",
         "isbn": "9791172132477",
         "cover_img_url": "books/book_covers/이로운_보수_의로운_cover.png",
+        "background_img_url": "이로운 보수 의로운_background_img_13.png",
         "publisher": "한겨레출판",
         "pub_date": "2025-05-15",
         "author_name": "최강욱, 최강혁 (지은이)",
         "author_info": "최강욱은 대한민국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/이로운_보수_의로운_summary.mp3",
-        "rank": 0
+        "rank": 2.42
     }
 },
 {
@@ -228,13 +241,14 @@
         "description": "니체가 주장한 ‘초인(&#220;bermensch)’의 철학을 현대적으로 풀어낸 책이다. 위버멘쉬란 기존의 도덕과 사회적 관습을 그대로 따르는 대신, 자신의 의지로 새로운 가치를 창조하며 스스로의 삶을 개척하는 존재를 의미한다.",
         "isbn": "9791192372730",
         "cover_img_url": "books/book_covers/위버멘쉬_-_누구의_cover.png",
+        "background_img_url": "위버멘쉬 - 누구의_background_img_14.png",
         "publisher": "RISE(떠오름)",
         "pub_date": "2025-03-14",
         "author_name": "프리드리히 니체 (지은이), 어나니머스 (옮긴이)",
         "author_info": "프리드리히 니체는 독일의 철학자이며, 19세기 서양 철학에 지대한 영향을 끼친 인물이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/위버멘쉬_-_누구의_summary.mp3",
-        "rank": 0
+        "rank": 3.0
     }
 },
 {
@@ -245,13 +259,14 @@
         "description": "세심한 온정의 세계를 빚어내는 우리 시대의 작가 김금희의 장편소설. 돈을 갚지 않고 사라진 선배 고수미의 고향 완주 마을을 찾은 성우 손열매는 그곳에서 합동 장의사 겸 매점을 운영하는 수미 어머니의 집에 머물게 된다. 오갈 데 없는 처지에 목소리에까지 이상이 생긴 열매는 수미 어머니의 매점을 지키며 각양각색의 동네 사람들을 만난다.",
         "isbn": "9791197221989",
         "cover_img_url": "books/book_covers/첫_여름_완주_cover.png",
+        "background_img_url": "첫 여름, 완주_background_img_15.png",
         "publisher": "무제",
         "pub_date": "2025-05-08",
         "author_name": "김금희 (지은이)",
         "author_info": "김금희는 대한민국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/첫_여름_완주_summary.mp3",
-        "rank": 0
+        "rank": 3.68
     }
 },
 {
@@ -262,13 +277,14 @@
         "description": "힙합을 좋아하고 과감한 패션을 구사하는, 자유로운 소년 강현겸. 그는 소꿉친구인 채지율의 요구에 따라 매일 교문 앞에서 지율의 하교를 기다린다. 현겸이 학교에 나타나는 날이면 여학생들은 환호하며 그의 뒤꽁무니를 쫓곤 한다. 변성기도, 사춘기도 아직인 현겸을 보며 지율은 과연 현겸도 자신에게 이성으로서 호감을 느끼는지 불안해하는데...",
         "isbn": "9791141610289",
         "cover_img_url": "books/book_covers/언플러그드_보이_2_cover.png",
+        "background_img_url": "언플러그드 보이 2_background_img_16.png",
         "publisher": "문학동네",
         "pub_date": "2025-05-23",
         "author_name": "천계영 (지은이)",
         "author_info": "천계영은 대한민국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/언플러그드_보이_2_summary.mp3",
-        "rank": 0
+        "rank": 3.63
     }
 },
 {
@@ -279,13 +295,14 @@
         "description": "2024년 12월 3일 ‘내란의 밤’부터 윤석열 대통령 탄핵소추안 가결, 2025년 4월 4일 헌재의 파면 선고까지 숨가빴던 순간들의 ‘막전막후’를 이재명의 시선으로 들여다본다.",
         "isbn": "9788997780624",
         "cover_img_url": "books/book_covers/결국_국민이_합니다_cover.png",
+        "background_img_url": "결국 국민이 합니다_background_img_17.png",
         "publisher": "오마이북",
         "pub_date": "2025-04-15",
         "author_name": "이재명 (지은이)",
         "author_info": "이재명은 대한민국의 정치인, 변호사, 저자이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/결국_국민이_합니다_summary.mp3",
-        "rank": 0
+        "rank": 4.07
     }
 },
 {
@@ -296,13 +313,14 @@
         "description": "아주 작은 행동 설계에 필요한 딱 두 가지의 핵심을 전한다. 존재하지 않는 공포와 불안에 속아 현실에 안주하는 마음을 버릴 것. 그리고 몸이 먼저 움직이는 행동 자동화 패턴을 익힐 것. 책에서 제시하는 방법들을 하나씩 완수하고, 몸으로 익힐 때 비로소 의지박약과 만성적 미루기에서 벗어나 행동하는 인생으로 나아갈 수 있을 것이다.",
         "isbn": "9791193904152",
         "cover_img_url": "books/book_covers/행동은_불안을_이긴_cover.png",
+        "background_img_url": "행동은 불안을 이긴_background_img_18.png",
         "publisher": "서삼독",
         "pub_date": "2025-04-16",
         "author_name": "롭 다이얼 (지은이), 박영준 (옮긴이)",
         "author_info": "롭 다이얼은 미국의 작가이자 강연가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/행동은_불안을_이긴_summary.mp3",
-        "rank": 0
+        "rank": 3.43
     }
 },
 {
@@ -313,13 +331,14 @@
         "description": "한국문학의 새로운 미래를 함께하고자 2010년 제정된 젊은작가상이 올해로 어느덧 16회를 맞이했다. 데뷔 십 년 이내의 젊은 작가들이 한 해 동안 발표한 소설 가운데, 지금 여기에서 창발하는 문제의식을 가장 예리한 시선으로 포착해낸 작품에 주목하고자 한다.",
         "isbn": "9791141602024",
         "cover_img_url": "books/book_covers/2025_제16회__cover.png",
+        "background_img_url": "2025 제16회 _background_img_19.png",
         "publisher": "문학동네",
         "pub_date": "2025-04-02",
         "author_name": "백온유, 강보라, 서장원, 성해나, 성혜령, 이희주, 현호정 (지은이)",
         "author_info": "백온유는 한국의 그림책 작가이자 일러스트레이터이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/2025_제16회__summary.mp3",
-        "rank": 0
+        "rank": 3.17
     }
 },
 {
@@ -330,13 +349,14 @@
         "description": "『초등 자존감 수업』을 쓴 윤지영 작가의 신작 『엄마의 말 연습』은 나도 모르는 사이에 마음에 없는 말을 내뱉고 후회하는 엄마들을 위한 책이다. 초등학교 교사이자 두 아이의 엄마인 윤지영 작가는 직접 아이들을 키우면서 경험한 시행착오를 바탕으로 아이들에게 상처 주는 말이 무엇인지, 반대로 아이들의 자존감을 키워주는 ‘존중의 말’은 무엇인지 연구하고 분석해 한 권의 책으로 정리했다.",
         "isbn": "9791168270749",
         "cover_img_url": "books/book_covers/엄마의_말_연습_-_cover.png",
+        "background_img_url": "엄마의 말 연습 -_background_img_20.png",
         "publisher": "카시오페아",
         "pub_date": "2022-09-22",
         "author_name": "윤지영 (지은이)",
         "author_info": "윤지영은 대한민국의 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/엄마의_말_연습_-_summary.mp3",
-        "rank": 0
+        "rank": 3.29
     }
 },
 {
@@ -347,13 +367,14 @@
         "description": "",
         "isbn": "9791142316869",
         "cover_img_url": "books/book_covers/최애의_아이_16__cover.png",
+        "background_img_url": "최애의 아이 16 _background_img_21.png",
         "publisher": "대원씨아이(만화)",
         "pub_date": "2025-05-30",
         "author_name": "아카사카 아카 (지은이), 요코야리 멘고 (그림)",
         "author_info": "아카사카 아카(赤坂アカ)는 일본의 만화가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/최애의_아이_16__summary.mp3",
-        "rank": 0
+        "rank": 3.88
     }
 },
 {
@@ -364,13 +385,14 @@
         "description": "2500년 동안 사람들에게 사랑받으며 회자되어 온 부처의 말을 코이케 류노스케 스님이 현대어로 재해석해 책으로 출간했다. 간결하게 축약된 핵심만을 담은 부처의 메시지는, 마음이 약해지고 어려움에 처한 사람들에게 힘과 용기를 불어넣어 준다.",
         "isbn": "9791193506516",
         "cover_img_url": "books/book_covers/초역_부처의_말_-_cover.png",
+        "background_img_url": "초역 부처의 말 -_background_img_22.png",
         "publisher": "포레스트북스",
         "pub_date": "2024-05-30",
         "author_name": "코이케 류노스케 (지은이), 박재현 (옮긴이)",
         "author_info": "코이케 류노스케는 일본의 소설가이자 에세이스트이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/초역_부처의_말_-_summary.mp3",
-        "rank": 0
+        "rank": 3.0
     }
 },
 {
@@ -381,13 +403,14 @@
         "description": "",
         "isbn": "9791142316852",
         "cover_img_url": "books/book_covers/최애의_아이_16__cover_Z71on3h.png",
+        "background_img_url": "최애의 아이 16 _background_img_23.png",
         "publisher": "대원씨아이(만화)",
         "pub_date": "2025-05-30",
         "author_name": "아카사카 아카 (지은이), 요코야리 멘고 (그림)",
         "author_info": "아카사카 아카는 일본의 만화가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/최애의_아이_16__summary_3eqWhBl.mp3",
-        "rank": 0
+        "rank": 3.5
     }
 },
 {
@@ -398,13 +421,14 @@
         "description": "평범한 비즈니스맨이자 두 아이의 아빠 ‘나’가 혼자 시골 별장에 내려갔다가 괴짜 농부 카를을 만나면서 펼쳐지는 아주 특별한 이틀을 담은 소설이다. 독일에서 출간되자마자 4주간 품절 사태를 일으키며 20만 부가 판매되었다.",
         "isbn": "9791193904213",
         "cover_img_url": "books/book_covers/내게_남은_스물다섯_cover.png",
+        "background_img_url": "내게 남은 스물다섯_background_img_24.png",
         "publisher": "서삼독",
         "pub_date": "2025-05-16",
         "author_name": "슈테판 셰퍼 (지은이), 전은경 (옮긴이)",
         "author_info": "슈테판 셰퍼는 독일의 소설가이자 시나리오 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/내게_남은_스물다섯_summary.mp3",
-        "rank": 0
+        "rank": 3.14
     }
 },
 {
@@ -415,13 +439,14 @@
         "description": "",
         "isbn": "9791141157944",
         "cover_img_url": "books/book_covers/봄의_폭풍과_몬스터_cover.png",
+        "background_img_url": "봄의 폭풍과 몬스터_background_img_25.png",
         "publisher": "학산문화사(만화)",
         "pub_date": "2025-05-22",
         "author_name": "미츠바치 미유키 (지은이)",
         "author_info": "미츠바치 미유키는 일본의 소설가이자 에세이스트이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/봄의_폭풍과_몬스터_summary.mp3",
-        "rank": 0
+        "rank": 3.38
     }
 },
 {
@@ -432,13 +457,14 @@
         "description": "2024년에 출간한 『미싱 스페이스 바닐라』에서 “과학적 엄밀성을 바탕으로 서로 다른 성격의 장르적 서사를 펼쳐내는 데 탁월하다”고 평가받은 이산화 작가가 이번에는 동서양 문헌 자료를 수년간 탐독하며 구상한 『근대 괴물 사기극』을 선보인다.",
         "isbn": "9791191842876",
         "cover_img_url": "books/book_covers/근대_괴물_사기극__cover.png",
+        "background_img_url": "근대 괴물 사기극 _background_img_26.png",
         "publisher": "갈매나무",
         "pub_date": "2025-05-26",
         "author_name": "이산화 (지은이), 최재훈 (일러스트)",
         "author_info": "이산화는 대한민국의 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/근대_괴물_사기극__summary.mp3",
-        "rank": 0
+        "rank": 3.47
     }
 },
 {
@@ -449,13 +475,14 @@
         "description": "생각은 어떻게 작품이 되는가? 무엇을 더하고 무엇을 덜어낼 것인가? 창작의 시작과 끝은 어디인가? 길을 잃을 땐 무엇을 해야 하는가? 창작자의 영원한 질문에 답하기 위해 40년 경력의 세계적인 저널리스트이자 화가인 애덤 모스가 현대예술의 최전선에 자리한 48명의 예술가와 전방위적인 대화를 나눈다.",
         "isbn": "9791167742025",
         "cover_img_url": "books/book_covers/예술이라는_일_-__cover.png",
+        "background_img_url": "예술이라는 일 - _background_img_27.png",
         "publisher": "어크로스",
         "pub_date": "2025-05-30",
         "author_name": "애덤 모스 (지은이)",
         "author_info": "애덤 모스는 미국의 소설가이자 에세이스트다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/예술이라는_일_-__summary.mp3",
-        "rank": 0
+        "rank": 3.4
     }
 },
 {
@@ -466,13 +493,14 @@
         "description": "한국 SF를 대표하는 작가 중 한 명이자 세계 독자에게 각별한 사랑을 받아온 소설가 김보영이 《얼마나 닮았는가》 이후로 5년 만에 신작 소설집을 펴냈다. 그간 초기작을 복원하고 기존 작품에 결말을 내는 등의 작업을 이어왔지만, 이 책은 대부분 2020년대에 발표한 작품들로 묶인 신작들이 담겨 독자들에게 반가움을 안긴다.",
         "isbn": "9791168342880",
         "cover_img_url": "books/book_covers/고래눈이_내리다_cover.png",
+        "background_img_url": "고래눈이 내리다_background_img_28.png",
         "publisher": "래빗홀",
         "pub_date": "2025-05-19",
         "author_name": "김보영 (지은이)",
         "author_info": "김보영은 대한민국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/고래눈이_내리다_summary.mp3",
-        "rank": 0
+        "rank": 4.1
     }
 },
 {
@@ -483,13 +511,14 @@
         "description": "태권도를 배우는 으뜸이와 에이미, 흔식이와의 첫 만남, 씁아저씨 집에 놀러 간 흔한남매, 소파에서 오래 버티기 대결, 흔한 일상 속 공감 포인트, 공포의 학교 안내 방송, 엄마와 우리의 흔한 차이점 등 활기찬 흔한남매의 일상을 통해 스트레스를 날려 보자.",
         "isbn": "9791173473968",
         "cover_img_url": "books/book_covers/흔한남매_19_cover.png",
+        "background_img_url": "흔한남매 19_background_img_29.png",
         "publisher": "미래엔아이세움",
         "pub_date": "2025-04-18",
         "author_name": "흔한남매 (지은이), 백난도 (글), 유난희 (그림), 흔한컴퍼니 (감수)",
         "author_info": "흔한남매는 유튜버이자 그림책 작가인 남매의 에세이집이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/흔한남매_19_summary.mp3",
-        "rank": 0
+        "rank": 2.25
     }
 },
 {
@@ -500,13 +529,14 @@
         "description": "문화 비평가이자 역사학자인 크리스틴 로젠은 《경험의 멸종》에서 경험이 소멸하는 21세기적 현상을 탐구하고 그 소멸이 갖는 의미를 철학적으로 분석한다. 대중문화, 과학, 정치, 법률 등 수많은 사례를 탐사하는 로젠의 작업은 인간의 조건이 되었던 경험들이 사라져가는 지금, 우리에게 이 흐름을 전복할 지적 근거를 제공한다.",
         "isbn": "9791167742063",
         "cover_img_url": "books/book_covers/경험의_멸종_-_기_cover.png",
+        "background_img_url": "경험의 멸종 - 기_background_img_30.png",
         "publisher": "어크로스",
         "pub_date": "2025-05-20",
         "author_name": "크리스틴 로젠 (지은이), 이영래 (옮긴이)",
         "author_info": "크리스틴 로젠은 미국의 소설가입니다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/경험의_멸종_-_기_summary.mp3",
-        "rank": 0
+        "rank": 3.25
     }
 },
 {
@@ -517,13 +547,14 @@
         "description": "",
         "isbn": "9788932925042",
         "cover_img_url": "books/book_covers/바움가트너_cover.png",
+        "background_img_url": "바움가트너_background_img_31.png",
         "publisher": "열린책들",
         "pub_date": "2025-04-30",
         "author_name": "폴 오스터 (지은이), 정영목 (옮긴이)",
         "author_info": "폴 오스터는 미국의 소설가이자 시나리오 작가, 각본가, 감독이며, 주로 노벨 문학상 후보에 오른 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/바움가트너_summary.mp3",
-        "rank": 0
+        "rank": 4.33
     }
 },
 {
@@ -534,13 +565,14 @@
         "description": "내셔널 북 어워드 수상작가 존 윌리엄스의 장편소설. 2013년 영국 최대의 체인 서점인 '워터스톤' 올해의 책으로 선정된 도서이다. 1965년 미국에서 발표된 후, 오랜 시간 동안 독자들에게 잊힌 &lt;스토너&gt;는 유럽 출판계와 평론가, 독자들의 열렬한 반응을 이끌어내며 베스트셀러가 되었다.",
         "isbn": "9788925554990",
         "cover_img_url": "books/book_covers/스토너_cover.png",
+        "background_img_url": "스토너_background_img_32.png",
         "publisher": "알에이치코리아(RHK)",
         "pub_date": "2015-01-02",
         "author_name": "존 윌리엄스 (지은이), 김승욱 (옮긴이)",
         "author_info": "존 윌리엄스는 미국의 소설가이자 시인, 교육자로 잘 알려져 있다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/스토너_summary.mp3",
-        "rank": 0
+        "rank": 2.9
     }
 },
 {
@@ -551,13 +583,14 @@
         "description": "“마흔 이후 삶의 품격은 인생을 살아가는 태도에서 나온다” 120만 독자의 멘토 김종원 작가가 전하는 삶을 관통하는 조언과 위로의 문장들을 담은 책이다.",
         "isbn": "9791193842287",
         "cover_img_url": "books/book_covers/어른의_품격을_채우_cover.png",
+        "background_img_url": "어른의 품격을 채우_background_img_33.png",
         "publisher": "청림Life",
         "pub_date": "2025-03-05",
         "author_name": "김종원 (지은이)",
         "author_info": "김종원은 대한민국의 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/어른의_품격을_채우_summary.mp3",
-        "rank": 0
+        "rank": 3.4
     }
 },
 {
@@ -568,13 +601,14 @@
         "description": "2016년 인터내셔널 부커상을 수상하며 한국문학의 입지를 한단계 확장시킨 한강의 장편소설. 상처받은 영혼의 고통과 식물적 상상력의 강렬한 결합을 정교한 구성과 흡인력 있는 문체로 보여주며 섬뜩한 아름다움의 미학을 한강만의 방식으로 완성한 역작이다.",
         "isbn": "9788936434595",
         "cover_img_url": "books/book_covers/채식주의자_리마스_cover.png",
+        "background_img_url": "채식주의자 (리마스_background_img_34.png",
         "publisher": "창비",
         "pub_date": "2022-03-28",
         "author_name": "한강 (지은이)",
         "author_info": "한강은 대한민국의 소설가이자 수필가로, 2016년 맨부커 인터내셔널 상을 수상하였다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/채식주의자_리마스_summary.mp3",
-        "rank": 0
+        "rank": 3.7
     }
 },
 {
@@ -585,13 +619,14 @@
         "description": "AI 시대를 살아가기 위해 꼭 읽어야 할 필독서다. 저자 이선 몰릭은 타임에서 선정한 ‘인공지능 분야에서 가장 영향력 있는 인물’ 중 한 명이다. 여러 AI 기업에 자문을 제공하고, 와튼 스쿨에서 교육에 AI 활용을 접목하는 등 다양한 영역에서 영향력을 발휘하고 있다. 그런 저자가 생성형 AI를 둘러싼 모든 것에 관한 최고의 책을 집필했다.",
         "isbn": "9791194368175",
         "cover_img_url": "books/book_covers/듀얼_브레인_-_A_cover.png",
+        "background_img_url": "듀얼 브레인 - A_background_img_35.png",
         "publisher": "상상스퀘어",
         "pub_date": "2025-03-19",
         "author_name": "이선 몰릭 (지은이), 신동숙 (옮긴이)",
         "author_info": "이선 몰릭은 대한민국의 작가이자 수필가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/듀얼_브레인_-_A_summary.mp3",
-        "rank": 0
+        "rank": 3.13
     }
 },
 {
@@ -602,13 +637,14 @@
         "description": "현대 AI 발전의 역사를 써 내려간 엔비디아와 젠슨 황의 모든 인사이트를 담은 책이다. &lt;뉴요커&gt; 기자인 저자는 젠슨 황의 요청으로 이 책을 집필하기 시작했고, 3년간 젠슨 황을 밀착 취재하고, 엔비디아의 핵심 관계자 300여 명을 인터뷰해 엔비디아의 심장인 젠슨 황의 비전, 리더십, 경영 철학은 물론 인간적인 면모까지 속속들이 보여준다.",
         "isbn": "9788925573762",
         "cover_img_url": "books/book_covers/엔비디아_젠슨_황_cover.png",
+        "background_img_url": "엔비디아 젠슨 황,_background_img_36.png",
         "publisher": "알에이치코리아(RHK)",
         "pub_date": "2025-05-25",
         "author_name": "스티븐 위트 (지은이), 백우진 (옮긴이)",
         "author_info": "스티븐 위트는 미국의 작가, 강사 및 상담사로, 창의성 개발과 자기 발견에 관한 다양한 저서를 집필하였다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/엔비디아_젠슨_황_summary.mp3",
-        "rank": 0
+        "rank": 3.66
     }
 },
 {
@@ -619,13 +655,14 @@
         "description": "얼굴을 밝히는 여고생 사나는 최애 카나토 선배와 함께 학교 공식 계정 「운영자」로 활약 중. 연인이 된 후로 선배는 달콤한 데다 점점 더 공급 과다. 도이가키가 고백하며 「답은 필요없어」라고 했지만, 사나는 아무래도 신경이 쓰이는데…",
         "isbn": "9791142802621",
         "cover_img_url": "books/book_covers/얼굴만으론_좋아할__cover.png",
+        "background_img_url": "얼굴만으론 좋아할 _background_img_37.png",
         "publisher": "서울미디어코믹스(서울문화사)",
         "pub_date": "2025-05-23",
         "author_name": "안자이 카린 (지은이), 이소연 (옮긴이)",
         "author_info": "안자이 카린은 일본의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/얼굴만으론_좋아할__summary.mp3",
-        "rank": 0
+        "rank": 2.72
     }
 },
 {
@@ -636,13 +673,14 @@
         "description": "운동회 실행위원이 된 루리와 마에다. 처음에는 서로 마음이 맞지 않았지만, 서서히 벽이 허물어져 가다 결국 ‘위원장’까지 맡게 되는데?! 익숙하지 않은 환경, 다시 주목받는 나날――. 그러던 중, 루리의 몸에 이변이 발생한다?!",
         "isbn": "9791142802775",
         "cover_img_url": "books/book_covers/루리_드래곤_3_cover.png",
+        "background_img_url": "루리 드래곤 3_background_img_38.png",
         "publisher": "서울미디어코믹스(서울문화사)",
         "pub_date": "2025-05-21",
         "author_name": "신도 마사오키 (지은이), 이루다 (옮긴이)",
         "author_info": "신도 마사오키는 일본의 소설가, 시나리오 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/루리_드래곤_3_summary.mp3",
-        "rank": 0
+        "rank": 3.87
     }
 },
 {
@@ -653,13 +691,14 @@
         "description": "2020년 《한경신춘문예》에 장편소설 &lt;GV 빌런 고태경&gt;이 당선되어 작품 활동을 시작한 소설가 정대건의 두 번째 장편소설 &lt;급류&gt;가 오늘의 젊은 작가 시리즈 40번으로 출간되었다. &lt;급류&gt;는 저수지와 계곡이 유명한 지방도시 ‘진평’을 배경으로, 열일곱 살 동갑내기인 ‘도담’과 ‘해솔’의 만남과 사랑을 그린 소설이다.",
         "isbn": "9788937473401",
         "cover_img_url": "books/book_covers/급류_cover.png",
+        "background_img_url": "급류_background_img_39.png",
         "publisher": "민음사",
         "pub_date": "2022-12-22",
         "author_name": "정대건 (지은이)",
         "author_info": "정대건은 대한민국의 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/급류_summary.mp3",
-        "rank": 0
+        "rank": 3.53
     }
 },
 {
@@ -670,13 +709,14 @@
         "description": "'쿠레구모'의 헌신 덕에 '엔텐'을 되찾은 치히로. '광'속에서, 공간을 자유자재로 다루는 쿄라의 맹공을 피해 하쿠리와 힘을 합쳐 갇혀있는 사람들을 구하고자 한다. 격투 끝에 벼랑까지 몰린 쿄라가 손을 뻗은 곳은...?!",
         "isbn": "9791142316777",
         "cover_img_url": "books/book_covers/카구라바치_5_더_cover.png",
+        "background_img_url": "카구라바치 5 (더_background_img_40.png",
         "publisher": "대원씨아이(만화)",
         "pub_date": "2025-05-28",
         "author_name": "호카조노 타케루 (지은이)",
         "author_info": "호카조노 타케루는 일본의 소설가이자 시나리오 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/카구라바치_5_더_summary.mp3",
-        "rank": 0
+        "rank": 0.0
     }
 },
 {
@@ -687,13 +727,14 @@
         "description": "전직 전설의 킬러 사카모토가 운영하는 사카모토 상점. 여러 가게가 즐비해 있는 이코라이자카 상점가의 분위기는 뭔가 좀 흉흉한데…. 사랑하는 가족과, 최강의 휴일을 지키기 위해 사카모토는 이코라이자카 상점가를 동네 최고의 평화로운 상점가로 만들기 위한 동네 부흥 미션에 돌입한다.",
         "isbn": "9791142316746",
         "cover_img_url": "books/book_covers/사카모토_홀리데이즈_cover.png",
+        "background_img_url": "사카모토 홀리데이즈_background_img_41.png",
         "publisher": "대원씨아이(만화)",
         "pub_date": "2025-05-30",
         "author_name": "오오카와 테츠 (지은이), 스즈키 유우토 (원작)",
         "author_info": "오오카와 테츠는 일본의 작가이자 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/사카모토_홀리데이즈_summary.mp3",
-        "rank": 0
+        "rank": 3.61
     }
 },
 {
@@ -704,13 +745,14 @@
         "description": "2016년 &lt;채식주의자&gt;로 인터내셔널 부커상을 수상하고 2018년 &lt;흰&gt;으로 같은 상 최종 후보에 오른 한강 작가의 5년 만의 장편소설. 2019년 겨울부터 이듬해 봄까지 계간 &lt;문학동네&gt;에 전반부를 연재하며 큰 관심을 모은 작품이다.",
         "isbn": "9788954682152",
         "cover_img_url": "books/book_covers/작별하지_않는다_-_cover.png",
+        "background_img_url": "작별하지 않는다 -_background_img_42.png",
         "publisher": "문학동네",
         "pub_date": "2021-09-09",
         "author_name": "한강 (지은이)",
         "author_info": "한강(한강)은 대한민국의 소설가이자 수필가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/작별하지_않는다_-_summary.mp3",
-        "rank": 0
+        "rank": 3.58
     }
 },
 {
@@ -721,13 +763,14 @@
         "description": "2024년 5월 22일, 한국문학사에 위대한 발자취를 남긴 ‘작은 거인’ 고(故) 신경림 시인이 타계했다. 1956년 등단 이후 70년 가까운 세월 동안 세상에서 소외된 이들의 아픔을 어루만지며 그들과 함께 걸어온 시인은 생의 마지막 순간까지 펜을 놓지 않았다. 시인의 1주기를 맞아 출간되는 이번 시집은 생전 마지막으로 펴낸 『사진관집 이층』 이후 11년 만의 신작이다.",
         "isbn": "9788936425180",
         "cover_img_url": "books/book_covers/살아_있는_것은_아_cover.png",
+        "background_img_url": "살아 있는 것은 아_background_img_43.png",
         "publisher": "창비",
         "pub_date": "2025-05-16",
         "author_name": "신경림 (지은이)",
         "author_info": "신경림은 대한민국의 시인이자 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/살아_있는_것은_아_summary.mp3",
-        "rank": 0
+        "rank": 3.44
     }
 },
 {
@@ -738,13 +781,14 @@
         "description": "이 시대의 시인들이 국내에서 처음으로 지구를 살리고 싶어하는 간절한 염원을 담은 신작시와 산문이 실려있다. 스물두 명의 시인이 전하는 시와 산문은 단순한 경고가 아니다. 그것은 우리가 지금 무엇을 해야 할지, 무엇을 포기해야 할지 묻는 강렬한 질문이다.",
         "isbn": "9791162851715",
         "cover_img_url": "books/book_covers/창백한_지구를_위한_cover.png",
+        "background_img_url": "창백한 지구를 위한_background_img_44.png",
         "publisher": "마음의숲",
         "pub_date": "2025-06-05",
         "author_name": "이문재, 전동균, 주창윤, 정끝별, 나희덕, 문태준, 장철문, 손택수, 이재훈, 신혜정, 이혜미, 신미나, 김연덕, 정다연, 김창균, 김남극, 우은주, 권현형, 이동욱, 조온윤, 길상호, 권대웅 (지은이)",
         "author_info": "이문재는 한국의 시인이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/창백한_지구를_위한_summary.mp3",
-        "rank": 0
+        "rank": 3.56
     }
 },
 {
@@ -755,13 +799,14 @@
         "description": "조선시대 고급공무원 선발 시험인 대과의 마지막 단계에서 출제한 시험과 답안의 한 유형인 책문 가운데에서 오늘날 사람들이 읽어도 의미가 있을 글들을 가려 뽑아서 엮은 책이다. 책문은 시대의 물음이다. 시대가 출제한 시험이다.",
         "isbn": "9791195124480",
         "cover_img_url": "books/book_covers/책문_이_시대가__cover.png",
+        "background_img_url": "책문, 이 시대가 _background_img_45.png",
         "publisher": "현자의마을",
         "pub_date": "2015-06-15",
         "author_name": "김태완 (지은이)",
         "author_info": "김태완은 한국의 소설가이자 수필가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/책문_이_시대가__summary.mp3",
-        "rank": 0
+        "rank": 3.61
     }
 },
 {
@@ -772,13 +817,14 @@
         "description": "정기시험 최신 기출문제 10세트가 수록되어 있다. 시험에 나온 최신 기출문제로 실전 감각을 키워 시험에 확실하게 대비할 수 있다. 교재 내 QR코드는 해당 회차의 무료 동영상 강의로 연결된다. 오답률 높은 고난도 문항을 친절한 해설 강의와 함께 수록하였다.",
         "isbn": "9788917239508",
         "cover_img_url": "books/book_covers/ETS_토익_정기시_cover.png",
+        "background_img_url": "ETS 토익 정기시_background_img_46.png",
         "publisher": "(주)YBM(와이비엠)",
         "pub_date": "2023-12-18",
         "author_name": "ETS (엮은이)",
         "author_info": "ETS는 다수의 저자 작품을 엮어서 출판하는 편집자의 이름이자 맨 처음 도입된 개념입니다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/ETS_토익_정기시_summary.mp3",
-        "rank": 0
+        "rank": 4.5
     }
 },
 {
@@ -789,13 +835,14 @@
         "description": "첫 시집 『샤워젤과 소다수』 출간 이후 뜨겁게 주목받으며 청년 세대를 대변하는 작가로 자리매김한 고선경의 첫 산문집 『내 꿈에 가끔만 놀러와』가 출간되었다. 시인이 수년간 블로그에 연재해온 일기와 때때로 기록한 메모에 새로 쓴 원고들을 더해 엮은 이 책에는 이십대 청년으로서 그가 줄곧 그려온 알록달록한 마음의 무늬들이 담겼다.",
         "isbn": "9791141602055",
         "cover_img_url": "books/book_covers/내_꿈에_가끔만_놀_cover.png",
+        "background_img_url": "내 꿈에 가끔만 놀_background_img_47.png",
         "publisher": "문학동네",
         "pub_date": "2025-05-14",
         "author_name": "고선경 (지은이)",
         "author_info": "고선경은 대한민국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/내_꿈에_가끔만_놀_summary.mp3",
-        "rank": 0
+        "rank": 0.0
     }
 },
 {
@@ -806,13 +853,14 @@
         "description": "2024년 5월, 세계적인 두 사상가 토마 피케티와 마이클 샌델이 파리경제대학에서 만났다. 두 사람은 불평등의 세 가지 측면, 즉 경제적 불평등, 정치적 불평등, 사회적 불평등을 다각도로 조명하면서 지금 우리를 둘러싼 세계화와 능력주의, 불평등한 기본재 접근권, 기울어진 정치 참여, 사라진 노동의 존엄성 등 다양한 문제를 심도 있게 파헤친다.",
         "isbn": "9791173475535",
         "cover_img_url": "books/book_covers/기울어진_평등_-__cover.png",
+        "background_img_url": "기울어진 평등 - _background_img_48.png",
         "publisher": "와이즈베리",
         "pub_date": "2025-05-02",
         "author_name": "토마 피케티, 마이클 샌델 (지은이), 장경덕 (옮긴이)",
         "author_info": "토마 피케티는 프랑스의 경제학자이자 사회학자로, 소득과 부의 불평등에 대한 연구로 잘 알려져 있다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/기울어진_평등_-__summary.mp3",
-        "rank": 0
+        "rank": 3.38
     }
 },
 {
@@ -823,13 +871,14 @@
         "description": "인사 혁신처 예시 문제의 철저한 분석을 바탕으로 하여, 변화하는 2025 공무원 시험 출제 기조를 완벽히 반영한 신유형 문제와, 실전과 똑같은 형태의 시험지+ OMR카드로 변화하는 2025 공무원 시험에 대비한 실전 훈련과 풀이 시간 단축에 최적화된 실전 모의고사다.",
         "isbn": "9791190302357",
         "cover_img_url": "books/book_covers/2025_선재국어__cover.png",
+        "background_img_url": "2025 선재국어 _background_img_49.png",
         "publisher": "수비니겨",
         "pub_date": "2025-04-14",
         "author_name": "이선재 (지은이)",
         "author_info": "이선재는 대한민국의 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/2025_선재국어__summary.mp3",
-        "rank": 0
+        "rank": 2.72
     }
 },
 {
@@ -840,13 +889,14 @@
         "description": "정기시험 최신 기출문제 10세트가 수록되어 있다. 시험에 나온 기출문제로 실전 감각을 키워 시험에 확실하게 대비하자! 수록된 10세트의 LC 음원은 모두 정기시험 성우의 음원이다. 시험장에서 듣게 될 음성으로 공부하면 까다로운 영국식, 호주식 발음도 걱정 없다.",
         "isbn": "9788917239492",
         "cover_img_url": "books/book_covers/ETS_토익_정기시_cover_IgtuzLk.png",
+        "background_img_url": "ETS 토익 정기시_background_img_50.png",
         "publisher": "(주)YBM(와이비엠)",
         "pub_date": "2023-12-18",
         "author_name": "ETS (엮은이)",
         "author_info": "작가에 대한 한 문장 설명",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/ETS_토익_정기시_summary_B165nCJ.mp3",
-        "rank": 0
+        "rank": 3.21
     }
 },
 {
@@ -857,13 +907,14 @@
         "description": "“주님이 함께 계심을 믿기만 하라!!” 진짜 믿음은 보이지 않는 예수님과의 동행이다. 친밀한 동행은 오직 믿음으로만 누려진다. 유기성 목사의 예수동행의 실제를 믿음으로 붙잡는 여정.",
         "isbn": "9791165046248",
         "cover_img_url": "books/book_covers/예수_동행_오직_믿_cover.png",
+        "background_img_url": "예수 동행 오직 믿_background_img_51.png",
         "publisher": "규장(규장문화사)",
         "pub_date": "2025-06-02",
         "author_name": "유기성 (지은이)",
         "author_info": "유기성은 대한민국의 작가이자 시나리오 작가입니다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/예수_동행_오직_믿_summary.mp3",
-        "rank": 0
+        "rank": 3.82
     }
 },
 {
@@ -874,13 +925,14 @@
         "description": "시인 오은이 2020년부터 2025년까지의 시간의 안팎에 대한 성실한 기록이자, 자기긍정의 언어로 엮은 산문집 『뭐 어때』가 난다에서 출간되었다. 지난 십여 년간 연재하는 사람이었던 시인 오은은 한 달에 한 번 돌아오는 마감일에 맞추어 칼럼을 썼다.",
         "isbn": "9791194171591",
         "cover_img_url": "books/book_covers/뭐_어때_cover.png",
+        "background_img_url": "뭐 어때_background_img_52.png",
         "publisher": "난다",
         "pub_date": "2025-05-26",
         "author_name": "오은 (지은이)",
         "author_info": "오은은 대한민국의 시인이자 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/뭐_어때_summary.mp3",
-        "rank": 0
+        "rank": 4.14
     }
 },
 {
@@ -891,13 +943,14 @@
         "description": "자연 다큐멘터리에 출연하던 올빼미 라게는 지금은 계산대에서 일한다. 비행학교도 열었지만 곧 닫았다. 친구와 멀어졌다가도 다시 마주치고, 귤을 까먹으며 얘기하지 않아도 괜찮은 시간을 보낸다. 실패 같지만 그렇지 않고, 끝난 것 같지만 아직 끝나지 않은 삶. 에바 린드스트룀은 서두르지 않고 단정하지 않는 시선으로, 무언가가 되지 않아도 이어질 수 있는 관계와 시간을 그린다.",
         "isbn": "9791189723446",
         "cover_img_url": "books/book_covers/내_친구_라게_cover.png",
+        "background_img_url": "내 친구 라게_background_img_53.png",
         "publisher": "단추",
         "pub_date": "2025-05-15",
         "author_name": "에바 린드스트룀 (지은이), 이유진 (옮긴이)",
         "author_info": "에바 린드스트룀은 스웨덴의 아동 도서 작가이자 일러스트레이터이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/내_친구_라게_summary.mp3",
-        "rank": 0
+        "rank": 4.21
     }
 },
 {
@@ -908,13 +961,14 @@
         "description": "미국의 이란 항공기 격추 참사로 어머니를, 고된 노동으로 아버지를 잃은 젊은 시인이 ‘의미 있는 죽음’에 관한 집착 아래 펼치는 ‘순교자 프로젝트’를 그린다. 작가는 아이오와 대학 문예 창작 과정을 이끄는 이란계 미국 시인 카베 악바르로, ‘순교’라는 하나의 행위로 제국주의 미국과 무슬림을 동시에 비판하는 한편, 의미 있는 죽음, 나아가 의미 있는 삶에 대한 통찰을 선사한다.",
         "isbn": "9791167375599",
         "cover_img_url": "books/book_covers/순교자_cover.png",
+        "background_img_url": "순교자!_background_img_54.png",
         "publisher": "은행나무",
         "pub_date": "2025-05-23",
         "author_name": "카베 악바르 (지은이), 강동혁 (옮긴이)",
         "author_info": "카베 악바르는 이란의 유명한 작가이자 수필가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/순교자_summary.mp3",
-        "rank": 0
+        "rank": 3.5
     }
 },
 {
@@ -925,13 +979,14 @@
         "description": "지난 2008년 출간된 이래 임신·출산·육아 분야의 바이블로 자리 잡은 《내 생애 첫 임신 출산 육아책》이 2025년 최신개정판으로 새롭게 태어났다. 예비 부모가 알아야 할 건강 정보를 간략하게 정리하고, 달라진 의학 정보와 정부 육아 지원 정책 등을 업데이트 한 한편 요즘 육아 트렌드를 알차게 담았다.",
         "isbn": "9788927880882",
         "cover_img_url": "books/book_covers/내_생애_첫_임신__cover.png",
+        "background_img_url": "내 생애 첫 임신 _background_img_55.png",
         "publisher": "중앙books(중앙북스)",
         "pub_date": "2025-06-10",
         "author_name": "중앙books 편집부 (지은이), 김수현, 성중엽, 심규홍 (감수)",
         "author_info": "중앙books 편집부는 대한민국의 출판 편집 집단이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/내_생애_첫_임신__summary.mp3",
-        "rank": 0
+        "rank": 3.53
     }
 },
 {
@@ -942,13 +997,14 @@
         "description": "20만 독자가 선택한 화제의 동화. 마지막 책장을 덮자마자 다음 책을 기다리게 되는 옴니버스 판타지! 고민이 있는 아이들 앞에 깜짝 등장한 식당과 어딘가 기묘한 식당 주인, 신비한 메뉴와 해결법이 불러오는 카타르시스가 어린이 독자들을 다시 초대한다.",
         "isbn": "9791167391391",
         "cover_img_url": "books/book_covers/신기한_맛_도깨비__cover.png",
+        "background_img_url": "신기한 맛 도깨비 _background_img_56.png",
         "publisher": "꿈터",
         "pub_date": "2025-05-23",
         "author_name": "김용세, 김병섭 (지은이), 센개 (그림)",
         "author_info": "김용세는 한국의 소설가이자 시인이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/신기한_맛_도깨비__summary.mp3",
-        "rank": 0
+        "rank": 3.58
     }
 },
 {
@@ -959,13 +1015,14 @@
         "description": "온갖 물건이 주렁주렁 달린 이상한 버스. 무려 4층이나 되는 수상쩍은 버스에서 누군가 살며시 내리는데…… 바로, 자신의 속을 찾아 떠났던 슈크림빵! 전국 방방곡곡 돌아다니며 자신에게 꼭 맞는 속을 찾아 헤매다 보니, 어느덧 버스 안에는 물건들로 가득 찼다. 이곳에서 빵들은 자신들이 원하는 걸 찾을 수 있을까?",
         "isbn": "9788901295428",
         "cover_img_url": "books/book_covers/내_멋대로_빵빵빵빵_cover.png",
+        "background_img_url": "내 멋대로 빵빵빵빵_background_img_57.png",
         "publisher": "웅진주니어",
         "pub_date": "2025-05-25",
         "author_name": "김지안 (지은이)",
         "author_info": "김지안은 대한민국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/내_멋대로_빵빵빵빵_summary.mp3",
-        "rank": 0
+        "rank": 2.78
     }
 },
 {
@@ -976,13 +1033,14 @@
         "description": "한국과학문학상과 비룡소문학상을 수상하고, 동화 『깊은 밤 필통 안에서』로 독자의 사랑을 받은 작가 길상효의 소설 『나의 먼 이름에게』(소설의 첫 만남 36)가 출간되었다. 번식장에서 구조된 개인 ‘나’가 “우리는 어쩌다가 인간의 세상에 왔는가.”(28면)라는 의문을 품고 자신의 이름을 찾아, 기원을 찾아 떠나는 환상적인 이야기다.",
         "isbn": "9788936431587",
         "cover_img_url": "books/book_covers/나의_먼_이름에게_cover.png",
+        "background_img_url": "나의 먼 이름에게_background_img_58.png",
         "publisher": "창비",
         "pub_date": "2025-05-23",
         "author_name": "길상효 (지은이), 신은정 (그림)",
         "author_info": "길상효는 한국의 동화 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/나의_먼_이름에게_summary.mp3",
-        "rank": 0
+        "rank": 0.0
     }
 },
 {
@@ -993,13 +1051,14 @@
         "description": "인기 키즈 크리에이터 에그박사의 원작 영상을 생생한 관찰 스토리와 귀여운 생물 도감으로 재구성한 자연 생물 관찰 만화이다. 과학자, 철학가, 예술가의 눈으로 곤충의 삶을 관찰했던 프랑스의 곤충학자 파브르의《곤충기》처럼 에그박사의 눈으로 바라본 신비롭고 놀라운 자연 생물의 이야기가 가득하다.",
         "isbn": "9791173476259",
         "cover_img_url": "books/book_covers/에그박사_15_-__cover.png",
+        "background_img_url": "에그박사 15 - _background_img_59.png",
         "publisher": "미래엔아이세움",
         "pub_date": "2025-05-29",
         "author_name": "에그박사 (원작), 박송이 (글), 홍종현 (그림), 주세종 (감수)",
         "author_info": "에그박사는 만화, 동화, 교양, 어린이 도서 등의 다양한 분야에서 활동하는 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/에그박사_15_-__summary.mp3",
-        "rank": 0
+        "rank": 3.55
     }
 },
 {
@@ -1010,13 +1069,14 @@
         "description": "내가 삶에서 겪었던 이별들로 만들어진 박물관이 있다면 어떨까? 『이별 박물관』은 마음을 사로잡는 상상력에서 출발해, 누구나 마음 한구석에 품고 있는 이별의 기억들을 꺼내어 들여다보도록 한다.",
         "isbn": "9788936431570",
         "cover_img_url": "books/book_covers/이별_박물관_cover.png",
+        "background_img_url": "이별 박물관_background_img_60.png",
         "publisher": "창비",
         "pub_date": "2025-05-23",
         "author_name": "전성현 (지은이), 서글 (그림)",
         "author_info": "전성현은 대한민국의 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/이별_박물관_summary.mp3",
-        "rank": 0
+        "rank": 3.24
     }
 },
 {
@@ -1027,13 +1087,14 @@
         "description": "『칵테일, 러브, 좀비』 『트로피컬 나이트』 등 환상적이고 독특한 세계를 펼쳐 왔던 조예은이 여름철 끈적하고 새콤달콤한 이야기로 독자들을 다시 찾아왔다. ‘소설의 첫 만남’ 시리즈 서른네 번째 책으로 출간된 『토마토로 만들어 줘』는 상대를 토마토로 변하게 할 수 있는 능력을 가진 아이 ‘도마윤’의 이야기다.",
         "isbn": "9788936431563",
         "cover_img_url": "books/book_covers/토마토로_만들어_줘_cover.png",
+        "background_img_url": "토마토로 만들어 줘_background_img_61.png",
         "publisher": "창비",
         "pub_date": "2025-05-23",
         "author_name": "조예은 (지은이), 권서영 (그림)",
         "author_info": "조예은은 한국의 그림책 작가이자 일러스트레이터이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/토마토로_만들어_줘_summary.mp3",
-        "rank": 0
+        "rank": 4.5
     }
 },
 {
@@ -1044,13 +1105,14 @@
         "description": "23년 차 여행가. 목적지가 없는 걸음일지라도 과정으로 이미 충분하다는 걸 가장 잘 아는 사람. 작가 김남희는 20년이 넘도록 여행으로 밥 버는 삶을 살아왔다. 여행을 다녀와 그곳에 대해 글을 쓰고, 함께 이야기 나누는 삶을 지속해왔다.",
         "isbn": "9791193238677",
         "cover_img_url": "books/book_covers/일단_떠나는_수밖에_cover.png",
+        "background_img_url": "일단 떠나는 수밖에_background_img_62.png",
         "publisher": "수오서재",
         "pub_date": "2025-05-26",
         "author_name": "김남희 (지은이)",
         "author_info": "김남희는 한국의 소설가이자 시나리오 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/일단_떠나는_수밖에_summary.mp3",
-        "rank": 0
+        "rank": 4.5
     }
 },
 {
@@ -1061,13 +1123,14 @@
         "description": "방대한 분량의 성경을 61개의 핵심 에피소드로 압축해 해설한다. 그리고 우리가 잘 알고 있는 레오나르도 다 빈치의 &lt;최후의 만찬&gt;, 렘브란트 반 레인의 &lt;돌아온 탕자&gt;, 장 프랑수아 밀레의 &lt;이삭줍기&gt; 등 성경 내용을 극적으로 재현한 명화를 일러스트로 곁들여 한눈에 에피소드를 이해하도록 한다.",
         "isbn": "9788925573670",
         "cover_img_url": "books/book_covers/성경_-_에피소드와_cover.png",
+        "background_img_url": "성경 - 에피소드와_background_img_63.png",
         "publisher": "알에이치코리아(RHK)",
         "pub_date": "2025-06-13",
         "author_name": "시부야 노부히로 (지은이), 양지영 (옮긴이)",
         "author_info": "시부야 노부히로는 일본의 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/성경_-_에피소드와_summary.mp3",
-        "rank": 0
+        "rank": 3.88
     }
 },
 {
@@ -1078,13 +1141,14 @@
         "description": "달팽이계의 메리 포핀스, 달평 씨가 우리 안의 어린이를 깨우러 왔다! 모두의 마음속에는 어린이가 있다. 마음속 깊이 잠든 어린이를 다시 깨울 수만 있다면 마법 같은 하루가 시작될 것이다.",
         "isbn": "9791158365370",
         "cover_img_url": "books/book_covers/버럭_할머니와_달평_cover.png",
+        "background_img_url": "버럭 할머니와 달평_background_img_64.png",
         "publisher": "책읽는곰",
         "pub_date": "2025-05-30",
         "author_name": "신민재 (지은이)",
         "author_info": "신민재는 한국의 소설가이자 시인이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/버럭_할머니와_달평_summary.mp3",
-        "rank": 0
+        "rank": 3.41
     }
 },
 {
@@ -1095,13 +1159,14 @@
         "description": "론다의 입을 통해 스플라르곤과 싸워 온 기나긴 역사를 들려주면서 그동안 일어난 몇몇 사건을 되짚어 본다. “네 삶이 시리즈물이라면… 아마도 ○권 ○쪽에….”라는 친절한(?) 말과 함께. 이와 함께 독자들은 지금껏 알고 있던 사실과는 전혀 다른 이면을 보게 되면서 충격(!)과 혼란(!)에 빠질 것이다.",
         "isbn": "9788949144184",
         "cover_img_url": "books/book_covers/배드_가이즈_18__cover.png",
+        "background_img_url": "배드 가이즈 18 _background_img_65.png",
         "publisher": "비룡소",
         "pub_date": "2025-05-25",
         "author_name": "애런 블레이비 (지은이), 신수진 (옮긴이)",
         "author_info": "애런 블레이비는 미국의 작가로, 다양한 장르에서 작품을 발표하고 있다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/배드_가이즈_18__summary.mp3",
-        "rank": 0
+        "rank": 3.74
     }
 },
 {
@@ -1112,13 +1177,14 @@
         "description": "≪세계 도시 탐험 만화 역사상식≫ 시리즈 30권은 인도의 뭄바이에서 펼쳐진다. 보물을 찾기 위해 고군분투하는 주인공들의 흥미진진한 이야기와 더불어, 뭄바이에 대한 기본 상식과 역사를 알기 쉽게 정리한 정보 페이지가 수록되어 있어 새로운 지식을 쌓을 수 있다. 또, 색칠 놀이와 알쏭달쏭 퀴즈 페이지를 실어 재미까지 높였다.",
         "isbn": "9791173476273",
         "cover_img_url": "books/book_covers/뭄바이에서_보물찾기_cover.png",
+        "background_img_url": "뭄바이에서 보물찾기_background_img_66.png",
         "publisher": "미래엔아이세움",
         "pub_date": "2025-05-27",
         "author_name": "팝콘스토리 (지은이), 강경효 (그림)",
         "author_info": "강경효는 대한민국의 만화가이자 일러스트레이터이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/뭄바이에서_보물찾기_summary.mp3",
-        "rank": 0
+        "rank": 3.38
     }
 },
 {
@@ -1129,13 +1195,14 @@
         "description": "2017년 1권이 처음 출간된 이래, 누적 판매 부수 600만 부라는 경이적인 수치를 기록하며 대한민국 대표 어린이 역사책으로 굳건히 자리매김한 &lt;설민석의 한국사 대모험&gt;은 아이들이 처음 접하는 한국사를 재미있는 만화와 깊이 있는 부록으로 유익하게 전달한다.",
         "isbn": "9791194616023",
         "cover_img_url": "books/book_covers/설민석의_한국사_대_cover.png",
+        "background_img_url": "설민석의 한국사 대_background_img_67.png",
         "publisher": "단꿈아이",
         "pub_date": "2025-05-26",
         "author_name": "설민석, 남이담 (지은이), 정현희 (그림), 강석화 (감수)",
         "author_info": "설민석은 대한민국의 역사 강사이자 저자이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/설민석의_한국사_대_summary.mp3",
-        "rank": 0
+        "rank": 3.12
     }
 },
 {
@@ -1146,13 +1213,14 @@
         "description": "디지털 미디어에 끌려다니지 않고 현명하게 사용할 수 있는 ‘미디어 자기 조절력’을 기르려면, 양육자의 엄청난 개입이 필요하다. 15년간 어린이와 미디어를 주제로 커리어를 쌓아 온 전문가가 현실적이고 따뜻한 해결책을 제시한다.",
         "isbn": "9791188632329",
         "cover_img_url": "books/book_covers/동영상_스스로_끄는_cover.png",
+        "background_img_url": "동영상 스스로 끄는_background_img_68.png",
         "publisher": "미류책방",
         "pub_date": "2025-06-02",
         "author_name": "이윤정 (지은이)",
         "author_info": "이윤정은 대한민국의 작가이자 번역가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/동영상_스스로_끄는_summary.mp3",
-        "rank": 0
+        "rank": 5.0
     }
 },
 {
@@ -1163,13 +1231,14 @@
         "description": "초등학생이 반드시 알아야 할 인성 덕목을 소개한 책이다. 성실, 존중, 배려, 책임, 정직, 용기, 예의, 포용 등 한국교육개발원의 &lt;학생 인성 검사&gt; 항목을 기반으로 구성한 70가지 덕목을 담았다.",
         "isbn": "9791191378757",
         "cover_img_url": "books/book_covers/초등_필수_인성_배_cover.png",
+        "background_img_url": "초등 필수 인성 배_background_img_69.png",
         "publisher": "체인지업",
         "pub_date": "2025-06-23",
         "author_name": "박은선, 김인의, 박여울, 박정은 (지은이)",
         "author_info": "박은선은 대한민국의 동화 작가이자 그림책 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/초등_필수_인성_배_summary.mp3",
-        "rank": 0
+        "rank": 3.62
     }
 },
 {
@@ -1180,13 +1249,14 @@
         "description": "날마다 탄소 중립을 실천하는 전학생 잎새를 따라 탄소 줄이기에 도전하는 5학년 친구들의 이야기를 담은 환경 동화. 점심시간마다 이어지는 잎새의 수상한 행동과 영양 수업 시간을 계기로 ‘저탄소 급식’을 제대로 알게 된 친구들은 ‘푸른 지구를 위해 나부터 당장’ 변하기로 약속하고, 줄여서 ‘푸나당’이라는 환경 모임을 결성한다.",
         "isbn": "9791158365363",
         "cover_img_url": "books/book_covers/점심시간에_지구를__cover.png",
+        "background_img_url": "점심시간에 지구를 _background_img_70.png",
         "publisher": "책읽는곰",
         "pub_date": "2025-05-23",
         "author_name": "글로, 오선경, 김정혜, 김길수, 유명진 (지은이), 허현경 (그림)",
         "author_info": "오선경은 한국의 작가이자 일러스트레이터이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/점심시간에_지구를__summary.mp3",
-        "rank": 0
+        "rank": 3.27
     }
 },
 {
@@ -1197,13 +1267,14 @@
         "description": "프랑스 연극에서 가장 중요한 예술가인 조엘 폼므라의 희곡 &lt;신데렐라Cendrillon&gt;가 출간된다. &lt;신데렐라&gt;는 &lt;빨간 모자&gt; &lt;피노키오&gt;와 함께 작가가 옛 이야기를 재창작한 삼부작 중 한 편이다.",
         "isbn": "9791159924392",
         "cover_img_url": "books/book_covers/신데렐라_cover.png",
+        "background_img_url": "신데렐라_background_img_71.png",
         "publisher": "알마",
         "pub_date": "2025-05-28",
         "author_name": "조엘 폼므라 (지은이), 이도희 (그림), 안보옥 (옮긴이)",
         "author_info": "조엘 폼므라는 미국의 작가이자 교수로, 주로 청소년 문학 분야에서 활동하고 있다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/신데렐라_summary.mp3",
-        "rank": 0
+        "rank": 3.71
     }
 },
 {
@@ -1214,13 +1285,14 @@
         "description": "2021년 『세계일보』신춘문예로 데뷔한 남현정의 첫 소설집 『아다지오 아사이』가 문학과지성사에서 출간되었다. 데뷔 4년 만에 펴낸 첫 소설집에는 데뷔작 「그때 나는」과 ‘이 계절의 소설 2021 겨울’ 선정작 「부용에서」를 포함하여 총 여덟 편의 작품이 실렸다.",
         "isbn": "9788932044026",
         "cover_img_url": "books/book_covers/아다지오_아사이_cover.png",
+        "background_img_url": "아다지오 아사이_background_img_72.png",
         "publisher": "문학과지성사",
         "pub_date": "2025-05-19",
         "author_name": "남현정 (지은이)",
         "author_info": "남현정은 한국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/아다지오_아사이_summary.mp3",
-        "rank": 0
+        "rank": 2.5
     }
 },
 {
@@ -1231,13 +1303,14 @@
         "description": "세계 주요 영화제를 석권하고, 20세기 최고의 예술가로 손꼽히며, 스탠리 큐브릭, 장뤼크 고다르, 마틴 스코세이지, 데이비드 린치, 우디 앨런, 라스 폰 트리에뿐 아니라 우리나라의 이창동, 홍상수, 박찬욱 감독에게도 커다란 영감을 주고 현저한 영향을 끼친 ‘영화감독들의 영화감독’ 잉마르 베리만의 자서전이다.",
         "isbn": "9788937428548",
         "cover_img_url": "books/book_covers/환등기_-_잉마르__cover.png",
+        "background_img_url": "환등기 - 잉마르 _background_img_73.png",
         "publisher": "민음사",
         "pub_date": "2025-05-23",
         "author_name": "잉마르 베리만 (Ingmar Bergman) (지은이), 신견식 (옮긴이)",
         "author_info": "잉마르 베리만은 스웨덴의 영화 감독, 각본가, 프로듀서, 극작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/환등기_-_잉마르__summary.mp3",
-        "rank": 0
+        "rank": 3.25
     }
 },
 {
@@ -1248,13 +1321,14 @@
         "description": "봄·여름·가을·겨울 사계절의 즐거움을 담아 누구나 직접 만드는 우리술! 봄에는 향긋한 딸기와 아카시아, 여름에는 청량한 연잎과 참외, 가을에는 부드러운 알밤과 호박, 겨울에는 상큼한 유자와 석류를 넣어 막걸리를 빚어보자.",
         "isbn": "9791194777120",
         "cover_img_url": "books/book_covers/윤주당의_사계절_막_cover.png",
+        "background_img_url": "윤주당의 사계절 막_background_img_74.png",
         "publisher": "한즈미디어(한스미디어)",
         "pub_date": "2025-05-29",
         "author_name": "윤나라 (지은이)",
         "author_info": "윤나라는 대한민국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/윤주당의_사계절_막_summary.mp3",
-        "rank": 0
+        "rank": 3.5
     }
 },
 {
@@ -1265,13 +1339,14 @@
         "description": "‘오경아의 한국 정원 기행’은 가든 디자이너 오경아가 사랑하는 한국 곳곳의 다양한 정원을 소개한다. 그 첫 번째 정원, 외도 보타니아는 거제 앞바다 한려수도국립공원에 속한 우리나라 대표 섬정원이다. 바다 절경을 자랑한다는 해금강 한가운데 섬 전체를 정원으로 조성해 놓은 이곳은 일찍부터 대한민국 정원 문화를 선도한 곳으로도 유명하다.",
         "isbn": "9791193027493",
         "cover_img_url": "books/book_covers/바다를_품은_정원__cover.png",
+        "background_img_url": "바다를 품은 정원 _background_img_75.png",
         "publisher": "남해의봄날",
         "pub_date": "2025-05-30",
         "author_name": "오경아 (지은이)",
         "author_info": "오경아는 대한민국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/바다를_품은_정원__summary.mp3",
-        "rank": 0
+        "rank": 4.5
     }
 },
 {
@@ -1282,13 +1357,14 @@
         "description": "‘즐거운 관람’을 넘어 삶을 바꾸고 움직이는 예술로서 뮤지컬의 쓸모를 보여준다. 좋아하는 배우, 멋진 노래와 춤, 무대를 만나는 것을 넘어 무대 위에 살아 움직이는 인물과 흐르는 스토리를 100% 이상으로 받아들일 수 있도록 안내한다.",
         "isbn": "9791173552502",
         "cover_img_url": "books/book_covers/뮤지컬의_쓸모_-__cover.png",
+        "background_img_url": "뮤지컬의 쓸모 - _background_img_76.png",
         "publisher": "미다스북스",
         "pub_date": "2025-06-05",
         "author_name": "흰제비나비 (지은이)",
         "author_info": "흰제비나비는 뛰어난 상상력과 독특한 문체를 가진 한국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/뮤지컬의_쓸모_-__summary.mp3",
-        "rank": 0
+        "rank": 3.3
     }
 },
 {
@@ -1299,13 +1375,14 @@
         "description": "돌에서부터 쓰레기통, 그네, 나무젓가락, 병뚜껑 같은 무생물과, 도토리 껍질이나 잠자리, 호박씨, 떨어진 꽃, 밟혀 죽은 개구리 등 살아있거나 혹은 죽은 생물들이 인간인 저자로 하여금 ‘작고 좁은’ 생각에서 깨어나도록 한 대화 50편이 들어 있다.",
         "isbn": "9791192604336",
         "cover_img_url": "books/book_covers/두려워_마라_별것_cover.png",
+        "background_img_url": "두려워 마라, 별것_background_img_77.png",
         "publisher": "샨티",
         "pub_date": "2025-05-26",
         "author_name": "이현주 (지은이)",
         "author_info": "이현주는 대한민국의 소설가이자 시나리오 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/두려워_마라_별것_summary.mp3",
-        "rank": 0
+        "rank": 3.27
     }
 },
 {
@@ -1316,13 +1393,14 @@
         "description": "국제 관계가 혼란하여 한 치 앞도 섣불리 전망하기 어려운 때에 원자재의 흐름으로 패권의 미래를 읽을 수 있는 책이 출간되었다. 미국, 중국, 중동, 러시아 등 강대국들이 현재의 패권을 지키기 위해 어떤 선택을 하고 있는지와 앞으로 어떤 선택을 할 것인지 알아보자.",
         "isbn": "9791157848072",
         "cover_img_url": "books/book_covers/강대국은_어떻게_미_cover.png",
+        "background_img_url": "강대국은 어떻게 미_background_img_78.png",
         "publisher": "한빛비즈",
         "pub_date": "2025-05-30",
         "author_name": "오정석 (지은이)",
         "author_info": "오정석은 대한민국의 소설가로, 주로 소설과 에세이를 집필하였다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/강대국은_어떻게_미_summary.mp3",
-        "rank": 0
+        "rank": 3.41
     }
 },
 {
@@ -1333,13 +1411,14 @@
         "description": "잭 케루악, 앨런 긴스버그와 함께 1950년대 비트 세대 문학을 대표하는 작가 윌리엄 S. 버로스의 두 번째 장편소설. 2차 세계 대전 후 1950년대 중반에 샌프란시스코와 뉴욕을 중심으로 대두된 보헤미안적인 문학, 예술가 그룹인 비트 세대는 1960년대에 등장할 히피 세대들과 그 이후로도 이어질 미국의 ‘서브컬처’ 탐구에 깊은 영향을 남겼다.",
         "isbn": "9788937464683",
         "cover_img_url": "books/book_covers/퀴어_cover.png",
+        "background_img_url": "퀴어_background_img_79.png",
         "publisher": "민음사",
         "pub_date": "2025-05-21",
         "author_name": "윌리엄 S. 버로스 (지은이), 조동섭 (옮긴이)",
         "author_info": "윌리엄 S. 버로스는 미국의 소설가이자 시인이며, 그의 작품은 현대 문학의 중요한 부분을 차지하고 있다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/퀴어_summary.mp3",
-        "rank": 0
+        "rank": 2.33
     }
 },
 {
@@ -1350,13 +1429,14 @@
         "description": "&lt;미술관에 간 해부학자&gt;가 출간 4년 만에 개정증보판으로 돌아왔다. 그동안 과학기술정보통신부 ‘우수과학도서’를 비롯해 문화체육관광부 ‘세종도서’ 및 서울대 영재교육원과 행복한아침독서 ‘추천도서’에 선정되는 등 각계각층으로부터 의학과 예술, 인문학을 융합하는 최고의 도서로 격찬 받았다.",
         "isbn": "9791192229621",
         "cover_img_url": "books/book_covers/미술관에_간_해부학_cover.png",
+        "background_img_url": "미술관에 간 해부학_background_img_80.png",
         "publisher": "어바웃어북",
         "pub_date": "2025-06-09",
         "author_name": "이재호 (지은이)",
         "author_info": "이재호는 대한민국의 작가이자 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/미술관에_간_해부학_summary.mp3",
-        "rank": 0
+        "rank": 0.0
     }
 },
 {
@@ -1367,13 +1447,14 @@
         "description": "스웨덴 웁살라대학교의 응용수학과 교수인 데이비드 섬프터는 이 책에서 수학의 네 가지 사고법인 통계적, 상호작용적, 카오스적, 복잡계적 사고법을 소개하고, 그 개념들을 일상에 어떻게 적용할 수 있을지 설명한다. 특히 셀룰러 오토마타라는 수학 모델을 바탕으로 우리가 사는 세계의 복잡한 현상을 단순하게 풀어보는 방법을 제시한다.",
         "isbn": "9788965967194",
         "cover_img_url": "books/book_covers/더_좋은_삶을_위한_cover.png",
+        "background_img_url": "더 좋은 삶을 위한_background_img_81.png",
         "publisher": "흐름출판",
         "pub_date": "2025-05-28",
         "author_name": "데이비드 섬프터 (지은이), 고현석 (옮긴이)",
         "author_info": "데이비드 섬프터는 영국의 수학자이자 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/더_좋은_삶을_위한_summary.mp3",
-        "rank": 0
+        "rank": 4.75
     }
 },
 {
@@ -1384,13 +1465,14 @@
         "description": "이상기후로 해수면이 점점 높아지면서 국민들이 살 수 있는 땅이 줄어들고 있는 자자지섬을 배경으로, 다섯 소녀의 우정과 사랑, 아픔과 성장통을 그려낸 장편 소설이다. 성적, 경제력 등 여러 면에서 최상위권 아이들만 입학할 수 있는 ‘수직농장 부속학교’가 주요 배경이다.",
         "isbn": "9791158792374",
         "cover_img_url": "books/book_covers/아름다운_소녀들의__cover.png",
+        "background_img_url": "아름다운 소녀들의 _background_img_82.png",
         "publisher": "북로드",
         "pub_date": "2025-05-25",
         "author_name": "우제주 (지은이), 황선영 (옮긴이)",
         "author_info": "우제주는 한국의 소설가이자 시인이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/아름다운_소녀들의__summary.mp3",
-        "rank": 0
+        "rank": 3.5
     }
 },
 {
@@ -1401,13 +1483,14 @@
         "description": "애니메이션 《후르츠 바스켓》각화의 에피소드에 관한 타카야 나츠키의 컬러 일러스트를 편찬했다. 모든 일러스트에 대한 코멘트와 미공개 일러스트도 수록했다. 아직 보지 못한 후르바의 세계를 이 한 권에.",
         "isbn": "9791142805677",
         "cover_img_url": "books/book_covers/후르츠_바스켓___cover.png",
+        "background_img_url": "후르츠 바스켓  _background_img_83.png",
         "publisher": "서울미디어코믹스(서울문화사)",
         "pub_date": "2025-05-23",
         "author_name": "타카야 나츠키 (지은이), 정효진 (옮긴이)",
         "author_info": "타카야 나츠키는 일본의 만화가이며, 대표작인 《소울이터》로 알려져 있다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/후르츠_바스켓___summary.mp3",
-        "rank": 0
+        "rank": 3.72
     }
 },
 {
@@ -1418,13 +1501,14 @@
         "description": "메타모르포시스란 우리가 완전히 자기 자신일 수 없으며, 완전히 타자와 뒤섞이거나 동화될 수도 없는 채로 타자를 자기 안에 품고 살아야 하는 조건을 뜻한다. 태어남이란 곧 순수하지 않은 것, 자기 자신이 아닌 것이며, 어딘가에서 온 이질적인 것을 자기 안에 간직하는 것이다.",
         "isbn": "9788962633108",
         "cover_img_url": "books/book_covers/메타모르포시스_-__cover.png",
+        "background_img_url": "메타모르포시스 - _background_img_84.png",
         "publisher": "에코리브르",
         "pub_date": "2025-05-30",
         "author_name": "에마누엘레 코치아 (지은이), 이아름 (옮긴이)",
         "author_info": "에마누엘레 코치아는 이탈리아의 소설가이자 수필가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/메타모르포시스_-__summary.mp3",
-        "rank": 0
+        "rank": 3.6
     }
 },
 {
@@ -1435,13 +1519,14 @@
         "description": "비합리적 믿음에도 그럴듯한 논리를 덧씌우며 스스로를 속이려는 현대인의 심리를 ‘주술적 과잉사고’라는 개념으로 파헤친다. 정보 과잉 시대를 살아가는 우리가 빠지기 쉬운 11가지 인지 편향을 심리학과 뇌과학의 최신 연구로 분석하고, 여기에 시의적이고 흥미로운 사례를 더해 자기기만의 은밀한 작동 방식을 생생하게 드러낸다.",
         "isbn": "9791173572869",
         "cover_img_url": "books/book_covers/합리적_망상의_시대_cover.png",
+        "background_img_url": "합리적 망상의 시대_background_img_85.png",
         "publisher": "arte(아르테)",
         "pub_date": "2025-05-28",
         "author_name": "어맨다 몬텔 (지은이), 김다봄 (옮긴이)",
         "author_info": "어맨다 몬텔은 미국의 작가이자 작가이므로, 현대의 장르 문학에 대해 널리 알려져 있다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/합리적_망상의_시대_summary.mp3",
-        "rank": 0
+        "rank": 3.32
     }
 },
 {
@@ -1452,13 +1537,14 @@
         "description": "작은 사람은 하느님을 만난 걸까? 아니, ‘하늘의 별만큼, 심지어 그보다 조금 더 많은’ 신들 중 하나인 신을 만난 거다. 따뜻하게 빛나는 오라로 둘러싸인. 이번에는 ‘신과 인간’의 만남이다. 눈부신 신, 시적인 분위기, 친숙하고 유머러스한 대화, 어린이 문학이 거의 탐색하지 않은, 독창적이고 지적인 걸작이다.",
         "isbn": "9788984145412",
         "cover_img_url": "books/book_covers/작은_사람과_신_cover.png",
+        "background_img_url": "작은 사람과 신_background_img_86.png",
         "publisher": "논장",
         "pub_date": "2025-05-26",
         "author_name": "키티 크라우더 (지은이), 이주희 (옮긴이)",
         "author_info": "키티 크라우더는 미국의 작가이자 일러스트레이터로, 어린이 책을 주로 창작한다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/작은_사람과_신_summary.mp3",
-        "rank": 0
+        "rank": 3.54
     }
 },
 {
@@ -1469,13 +1555,14 @@
         "description": "창비 인문교양 시리즈 ‘교양100그램’의 일곱번째 책. 새롭게 재편되는 국제질서를 연속적인 하나의 흐름으로 읽어내며 이에 대응하는 미국의 전략이 어째서 파행으로 나타나는지 분석하고, 그 속에서 한국이 나아가야 할 길을 모색한다.",
         "isbn": "9788936480820",
         "cover_img_url": "books/book_covers/미국의_배신과_흔들_cover.png",
+        "background_img_url": "미국의 배신과 흔들_background_img_87.png",
         "publisher": "창비",
         "pub_date": "2025-05-23",
         "author_name": "김준형 (지은이)",
         "author_info": "김준형은 대한민국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/미국의_배신과_흔들_summary.mp3",
-        "rank": 0
+        "rank": 3.36
     }
 },
 {
@@ -1486,13 +1573,14 @@
         "description": "20세기 가장 중요한 비평가로 꼽히는 발터 벤야민을 오랫동안 연구해온 독문학자 윤미애의 연구서 『벤야민과 기억』이 문학동네에서 출간되었다. 2020년 출간된 『발터 벤야민과 도시 산책자의 사유』 이후 5년 만에 출간되는 그의 두번째 연구서이다.",
         "isbn": "9791141609658",
         "cover_img_url": "books/book_covers/벤야민과_기억_cover.png",
+        "background_img_url": "벤야민과 기억_background_img_88.png",
         "publisher": "문학동네",
         "pub_date": "2025-05-22",
         "author_name": "윤미애 (지은이)",
         "author_info": "윤미애는 대한민국의 여성 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/벤야민과_기억_summary.mp3",
-        "rank": 0
+        "rank": 0.0
     }
 },
 {
@@ -1503,13 +1591,14 @@
         "description": "종이 집에 사는 종이 인형들은 불이 켜지면 아침을 맞이하고 끈이 움직이는 대로 살아간다. 책이 주어지면 세상을 배우고, 곰 인형이 주어지면 기쁨을 배운다. 그러던 어느 날, 그들에게 스마트폰이 주어지며 인형 가족은 금이 가기 시작하는데….",
         "isbn": "9788943317959",
         "cover_img_url": "books/book_covers/끈_cover.png",
+        "background_img_url": "끈_background_img_89.png",
         "publisher": "보림",
         "pub_date": "2025-05-27",
         "author_name": "이민혜 (지은이)",
         "author_info": "이민혜는 대한민국의 소설가이자 원로 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/끈_summary.mp3",
-        "rank": 0
+        "rank": 0.0
     }
 },
 {
@@ -1520,13 +1609,14 @@
         "description": "철학은 수많은 갈림길에서 방향을 잡아주고, 어디로 가는 것이 더 나은 선택인지를 생각하도록 이끌어주는 나침반과도 같다. 이 책은 하루에 한 꼭지, 한 철학자의 사유와 지혜를 만나고, 그 안에서 내 삶에서 실천할 수 있는 인사이트를 얻도록 구성되어 있다.",
         "isbn": "9791189347260",
         "cover_img_url": "books/book_covers/하루_한_장_삶에__cover.png",
+        "background_img_url": "하루 한 장 삶에 _background_img_90.png",
         "publisher": "보아스",
         "pub_date": "2025-06-09",
         "author_name": "최영원 (지은이)",
         "author_info": "최영원은 대한민국의 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/하루_한_장_삶에__summary.mp3",
-        "rank": 0
+        "rank": 3.93
     }
 },
 {
@@ -1537,13 +1627,14 @@
         "description": "국립현대미술관 학예연구실장이자 미술사가인 김인혜 작가가 한국 근대 화가들의 삶과 예술을 다룬 『살롱 드 경성 2』를 출간했다. “BTS RM도 열독”한다는 『조선일보』 인기 칼럼 《김인혜의 살롱 드 경성》을 묶어낸 『살롱 드 경성』의 후속작이다.",
         "isbn": "9791167141149",
         "cover_img_url": "books/book_covers/살롱_드_경성_2__cover.png",
+        "background_img_url": "살롱 드 경성 2 _background_img_91.png",
         "publisher": "해냄",
         "pub_date": "2025-05-26",
         "author_name": "김인혜 (지은이)",
         "author_info": "김인혜는 한국의 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/살롱_드_경성_2__summary.mp3",
-        "rank": 0
+        "rank": 3.58
     }
 },
 {
@@ -1554,13 +1645,14 @@
         "description": "《연쇄살인마 개구리 남자》 《속죄의 소나타》,  밀리언셀러 작가 나카야마 시치리의 쓰기 비결. 독자를 놀라게 하는 반전으로 정평이 난 나카야마 시치리가 평생을 바쳐 애정해온 미스터리에 대한 생각과 작품을 대하는 방식에 대해 밝힌다.",
         "isbn": "9788925573601",
         "cover_img_url": "books/book_covers/합리적인_미스터리를_cover.png",
+        "background_img_url": "합리적인 미스터리를_background_img_92.png",
         "publisher": "알에이치코리아(RHK)",
         "pub_date": "2025-05-28",
         "author_name": "나카야마 시치리 (지은이), 민경욱 (옮긴이)",
         "author_info": "나카야마 시치리는 일본의 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/합리적인_미스터리를_summary.mp3",
-        "rank": 0
+        "rank": 3.03
     }
 },
 {
@@ -1571,13 +1663,14 @@
         "description": "제20회 ‘〈이 미스터리가 대단하다!〉 대상’ 문고 그랑프리 수상작. 《밀실 황금시대의 살인》은 세상에 밀실살인이 유행한다는 참신하고 유쾌한 설정으로 시작한다. 삼 년 전, 한 살인 사건의 용의자가 현장이 완벽한 밀실이라는 이유로 무죄판결을 받는데...",
         "isbn": "9791192738543",
         "cover_img_url": "books/book_covers/밀실_황금시대의_살_cover.png",
+        "background_img_url": "밀실 황금시대의 살_background_img_93.png",
         "publisher": "리드비",
         "pub_date": "2025-05-29",
         "author_name": "가모사키 단로 (지은이), 김예진 (옮긴이)",
         "author_info": "카모사키 단로 (上野鶴見, たろう かまさき)는 일본의 유명한 작가이자, 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/밀실_황금시대의_살_summary.mp3",
-        "rank": 0
+        "rank": 3.35
     }
 },
 {
@@ -1588,13 +1681,14 @@
         "description": "예일대학교 로빈 박사가 30여 년간 심리 상담을 통해 정립한 가스라이팅이 일어나는 상황 및 가해자의 유형을 소개하며 가스라이팅을 단계적으로 차단할 수 있도록 돕는다. 궁극의 목표는 내 앞에 놓인 이 관계를 이어갈지 말지 누구나 스스로 결정할 수 있게 되는 것이다.",
         "isbn": "9788925573618",
         "cover_img_url": "books/book_covers/친밀한_파괴자_cover.png",
+        "background_img_url": "친밀한 파괴자_background_img_94.png",
         "publisher": "알에이치코리아(RHK)",
         "pub_date": "2025-05-28",
         "author_name": "로빈 스턴 (지은이), 신준영 (옮긴이)",
         "author_info": "로빈 스턴은 현대 미국 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/친밀한_파괴자_summary.mp3",
-        "rank": 0
+        "rank": 3.35
     }
 },
 {
@@ -1605,13 +1699,14 @@
         "description": "장보기 스킬과 맛있는 레시피, 나아가 '살림 기술'까지 익힐 수 있도록 이 분야의 '전문가'인 작가의 인기 만점 레시피들과 매월 메뉴 구성 및 장보기 노하우, 주방 청소를 쉽게 하는 법 등 살림 기술을 일목요연하게 정리해 담았다.",
         "isbn": "9791191994391",
         "cover_img_url": "books/book_covers/매월_알찬_집밥_-_cover.png",
+        "background_img_url": "매월 알찬 집밥 -_background_img_95.png",
         "publisher": "용감한까치",
         "pub_date": "2025-05-22",
         "author_name": "전혜진 (지은이)",
         "author_info": "전혜진은 대한민국의 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/매월_알찬_집밥_-_summary.mp3",
-        "rank": 0
+        "rank": 3.62
     }
 },
 {
@@ -1622,13 +1717,14 @@
         "description": "버지니아 울프는 일평생 정원과 자연, 내면의 흐름을 따라가는 감각적 글쓰기를 멈추지 않았다. 『모두의 행복―버지니아 울프와 함께 정원을 걷다』는 울프의 자전적 회고와 함께 그가 문학 속에서 풀어낸 정원, 풍경, 자연에 대한 섬세한 정서를 엮은 산문집이다.",
         "isbn": "9791170403494",
         "cover_img_url": "books/book_covers/모두의_행복_-_버_cover.png",
+        "background_img_url": "모두의 행복 - 버_background_img_96.png",
         "publisher": "열림원",
         "pub_date": "2025-05-20",
         "author_name": "버지니아 울프 (지은이), 모명숙 (옮긴이)",
         "author_info": "버지니아 울프는 영국 소설가이자 에세이스트로, 현대주의 문학의 선구자 중 한 명이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/모두의_행복_-_버_summary.mp3",
-        "rank": 0
+        "rank": 4.25
     }
 },
 {
@@ -1639,13 +1735,14 @@
         "description": "",
         "isbn": "9791142316852",
         "cover_img_url": "books/book_covers/최애의_아이_16__cover_i6EBQ3E.png",
+        "background_img_url": "최애의 아이 16 _background_img_97.png",
         "publisher": "대원씨아이(만화)",
         "pub_date": "2025-05-30",
         "author_name": "아카사카 아카 (지은이), 요코야리 멘고 (그림)",
         "author_info": "아카사카 아카는 일본의 라이트 노벨 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/최애의_아이_16__summary_3E2jBV0.mp3",
-        "rank": 0
+        "rank": 3.14
     }
 },
 {
@@ -1656,13 +1753,14 @@
         "description": "",
         "isbn": "9791142316869",
         "cover_img_url": "books/book_covers/최애의_아이_16__cover_71YyrQa.png",
+        "background_img_url": "최애의 아이 16 _background_img_98.png",
         "publisher": "대원씨아이(만화)",
         "pub_date": "2025-05-30",
         "author_name": "아카사카 아카 (지은이), 요코야리 멘고 (그림)",
         "author_info": "아카사카 아카는 일본의 라이트 노벨 작가이자 스토리 작가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/최애의_아이_16__summary_8H2S0eX.mp3",
-        "rank": 0
+        "rank": 3.59
     }
 },
 {
@@ -1673,13 +1771,14 @@
         "description": "좀비들은 언제부터 뛰어다녔을까? 홍콩 느와르가 홍콩에 없는 이유는 무엇일까? 장르영화를 보면서 한 번쯤 궁금했던 질문들에 해답이 되어줄 책이 출간됐다. 《장르영화 대사전》은 영화 장르를 크게 12가지로 구분해 소개한다.",
         "isbn": "9788972971597",
         "cover_img_url": "books/book_covers/장르영화_대사전_-_cover.png",
+        "background_img_url": "장르영화 대사전 -_background_img_99.png",
         "publisher": "동녘",
         "pub_date": "2025-05-30",
         "author_name": "김정곤, 김익상 (지은이)",
         "author_info": "김익상은 한국의 작가이자 평론가로, 주로 소설과 수필을 집필하고 있다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/장르영화_대사전_-_summary.mp3",
-        "rank": 0
+        "rank": 3.38
     }
 },
 {
@@ -1690,13 +1789,14 @@
         "description": "스스로에게 친절해지는 연습을 위한 ‘100일 칭찬일기’ 《Self-Kindness Note》. 김키미의 실용에세이 《오늘부터 나를 칭찬하기로 했다》에서 제안한 칭찬일기를 100일간 직접 실천하고 그 변화를 경험할 수 있는 워크북이다. 불안과 자기혐오에서 벗어나 진정한 자기 인정에 이른 과정을 경험한 저자가 자신의 칭찬일기를 토대로 ‘100일 칭찬일기’를 직접 구성했다.",
         "isbn": "9791170873402",
         "cover_img_url": "books/book_covers/Self-Kindn_cover.png",
+        "background_img_url": "Self-Kindn_background_img_100.png",
         "publisher": "휴머니스트",
         "pub_date": "2025-06-02",
         "author_name": "김키미 (지은이)",
         "author_info": "김키미는 대한민국의 소설가이다.",
         "author_profile_img_url": "books/author_imgs/default_img.png",
         "audio_file": "books/audios/Self-Kindn_summary.mp3",
-        "rank": 0
+        "rank": 3.5
     }
 }
 ]
