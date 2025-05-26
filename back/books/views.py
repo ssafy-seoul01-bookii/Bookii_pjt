@@ -4,9 +4,15 @@ from rest_framework import status
 
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.db.models import Count, Q
+from django.core.files.base import ContentFile
 
-from .models import Category, Book, Thread, Comment
+import requests
+from io import BytesIO
+from PIL import Image, UnidentifiedImageError
+
+from .models import Category, Book, Thread, Comment, Keyword
 from .serializers import CategoryListSerializer, BookListSerializer, BookDetailSerializer, ThreadListSerializer, ThreadDetailSerializer, CommentDetailSerializer, ThreadCreateSerializer, CommentCreateSerializer
+from .utils import get_thread_cover_img
 
 @api_view(["GET"])
 def get_categories(request):

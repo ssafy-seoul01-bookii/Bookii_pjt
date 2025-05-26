@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from . import creates
 
 urlpatterns = [
     path("categories/", views.get_categories),
@@ -11,4 +12,13 @@ urlpatterns = [
     path("<int:book_pk>/threads/<int:thread_pk>/comments/create_comment/", views.create_comment),
     path("<int:book_pk>/threads/<int:thread_pk>/comments/<int:comment_pk>/", views.get_update_delete_comment),
     path("search/", views.search_books),
+
+    # 더미데이터 삽입
+    path("insert_books/", creates.insert_books),
+    path("insert_categories/", creates.insert_categories),
+    path("insert_keywords/", creates.insert_keywords),
+    path("insert_threads/", creates.insert_threads),
+    path("insert_book_ranks/", creates.insert_book_ranks),
+    path("insert_book_background_img/", creates.insert_book_background_img),
+    path("change_book_background_img_file_name/", creates.change_book_background_img_file_name),
 ]
