@@ -4,18 +4,12 @@ from .models import Category, Book, Thread, Comment
 class CategoryListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = '__all__'
+        fields = "__all__"
 
 class BookListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
-        fields = (
-            "id",
-            "title",
-            "author",
-            "isbn",
-            "cover",
-        )
+        fields = "__all__"
 
 class BookDetailSerializer(serializers.ModelSerializer):
     class Meta:
