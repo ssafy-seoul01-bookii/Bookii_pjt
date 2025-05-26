@@ -48,7 +48,6 @@ import Footer2 from '@/components/layout/footer2.vue'
 import HomeView from '@/views/HomeView.vue'
 import BookDetailView from '@/views/BookDetailView.vue'
 import SearchView from '@/views/SearchView.vue'
-import TagSearchView from '@/views/TagSearchView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import ThreadDetailView from '@/views/ThreadDetailView.vue'
 
@@ -63,7 +62,6 @@ const backgroundMap = {
     'home': HomeView,
     'book-detail': BookDetailView,
     'search': SearchView,
-    'tag-search': TagSearchView,
     'profile': ProfileView,
     'thread-detail': ThreadDetailView,
 }
@@ -82,7 +80,6 @@ const backgroundComponent = computed(() => {
   const path = ui.backgroundRoute
   if (!path) return HomeView
   if (path.startsWith('/book/')) return BookDetailView
-  if (path.startsWith('/search/tag')) return TagSearchView
   if (path.startsWith('/search')) return SearchView
   if (path.startsWith('/profile')) return ProfileView
   // 4️⃣ 최종 fallback

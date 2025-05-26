@@ -12,7 +12,6 @@ import ProfileUpdateView from '@/views/ProfileUpdateView.vue'
 // Book
 import BookDetailView from '@/views/BookDetailView.vue'
 import SearchView from '@/views/SearchView.vue'
-import TagSearchView from '@/views/TagSearchView.vue'
 // Thread
 import ThreadDetailView from '@/views/ThreadDetailView.vue'
 import ThreadCreateView from '@/views/ThreadCreateView.vue'
@@ -23,8 +22,6 @@ const routes = [
   { path: '/', name: 'home', component: HomeView },
   { path: '/book/:bookId', name: 'book-detail', component: BookDetailView },
   { path: '/search', name: 'search', component: SearchView },
-  // tag필수 해제
-  { path: '/search/tag/:tag?', name: 'tag-search', component: TagSearchView },
   { path: '/profile/:username', name: 'profile', component: ProfileView },
 
   // modal 라우트

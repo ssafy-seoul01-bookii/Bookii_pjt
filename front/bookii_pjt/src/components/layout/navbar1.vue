@@ -5,7 +5,7 @@
     <div class="left">
       <router-link :to="{ name: 'home' }" class="link">Bookii</router-link>
       <!-- 태그 임의값 -->
-      <router-link :to="{ name: 'tag-search' }" class="link">태그검색</router-link>
+      <router-link :to="{ name: 'search' }" class="link">태그검색</router-link>
       <a href="https://www.kyobobook.co.kr" target="_blank" class="link">책 구매</a>
     </div>
     <div class="right">

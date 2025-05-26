@@ -66,6 +66,7 @@ defineProps({
   max-width: 720px;
   height: auto; /* 또는 필요 시 height: 80vh */
   overflow-y: auto;
+  background-color: #FFF7E4;
 }
 
 .modal-wide {
@@ -73,6 +74,7 @@ defineProps({
   max-width: 1200px;
   height: 80vh;
   overflow-y: auto;
+  background-color: #FFECBD;
 }
 
 .close-btn {
