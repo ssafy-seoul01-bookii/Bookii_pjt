@@ -33,7 +33,15 @@
         <div class="header">
           <span class="username">@{{ user?.username }}</span>
           <h3 class="title">{{ thread?.title }}</h3>
-          <!-- <span class="book-title"> — {{ book?.title }}</span> -->
+          
+          <!-- 쓰레드 수정 버튼 -->
+          <button
+            v-if="isMine"
+            class="edit=btn"
+            @click="goToEditThread"
+          >
+            ✏️ 수정
+          </button>
         </div>
   
         <!-- 쓰레드 내용 -->
@@ -55,7 +63,7 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useThreadStore } from '@/stores/thread'
 import { useUserStore } from '@/stores/user'
 import { useBookStore } from '@/stores/book'
@@ -64,6 +72,7 @@ import CommentList from '@/components/comment/CommentList.vue'
 import CommentCreate from '@/components/comment/CommentCreateForm.vue'
 
 const route = useRoute()
+const router = useRouter()
 const threadId = Number(route.params.id)
 
 const threadStore = useThreadStore()
@@ -91,6 +100,16 @@ watch(thread, (newThread) => {
   isLiked.value = newThread.liked_user_ids?.includes(userStore.currentUserId)
   }
 }, { immediate: true })
+
+// 쓰레드 작성자가 본인인지 확인
+const isMine = computed(() =>
+  userStore.currentUserId === thread.value.user_id
+)
+
+// 쓰레드 수정폼 이동
+const goToEditThread = () => {
+  router.push({ name: 'thread-edit', params: { id: threadId } })
+}
 </script>
 
 <style scoped>
@@ -231,4 +250,16 @@ watch(thread, (newThread) => {
   line-height: 1.5;
 }
 
+/* 쓰레드 수정 버튼 */
+.edit-btn {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #a2ace2;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-start;
+}
 </style>

@@ -33,9 +33,9 @@ import { useUserStore } from '@/stores/user'
 
 const router = useRouter()
 const user = useUserStore()
-
-const isLoggedIn = computed(() => !!user.accessToken)
 const searchText = ref('')
+
+const isLoggedIn = computed(() => user.isLoggedIn)
 
 // 메뉴 버튼 클릭 이벤트 (필요 시 메뉴 확장 등 추가 가능)
 const toggleMenu = () => {
@@ -54,7 +54,8 @@ const goToLogin = () => {
 }
 
 const logout = () => {
-  user.accessToken = null
+  user.clearSession()
+  router.replace({ path: router.currentRoute.value.fullPath, query: { t: Date.now() } })
 }
 </script>
 
