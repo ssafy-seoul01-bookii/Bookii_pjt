@@ -173,8 +173,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:5173',
     'http://localhost:5173',
 ]
-
-
+# front: 필요하다 해서 일단 추가해봄
+CORS_ALLOW_CREDENTIALS = True
 
 # dj-rest-auth
 SITE_ID = 1

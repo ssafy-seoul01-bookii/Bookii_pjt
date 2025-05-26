@@ -16,13 +16,18 @@ import { useCommentStore } from '@/stores/comment'
 import CommentListItem from './CommentListItem.vue'
 
 const props = defineProps({
-  threadId: Number
+  threadId: {
+    type: Number,
+    required: true
+  }
 })
 
 const commentStore = useCommentStore()
-const filteredComments = computed(() =>
-  commentStore.comments.filter(c => c.thread_id === props.threadId)
-)
+
+const filteredComments = computed(() => {
+  if (!props.threadId) return []
+  return commentStore.comments.filter(c => c.thread_id === props.threadId)
+})
 </script>
 
 <style scoped>

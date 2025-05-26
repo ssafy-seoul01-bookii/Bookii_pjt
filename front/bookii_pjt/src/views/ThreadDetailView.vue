@@ -37,7 +37,7 @@
           <!-- 쓰레드 수정 버튼 -->
           <button
             v-if="isMine"
-            class="edit=btn"
+            class="edit-btn"
             @click="goToEditThread"
           >
             ✏️ 수정
@@ -67,6 +67,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { useThreadStore } from '@/stores/thread'
 import { useUserStore } from '@/stores/user'
 import { useBookStore } from '@/stores/book'
+import { useFollowStore } from '@/stores/follow'
 
 import CommentList from '@/components/comment/CommentList.vue'
 import CommentCreate from '@/components/comment/CommentCreateForm.vue'
@@ -78,6 +79,7 @@ const threadId = Number(route.params.id)
 const threadStore = useThreadStore()
 const userStore = useUserStore()
 const bookStore = useBookStore()
+const followStore = useFollowStore()
 
 const thread = computed(() => threadStore.threads.find(t => t.id === threadId))
 const user = computed(() => userStore.users.find(u => u.id === thread.value?.user_id))
@@ -92,12 +94,11 @@ const toggleLike = () => {
   likeCount.value += isLiked.value ? 1 : -1
 }
 
-
 watch(thread, (newThread) => {
   if (newThread) {
-  likeCount.value = newThread.like_count
-  // 현재 로그인 유저가 이미 좋아요한 경우 (가정)
-  isLiked.value = newThread.liked_user_ids?.includes(userStore.currentUserId)
+    likeCount.value = newThread.like_count
+    // 현재 로그인 유저가 이미 좋아요한 경우 (가정)
+    isLiked.value = newThread.liked_user_ids?.includes(userStore.currentUserId)
   }
 }, { immediate: true })
 
@@ -113,17 +114,16 @@ const goToEditThread = () => {
 </script>
 
 <style scoped>
+/* 그대로 유지 */
 .thread-detail {
   display: flex;
   width: 100%;
   max-width: 1200px;
   height: 80vh;
-  background: #FFF7E4; /* ✅ 요구사항 1 */
+  background: #FFF7E4;
   border-radius: 12px;
   overflow: hidden;
 }
-
-/* ===== 왼쪽 영역 ===== */
 .thread-left {
   width: 60%;
   position: relative;
@@ -133,7 +133,6 @@ const goToEditThread = () => {
   align-items: center;
   overflow: hidden;
 }
-
 .thread-left img {
   width: 100%;
   height: 100%;
@@ -150,12 +149,10 @@ const goToEditThread = () => {
   transform: translateY(10px);
   transition: all 0.3s ease;
 }
-
 .thread-left:hover .book-overlay {
   opacity: 1;
   transform: translateY(0);
 }
-
 .book-info {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 0.75rem 1rem;
@@ -164,27 +161,22 @@ const goToEditThread = () => {
   text-decoration: none;
   display: block;
 }
-
 .book-title {
   font-weight: bold;
   font-size: 1rem;
   margin: 0;
 }
-
 .book-author {
   font-size: 0.85rem;
   opacity: 0.9;
   margin: 0;
 }
-
-/* 좋아요 버튼도 이미지 안에 */
 .like-overlay {
   display: flex;
   align-items: center;
   gap: 0.4rem;
   margin-top: 0.5rem;
 }
-
 .heart {
   font-size: 1.4rem;
   background: none;
@@ -193,17 +185,13 @@ const goToEditThread = () => {
   color: #ddd;
   transition: color 0.2s;
 }
-
 .heart.active {
   color: #FF6B6B;
 }
-
 .count {
   font-size: 0.9rem;
   color: #f0f0f0;
 }
-
-/* ===== 오른쪽 영역 ===== */
 .thread-right {
   width: 40%;
   display: flex;
@@ -212,8 +200,6 @@ const goToEditThread = () => {
   padding-left: 0;
   background-color: #FFF7E4;
 }
-
-/* 스크롤되는 부분 */
 .scroll-area {
   flex: 1;
   overflow-y: auto;
@@ -222,21 +208,17 @@ const goToEditThread = () => {
   flex-direction: column;
   gap: 1.2rem;
 }
-
-/* 하단 고정 댓글 작성 폼 */
 .comment-fixed {
   padding: 1rem 1rem 1rem 0;
   background-color: #FFF7E4;
   display: flex;
-  justify-content: center; /* ✅ 가운데 정렬 */
+  justify-content: center;
 }
-
 .comment-fixed form {
   width: 100%;
   max-width: 90%;
-  margin-top: -3px
+  margin-top: -3px;
 }
-
 .header {
   display: flex;
   flex-direction: column;
@@ -244,13 +226,10 @@ const goToEditThread = () => {
   font-size: 1rem;
   font-weight: bold;
 }
-
 .content {
   font-size: 1rem;
   line-height: 1.5;
 }
-
-/* 쓰레드 수정 버튼 */
 .edit-btn {
   margin-top: 0.5rem;
   padding: 0.4rem 0.8rem;

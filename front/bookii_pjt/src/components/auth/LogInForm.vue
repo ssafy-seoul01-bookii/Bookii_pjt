@@ -4,7 +4,7 @@
   <form class="login-form" @submit.prevent="handleSubmit">
     <!-- 로고 -->
     <h1 class="logo">
-      <img src="@/assets/003.PNG" alt="Bookii 로고">
+      <img src="@/assets/003.PNG" alt="Bookii 로고" />
     </h1>
     <h2 class="title">로그인</h2>
 
@@ -12,12 +12,16 @@
     <input v-model="form.username" type="text" placeholder="아이디" required />
     <input v-model="form.password" type="password" placeholder="비밀번호" required />
 
+    <!-- 에러 메시지 -->
+    <p v-if="error" class="error-message">{{ error }}</p>
+
     <!-- 로그인 버튼 -->
     <button type="submit" class="login-btn">로그인</button>
 
     <!-- 회원가입 링크 -->
     <p class="signup-guide">
-      계정이 없으신가요? <span class="signup-link" @click="$emit('go-signup')">회원가입</span>
+      계정이 없으신가요?
+      <span class="signup-link" @click="$emit('go-signup')">회원가입</span>
     </p>
 
     <!-- 구분선 -->
@@ -27,10 +31,10 @@
       <hr />
     </div>
 
-    <!-- SNS 로그인 -->
+    <!-- SNS 로그인 (기능 미구현 시 숨기거나 주석처리 권장) -->
     <div class="sns-login">
-      <img src="#" alt="카카오 로그인" class="sns-icon" />
-      <img src="#" alt="구글 로그인" class="sns-icon" />
+      <button type="button" class="sns-icon" disabled>카카오</button>
+      <button type="button" class="sns-icon" disabled>구글</button>
     </div>
 
     <!-- 안내 문구 -->
@@ -42,9 +46,12 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { reactive, ref, watch } from 'vue'
 
-const emit = defineEmits(['submit', 'go-signup'])
+const emit = defineEmits(['submit', 'go-signup', 'error'])
+const props = defineProps({
+  error: String
+})
 
 const form = reactive({
   username: '',
@@ -74,9 +81,7 @@ function handleSubmit() {
 }
 
 .logo img {
-  height: auto; 
-  max-width: 160px; 
-  object-fit: contain;
+  max-width: 160px;
 }
 
 .title {
@@ -93,6 +98,12 @@ input {
   background-color: #fff7e4;
   font-size: 14px;
   color: #a2ace2;
+}
+
+.error-message {
+  color: red;
+  font-size: 13px;
+  margin: -8px 0 12px;
 }
 
 .login-btn {
@@ -148,7 +159,12 @@ input {
 .sns-icon {
   width: 48px;
   height: 48px;
-  cursor: pointer;
+  background-color: #eee;
+  border: none;
+  border-radius: 50%;
+  cursor: not-allowed;
+  color: #999;
+  font-size: 12px;
 }
 
 .guide-text {

@@ -17,7 +17,10 @@ import { useCommentStore } from '@/stores/comment'
 import { useUserStore } from '@/stores/user'
 
 const props = defineProps({
-  threadId: Number
+  threadId: {
+    type: Number,
+    required: true
+  }
 })
 
 const commentStore = useCommentStore()
@@ -27,14 +30,10 @@ const newComment = ref('')
 
 const submitComment = () => {
   if (!newComment.value.trim()) return
-  const newId = commentStore.comments.length + 1
-  commentStore.comments.push({
-    id: newId,
+  commentStore.addComment({
     thread_id: props.threadId,
     user_id: userStore.accessToken,
-    content: newComment.value,
-    created_at: new Date().toISOString().slice(0, 10),
-    updated_at: new Date().toISOString().slice(0, 10)
+    content: newComment.value
   })
   newComment.value = ''
 }

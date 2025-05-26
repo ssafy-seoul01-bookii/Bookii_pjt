@@ -21,15 +21,18 @@ const user = computed(() =>
   userStore.users.find(u => u.username === username)
 )
 
-const updateProfile = (updatedUser) => {
-  const idx = userStore.users.findIndex(u => u.username === username)
-  if (idx !== -1) {
-    userStore.users[idx] = updatedUser
+const updateProfile = async (updatedUser) => {
+  try {
+    await userStore.updateUser(user.value.id, updatedUser)
+    await userStore.fetchUsers() // 리스트 갱신
     router.back() // 모달 닫기
+  } catch (err) {
+    console.error('프로필 수정 실패:', err)
+    alert('프로필 수정에 실패했습니다.')
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
+/* 필요시 스타일 추가 */
 </style>
