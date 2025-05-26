@@ -2,16 +2,16 @@
 
 <template>
   <li class="book-item">
-    <img :src="book.coverImage" :alt="book.title" class="book-cover">
+    <img :src="book.cover_img_url" :alt="book.title" class="book-cover">
     <div class="book-info">
       <p class="book-title">{{ book.title }}</p>
-      <p class="thread-count">{{ book.threadCount }}</p>
+      <p class="thread-count">{{ book.thread_count }}</p>
     </div>
   </li>
 </template>
 
 <script setup>
-defineProps({
+const props = defineProps({
   book: Object,
 })
 </script>

@@ -1,5 +1,3 @@
-<!-- SignUpForm.vue -->
-
 <template>
   <form class="signup-form" @submit.prevent="handleSubmit">
     <!-- 로고 -->
@@ -13,12 +11,16 @@
     <input v-model="form.username" type="text" placeholder="아이디" required />
     <input v-model="form.password" type="password" placeholder="비밀번호" required />
 
+    <!-- 에러 메시지 표시 -->
+    <p v-if="error" class="error-text">{{ error }}</p>
+
     <!-- 가입 버튼 -->
     <button type="submit" class="signup-btn">회원가입</button>
 
     <!-- 로그인 링크 -->
     <p class="login-guide">
-      이미 가입하셨나요? <span class="login-link" @click="$emit('go-login')">로그인</span>
+      이미 가입하셨나요?
+      <span class="login-link" @click="$emit('go-login')">로그인</span>
     </p>
 
     <!-- 구분선 -->
@@ -39,8 +41,15 @@
 <script setup>
 import { reactive } from 'vue'
 
+// emits 정의
 const emit = defineEmits(['submit', 'go-login'])
 
+// error prop 수신
+const props = defineProps({
+  error: String
+})
+
+// form 상태
 const form = reactive({
   name: '',
   username: '',
@@ -70,8 +79,8 @@ function handleSubmit() {
 }
 
 .logo img {
-  height: auto; 
-  max-width: 160px; 
+  height: auto;
+  max-width: 160px;
   object-fit: contain;
 }
 
@@ -89,6 +98,13 @@ input {
   background-color: #fff7e4;
   font-size: 14px;
   color: #a2ace2;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  align-self: flex-start;
 }
 
 .signup-btn {

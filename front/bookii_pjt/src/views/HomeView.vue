@@ -18,15 +18,17 @@
         
         <!-- 중앙: 책 커버 -->
         <div class="book-image">
-          <router-link :to="{ name: 'book-detail', params: { bookId: currentBook.id } }">
-            <img :src="currentBook.cover_img_url" :alt="currentBook.title" />
+          <router-link
+            v-if="currentBook"
+            :to="{ name: 'book-detail', params: { bookId: currentBook?.id } }">
+            <img :src="currentBook.cover_img_url" :alt="currentBook?.title" />
           </router-link>
         </div>
 
         <!-- 우측: 책 정보 -->
         <div class="book-info">
-          <p class="book-title">{{ currentBook.title }}</p>
-          <p class="book-author">- {{ currentBook.author_name }}</p>
+          <p class="book-title">{{ currentBook?.title }}</p>
+          <p class="book-author">- {{ currentBook?.author_name }}</p>
         </div>
       </div>
 
@@ -45,15 +47,15 @@
      <template v-if="isLoggedIn">
       <div class="section">
         <h3>키워드 추천 책</h3>
-        <BookList :books="book.books"/>
+        <BookList :books="bookStore.books"/>
       </div>
       <div class="section">
         <h3>클릭 기반 추천 책</h3>
-        <BookList :books="book.books"/>
+        <BookList :books="bookStore.books"/>
       </div>
       <div class="section">
         <h3>좋아요 순 정렬 쓰레드</h3>
-        <BookList :books="book.books"/>
+        <BookList :books="bookStore.books"/>
       </div>
      </template>
 
@@ -61,18 +63,15 @@
       <!-- 로그인x -->
       <div class="section">
         <h3>평론가 3.0 이상 책</h3>
-        <BookList :books="book.books"/>
+        <BookList :books="bookStore.books"/>
       </div>
       <div class="section">
         <h3>쓰레드 많은 순 정렬 책</h3>
-        <BookList :books="book.books"/>
+        <BookList :books="bookStore.books"/>
       </div>
       <div class="section">
-        <!-- <h3>평점 3.5 이상 정렬 책</h3>
-        <BookList :books="book.books"/> -->
-        <!-- 쓰레드 테스트용 -->
         <h3>쓰레드 테스트</h3>
-        <ThreadList :threads="thread.threads"/>
+        <ThreadList :threads="threadStore.threads"/>
       </div>
      </template>
   </div>
@@ -93,49 +92,57 @@ import ThreadList from '@/components/thread/ThreadList.vue'
 
 const router = useRouter()
 const route = useRoute()
-const user = useUserStore()
-const ui = useUIStore()
-const book = useBookStore()
-const thread = useThreadStore()
 
-// 로그인여부 판단
-const isLoggedIn = computed(() => !!user.accessToken)
+const userStore = useUserStore()
+const uiStore = useUIStore()
+const bookStore = useBookStore()
+const threadStore = useThreadStore()
+
+const isLoggedIn = computed(() => userStore.isLoggedIn)
 
 const goToLogin = () => {
-  ui.setBackgroundRoute(route.fullPath)
+  uiStore.setBackgroundRoute(route.fullPath)
   router.push('/login')
 }
 
-// main 배너용
-const allBooks = book.books
-const books = allBooks.sort(() => 0.5 - Math.random()).slice(0, 4)
+// 책 목록
+const books = computed(() =>
+  [...bookStore.books].sort(() => 0.5 - Math.random()).slice(0, 4)
+)
+const currentBook = computed(() => books.value[index.value] || null)
+
 const index = ref(0)
 
-const currentBook = computed(() => books[index.value])
 const currentThread = computed(() => {
-  return thread.threads
+  if (!currentBook.value?.id) return null
+  return threadStore.threads
     .filter(t => t.book_id === currentBook.value.id)
     .sort((a, b) => b.like_count - a.like_count)[0]
 })
 
 const nextSlide = () => {
-  if (index.value < books.length - 1) index.value++
+  if (index.value < books.value.length - 1) index.value++
 }
 const prevSlide = () => {
   if (index.value > 0) index.value--
 }
 
-// 자동 pagination
+// 자동 슬라이드
 let intervalId = null
-
-onMounted(() => {
+function startAutoSlide() {
   intervalId = setInterval(() => {
-    if (index.value < books.length - 1) {
+    if (index.value < books.value.length - 1) {
       nextSlide()
     } else {
-      index.value = 0 // 끝나면 다시 처음으로
+      index.value = 0
     }
-  }, 5000) // 5초마다 슬라이드
+  }, 5000)
+}
+
+onMounted(() => {
+  bookStore.fetchBooks()
+  threadStore.fetchThreads()
+  startAutoSlide()
 })
 
 onBeforeUnmount(() => {

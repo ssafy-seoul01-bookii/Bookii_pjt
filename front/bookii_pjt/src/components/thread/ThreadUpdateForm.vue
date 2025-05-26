@@ -50,6 +50,7 @@ const bookStore = useBookStore()
 const thread = computed(() =>
   threadStore.threads.find(t => t.id === threadId)
 )
+
 const book = computed(() =>
   bookStore.books.find(b => b.id === thread.value?.book_id)
 )
@@ -67,13 +68,20 @@ const coverImgUrl = computed(() =>
 )
 
 const onSubmit = () => {
-  if (thread.value) {
-    thread.value.content = content.value
-    thread.value.rank = rank.value
-    thread.value.updated_at = new Date().toISOString().slice(0, 10)
-    alert('수정이 완료되었습니다!')
-    router.back() // 모달 닫고 복귀
+  if (!thread.value) return
+
+  const updated = {
+    ...thread.value,
+    content: content.value,
+    rank: rank.value,
+    updated_at: new Date().toISOString().slice(0, 10)
   }
+
+  // ✅ 메서드 추출 (추후 서버 연동도 가능하게)
+  threadStore.updateThread(threadId, updated)
+
+  alert('수정이 완료되었습니다!')
+  router.back()
 }
 </script>
 

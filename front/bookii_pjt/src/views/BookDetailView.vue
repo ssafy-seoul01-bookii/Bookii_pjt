@@ -1,5 +1,4 @@
-<!-- BookDetailView -->
-
+<!-- BookDetailView.vue -->
 <template>
   <div>
     <!-- Main -->
@@ -9,7 +8,7 @@
 
         <!-- 쓰레드 작성 버튼 -->
         <button
-          v-if="user.isLoggedIn"
+          v-if="isLoggedIn"
           class="write-thread-btn"
           @click="goToCreateThread"
         >
@@ -47,7 +46,7 @@
     <Footer1 />
 
     <!-- 로그인 여부 분기 -->
-    <div class="section" v-if="user.isLoggedIn">
+    <div class="section" v-if="isLoggedIn">
       <h3>이웃이 남긴 쓰레드</h3>
       <ThreadList :threads="followingThreads" />
     </div>
@@ -80,34 +79,37 @@ const router = useRouter()
 const route = useRoute()
 const bookId = Number(route.params.bookId)
 
-const user = useUserStore()
-const book = useBookStore()
-const thread = useThreadStore()
+const userStore = useUserStore()
+const bookStore = useBookStore()
+const threadStore = useThreadStore()
 
 // fallback 키워드
 const defaultTags = ['감동', '추천', '인상깊음']
 
 // 현재 책
 const currentBook = computed(() =>
-  book.books.find(b => b.id === bookId)
+  bookStore.books.find(b => b.id === bookId)
 )
 
 // 현재 책에 해당하는 쓰레드
 const bookThreads = computed(() =>
-  thread.threads.filter(t => t.book_id === bookId)
+  threadStore.threads.filter(t => t.book_id === bookId)
 )
 
 // 이웃이 남긴 쓰레드
 const followingThreads = computed(() =>
-  thread.threads.filter(
-    t => t.book_id === bookId && user.following?.includes(t.user_id)
+  threadStore.threads.filter(
+    t => t.book_id === bookId && userStore.userInfo?.following?.includes(t.user_id)
   )
 )
 
 // 추천 도서
 const recommendedBooks = computed(() =>
-  book.books.filter(b => b.id !== bookId)
+  bookStore.books.filter(b => b.id !== bookId)
 )
+
+// 로그인 여부
+const isLoggedIn = computed(() => userStore.isLoggedIn)
 
 // 쓰레드 생성 -> ThreadCreateView 연결
 const goToCreateThread = () => {

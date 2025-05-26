@@ -14,10 +14,8 @@
 
 <script setup>
 import { useRouter, useRoute } from 'vue-router'
-import { useUserStore } from '@/stores/user'
 import { useUIStore } from '@/stores/ui'
-import { computed } from 'vue'
-import {nextTick } from 'vue'
+import { nextTick } from 'vue'
 
 const props = defineProps({
   thread: {
@@ -26,17 +24,11 @@ const props = defineProps({
   }
 })
 
-const route = useRoute()
 const router = useRouter()
-const userStore = useUserStore()
 const ui = useUIStore()
 
-const user = computed(() =>
-  userStore.users.find(u => u.id === props.thread.user_id)
-)
-
 const openThreadDetail = async () => {
-  ui.setBackgroundRoute(router.currentRoute.value.fullPath)  // ✅ 진짜 현재 경로!
+  ui.setBackgroundRoute(router.currentRoute.value.fullPath)
   await nextTick()
   router.push({ name: 'thread-detail', params: { id: props.thread.id } })
 }
@@ -53,6 +45,11 @@ const openThreadDetail = async () => {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.thread-card:hover {
+  transform: translateY(-4px);
 }
 
 .quote-icon {
@@ -86,4 +83,3 @@ const openThreadDetail = async () => {
   color: #555;
 }
 </style>
-

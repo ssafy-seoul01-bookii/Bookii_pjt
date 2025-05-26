@@ -24,12 +24,17 @@ import { useUserStore } from '@/stores/user'
 import  { useCommentStore } from '@/stores/comment'
 
 const props = defineProps({
-  comment: Object
+  comment: {
+    type: Object,
+    required: true
+  }
 })
 
 const userStore = useUserStore()
 const commentStore = useCommentStore()
-const user = computed(() => userStore.users.find(u => u.id === props.comment.user_id))
+const user = computed(() => {
+  return userStore.users.find(u => u.id === props.comment.user_id) || {}
+})
 
 const isLiked = ref(false)
 const likeCount = ref(Math.floor(Math.random() * 10) + 1) // 💡 더미용 랜덤
@@ -40,7 +45,7 @@ const toggleLike = () => {
 }
 
 const deleteComment = () => {
-  commentStore.comments = commentStore.comments.filter(c => c.id !== props.comment.id)
+  commentStore.deleteCommentById(props.comment.id)
 }
 
 </script>
