@@ -8,41 +8,45 @@
       <img :src="thread?.cover_img_url" :alt="thread?.title" />
 
       <!-- 책 정보 오버레이 -->
-      <router-link
-        v-if="book"
-        :to="{ name: 'book-detail', params: { bookId: book.id } }"
-        class="book-overlay"
-      >
-        <p class="book-title">{{ book.title }}</p>
-        <p class="book-author">{{ book.author_name }}</p>
-      </router-link>
+      <div class="book-overlay">
+        <router-link
+          v-if="book"
+          :to="{ name: 'book-detail', params: { bookId: book.id } }"
+          class="book-info"
+        >
+          <p class="book-title">{{ book.title }}</p>
+          <p class="book-author">{{ book.author_name }}</p>
+        </router-link>
+      
+        <!-- 좋아요 버튼 -->
+        <div class="like-overlay">
+          <button class="heart" :class="{ active: isLiked }" @click="toggleLike">❤️</button>
+          <span class="count">{{ likeCount }}</span>
+        </div>
+      </div>
     </div>
 
     <!-- 오른쪽: 내용 -->
     <div class="thread-right">
-      <!-- 작성자 정보 -->
-      <div class="header">
-        <span class="username">@{{ user?.username }}</span>
-        <h3 class="title">{{ thread?.title }}</h3>
-        <!-- <span class="book-title"> — {{ book?.title }}</span> -->
-      </div>
-
-      <!-- 쓰레드 내용 -->
-      <div class="content">
-        <p>{{ thread?.content }}</p>
-      </div>
-
-      <!-- 댓글 리스트 -->
-      <CommentList v-if="thread" :thread-id="thread.id"></CommentList>
-
-      <!-- 좋아요 -->
-      <div class="like-section">
-        <button class="heart" :class="{ active: isLiked }" @click="toggleLike">❤️</button>
-        <span class="count">{{ likeCount }}</span>
+      <div class="scroll-area">
+        <!-- 작성자 정보 -->
+        <div class="header">
+          <span class="username">@{{ user?.username }}</span>
+          <h3 class="title">{{ thread?.title }}</h3>
+          <!-- <span class="book-title"> — {{ book?.title }}</span> -->
+        </div>
+  
+        <!-- 쓰레드 내용 -->
+        <div class="content">
+          <p>{{ thread?.content }}</p>
+        </div>
+  
+        <!-- 댓글 리스트 -->
+        <CommentList v-if="thread" :thread-id="thread.id"></CommentList>
       </div>
 
       <!-- 댓글작성 -->
-      <div>
+      <div class="comment-fixed">
         <CommentCreate v-if="thread" :thread-id="thread.id" ></CommentCreate>
       </div>
     </div>
@@ -95,7 +99,7 @@ watch(thread, (newThread) => {
   width: 100%;
   max-width: 1200px;
   height: 80vh;
-  background: #fff;
+  background: #FFF7E4; /* ✅ 요구사항 1 */
   border-radius: 12px;
   overflow: hidden;
 }
@@ -116,54 +120,108 @@ watch(thread, (newThread) => {
   height: 100%;
   object-fit: cover;
 }
-
-/* hover 효과로 오버레이 표시 */
-.thread-left:hover ::v-deep(.book-overlay) {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .book-overlay {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.thread-left:hover .book-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.book-info {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 0.75rem 1rem;
   border-radius: 6px;
   color: white;
   text-decoration: none;
-  z-index: 10;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
+  display: block;
+}
 
-  p {
-    margin: 0;
-    line-height: 1.4;
-  }
+.book-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+}
 
-  .book-title {
-    font-weight: bold;
-    font-size: 1rem;
-  }
+.book-author {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin: 0;
+}
 
-  .book-author {
-    font-size: 0.85rem;
-    opacity: 0.9;
-  }
+/* 좋아요 버튼도 이미지 안에 */
+.like-overlay {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.heart {
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ddd;
+  transition: color 0.2s;
+}
+
+.heart.active {
+  color: #FF6B6B;
+}
+
+.count {
+  font-size: 0.9rem;
+  color: #f0f0f0;
 }
 
 /* ===== 오른쪽 영역 ===== */
 .thread-right {
   width: 40%;
-  padding: 2rem 1rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 0;
+  background-color: #FFF7E4;
+}
+
+/* 스크롤되는 부분 */
+.scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2.5rem 1.5rem 1rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  overflow-y: auto;
+}
+
+/* 하단 고정 댓글 작성 폼 */
+.comment-fixed {
+  padding: 1rem 1rem 1rem 0;
+  background-color: #FFF7E4;
+  display: flex;
+  justify-content: center; /* ✅ 가운데 정렬 */
+}
+
+.comment-fixed form {
+  width: 100%;
+  max-width: 90%;
+  margin-top: -3px
 }
 
 .header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
   font-size: 1rem;
   font-weight: bold;
 }
@@ -173,28 +231,4 @@ watch(thread, (newThread) => {
   line-height: 1.5;
 }
 
-/* ===== 좋아요 버튼 ===== */
-.like-section {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.heart {
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #999;
-  transition: color 0.2s;
-}
-
-.heart.active {
-  color: red;
-}
-
-.count {
-  font-size: 0.95rem;
-  color: #444;
-}
 </style>
