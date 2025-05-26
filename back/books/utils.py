@@ -2,8 +2,13 @@ from openai import OpenAI
 
 import os
 
-OPENAI_API_KEY= os.environ.get("ALADDIN_API_KEY")
-client = OpenAI(api_key=os.environ.get("GPT_API_KEY"))
+from django.shortcuts import get_object_or_404, get_list_or_404
+
+from .models import Book, Thread
+
+OPENAI_API_KEY= os.environ.get("GPT_API_KEY")
+TTB_KEY = os.environ.get("ALADDIN_API_KEY")
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 def get_ai_thread_kw(context):
     thread_context = """
@@ -45,3 +50,15 @@ def get_thread_cover_img(content):
     )
     cover_img = response.data[0].url
     return cover_img
+
+def update_book_rank(book_pk):
+    book = get_object_or_404(Book, pk=book_pk)
+    total_rank = 0.0
+    cnt = 0
+    threads = get_list_or_404(Thread, book=book)
+    if threads:
+        for thread in threads:
+            total_rank += thread.rank
+            cnt += 1
+        book.rank = round(total_rank / cnt, 2)
+        book.save()

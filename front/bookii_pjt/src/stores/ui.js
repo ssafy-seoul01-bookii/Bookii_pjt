@@ -10,5 +10,11 @@ export const useUIStore = defineStore('ui', () => {
     backgroundRoute.value = route
   }
 
-  return { backgroundRoute, setBackgroundRoute }
+  const searchText = ref('')
+
+  return {
+    backgroundRoute,
+    setBackgroundRoute,
+    searchText,
+  }
 })

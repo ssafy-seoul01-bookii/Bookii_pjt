@@ -118,7 +118,8 @@ export const useUserStore = defineStore('user', () => {
     }
   ])
 
-  const accessToken = ref(null)
+  const accessToken = ref(false)
+  const userInfo = ref(null)
   const isLoggedIn = computed(() => !!accessToken.value)
 
   const setAccessToken = (token) => {
@@ -130,10 +131,26 @@ export const useUserStore = defineStore('user', () => {
     userInfo.value = null
   }
 
+  // 👉 로그인 함수 추가
+  const login = async ({ username, password }) => {
+    const foundUser = users.value.find(
+      (user) => user.username === username && user.password === password
+    )
+
+    if (foundUser) {
+      accessToken.value = 'dummy_token_' + foundUser.id  // 임의 토큰
+      userInfo.value = foundUser
+    } else {
+      throw new Error('아이디 또는 비밀번호가 일치하지 않습니다.')
+    }
+  }
+
   return {
     users,
     accessToken,
     isLoggedIn,
+    userInfo,
+    login,
     setAccessToken,
     clearSession
   }

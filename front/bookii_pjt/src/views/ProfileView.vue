@@ -16,8 +16,10 @@
           </p>
   
           <div class="action-buttons">
-            <button v-if="isOwnProfile" @click="goToEdit">프로필 수정</button>
-            <button v-else @click="toggleFollow">
+            <!-- 항상 프로필 수정 버튼 표시 -->
+            <button @click="goToEdit">프로필 수정</button>
+            <!-- 항상 팔로우 버튼도 표시 -->
+            <button @click="toggleFollow">
               {{ isFollowing ? '언팔로우' : '팔로우' }}
             </button>
           </div>
@@ -126,11 +128,12 @@ watch(lastItem, (el) => {
   }
 })
 
-// 라우터 이동
+// 프로필 수정 이동
 const goToEdit = () => {
   router.push({ name: 'profile-edit', params: { username } })
 }
 
+// 쓰레드 디테일 이동
 const goToThread = (id) => {
   router.push({ name: 'thread-detail', params: { id } })
 }

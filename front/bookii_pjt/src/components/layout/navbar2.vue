@@ -13,7 +13,12 @@
     <!-- 우측: 검색창 + 로그인/로그아웃 버튼 -->
     <div class="right">
       <div class="search-group">
-        <input v-model="searchText" type="text" placeholder="책 제목 검색" />
+        <input
+          v-model="searchText"
+          type="text"
+          placeholder="책 제목 검색"
+          @keydown.enter="goToSearch"
+          />
         <button @click="goToSearch">🔍</button>
       </div>
       <template v-if="isLoggedIn">
@@ -30,12 +35,19 @@
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useUserStore } from '@/stores/user'
+import { useUIStore } from '@/stores/ui'
 
 const router = useRouter()
 const user = useUserStore()
+const uiStore = useUIStore()
 
-const isLoggedIn = computed(() => !!user.accessToken)
-const searchText = ref('')
+const isLoggedIn = computed(() => user.isLoggedIn)
+
+// searchText -> pinia에서 전역 관리
+const searchText = computed({
+  get: () => uiStore.searchText,
+  set: val => uiStore.searchText = val
+})
 
 // 메뉴 버튼 클릭 이벤트 (필요 시 메뉴 확장 등 추가 가능)
 const toggleMenu = () => {
@@ -54,7 +66,8 @@ const goToLogin = () => {
 }
 
 const logout = () => {
-  user.accessToken = null
+  user.clearSession()
+  router.replace({ path: router.currentRoute.value.fullPath, query: { t: Date.now() } })
 }
 </script>
 
