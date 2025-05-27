@@ -33,7 +33,7 @@
         <h3># 키워드</h3>
         <div class="tag-list">
           <span
-            v-for="tag in currentBook.tags || defaultTags"
+            v-for="tag in bookKeywordTags"
             :key="tag"
             class="tag"
           >#{{ tag }}</span>
@@ -69,15 +69,16 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useUserStore } from '@/stores/user'
 import { useBookStore } from '@/stores/book'
 import { useThreadStore } from '@/stores/thread'
+import { useKeywordStore } from '@/stores/keyword'
 
 import ThreadList from '@/components/thread/ThreadList.vue'
 import BookList from '@/components/book/BookList.vue'
-import Footer1 from '@/components/layout/Footer1.vue'
+import Footer1 from '@/components/layout/footer1.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -86,9 +87,8 @@ const bookId = Number(route.params.bookId)
 const userStore = useUserStore()
 const bookStore = useBookStore()
 const threadStore = useThreadStore()
+const keywordStore = useKeywordStore()
 
-// fallback 키워드
-const defaultTags = ['감동', '추천', '인상깊음']
 
 // 현재 책
 const currentBook = computed(() =>
@@ -119,6 +119,16 @@ const isLoggedIn = computed(() => userStore.isLoggedIn)
 const goToCreateThread = () => {
   router.push({ name: 'thread-create', query: { bookId } })
 }
+
+onMounted(async () => {
+  await keywordStore.fetchBookKeywords(bookId)
+})
+
+// 진짜 키워드 뽑아내기
+const bookKeywordTags = computed(() => {
+  const allTags = keywordStore.bookKeywords.flatMap(book => book.keywords || [])
+  return [...new Set(allTags)]  // 중복 제거
+})
 </script>
 
 <style lang="scss" scoped>

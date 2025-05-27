@@ -3,7 +3,7 @@
 <template>
   <li class="thread-card" @click="openThreadDetail">
     <p class="quote-icon">“</p>
-    <p class="username">From_{{ thread.user || 'Unknown' }}</p>
+    <p class="username">From_{{ thread.username || 'Unknown' }}</p>
     <p class="content">{{ thread.content }}</p>
     <div class="meta">
       <span class="icon like">❤️ {{ thread.like_count }}</span>
