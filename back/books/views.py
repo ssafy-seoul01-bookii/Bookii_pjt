@@ -105,7 +105,14 @@ def get_threads(request, book_pk):
 # 쓰레드 상세 조회, 수정, 삭제
 @api_view(["GET", "PUT", "DELETE"])
 def get_update_delete_thread(request, book_pk, thread_pk):
-    thread = get_object_or_404(Thread, pk=thread_pk)
+    thread = (
+        Thread.objects
+        .annotate(
+            comment_count=Count("thread_comments", distinct=True),
+            like_count=Count("like_users", distinct=True),
+        )
+        .get(pk=thread_pk)
+    )
     if request.method == "GET":
         serializer = ThreadListSerializer(thread)
         return Response(serializer.data)
@@ -236,3 +243,15 @@ def get_user_threads(request, user_pk):
     threads = Thread.objects.filter(user=user)
     serializer = ThreadListSerializer(instance=threads, many=True)
     return Response(serializer.data)
+
+# 
+@api_view(["GET"])
+def get_related_books_by_keywords(request, book_pk):
+    try:
+        book = get_object_or_404(Book, pk=book_pk)
+        keywords = book.keyword.all()
+        related_books = Book.objects.filter(keyword__in=keywords).exclude(id=book.id).distinct()
+        serializer = BookListSerializer(instance=related_books, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    except Book.DoesNotExist:
+        return Response({"detail": "해당 책을 찾을 수 없습니다."}, status=status.HTTP_404_NOT_FOUND)

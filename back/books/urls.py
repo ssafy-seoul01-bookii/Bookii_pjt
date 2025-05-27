@@ -18,6 +18,7 @@ urlpatterns = [
     # 책 상세 페이지
     path("<int:book_pk>/get_keywords_books/", views.get_keywords_books),
     path("get_followings_threads/", views.get_followings_threads),
+    path("<int:book_pk>/get_related_books_by_keywords/", views.get_related_books_by_keywords),
 
     path("categories/", views.get_categories),
     path("keywords/", views.get_keywords),
