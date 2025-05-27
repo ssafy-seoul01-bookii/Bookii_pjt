@@ -45,6 +45,7 @@ class ThreadListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Thread
         fields = (
+            "id",
             "book",
             "user",
             "username",
