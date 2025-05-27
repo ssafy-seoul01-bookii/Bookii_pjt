@@ -5,6 +5,7 @@ import api from '@/lib/axios'
 
 export const useKeywordStore = defineStore('keyword', () => {
   const keywords = ref([])
+  const bookKeywords = ref([])
 
   const fetchKeywords = async () => {
     try {
@@ -14,9 +15,21 @@ export const useKeywordStore = defineStore('keyword', () => {
       console.error('키워드 불러오기 실패:', err)
     }
   }
+  
+  const fetchBookKeywords = async (bookId) => {
+    try {
+      const res = await api.get(`/books/${bookId}/get_keywords_books/`)
+      bookKeywords.value = res.data.keywords ?? []
+    } catch (err) {
+      console.error('키워드 기반 추천 책 불러오기 실패:', err)
+    }
+  }
+
 
   return {
     keywords,
-    fetchKeywords
+    bookKeywords,
+    fetchKeywords,
+    fetchBookKeywords,
   }
 })

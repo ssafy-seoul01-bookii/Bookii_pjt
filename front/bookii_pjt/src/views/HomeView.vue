@@ -62,16 +62,16 @@
      <template v-else> 
       <!-- 로그인x -->
       <div class="section">
-        <h3>평론가 3.0 이상 책</h3>
-        <BookList :books="bookStore.books"/>
+        <h3>{{ bookStore.criticUsername }}'s 평점 3.0 이상 책</h3>
+        <BookList :books="bookStore.criticBooks"/>
       </div>
       <div class="section">
         <h3>쓰레드 많은 순 정렬 책</h3>
-        <BookList :books="bookStore.books"/>
+        <BookList :books="bookStore.manyThreadBooks"/>
       </div>
       <div class="section">
-        <h3>쓰레드 테스트</h3>
-        <ThreadList :threads="threadStore.threads"/>
+        <h3>많은 사람들이 공감한 쓰레드</h3>
+        <ThreadList :threads="threadStore.sortedThreads"/>
       </div>
      </template>
   </div>
@@ -142,10 +142,14 @@ function startAutoSlide() {
 // 필수인자_bookId 추가
 onMounted(async () => {
   await bookStore.fetchBooks()
+  await bookStore.fetchCriticBooks()
+  await bookStore.fetchManyThreadBooks()
   const bookId = books.value[0]?.id
   if (bookId) {
     await threadStore.fetchThreads(bookId)
   }
+
+  await threadStore.fetchSortedThreads()
   startAutoSlide()
 })
 
