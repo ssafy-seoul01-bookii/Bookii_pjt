@@ -253,3 +253,11 @@ def change_book_background_img_file_name(request):
         cnt += 1
     
     return Response({"message": "ok"}, status=status.HTTP_200_OK)
+
+@api_view(["GET"])
+def change_book_background_img_file_name_again(request):
+    books = Book.objects.all()
+    for book in books:
+        book.background_img_url = f"books/background_imgs/{book.background_img_url}"
+        book.save()
+    return Response({"message": "ok"}, status=status.HTTP_200_OK)
