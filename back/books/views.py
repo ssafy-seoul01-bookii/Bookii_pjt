@@ -4,10 +4,17 @@ from rest_framework import status
 
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.db.models import Count, Q
+from django.core.files.base import ContentFile
+
+import requests
+import random
+from io import BytesIO
+from PIL import Image, UnidentifiedImageError
 
 from .models import Category, Book, Thread, Comment, Keyword
 from .serializers import CategoryListSerializer, KeywordListSerializer, BookListSerializer, ThreadListSerializer, CommentListSerializer, ThreadCreateSerializer, CommentCreateSerializer
-from .utils import get_thread_cover_img, update_book_rank
+from .utils import get_thread_cover_img, update_book_rank, is_valid_url
+from accounts.models import User
 
 # 카테고리 목록 조회
 @api_view(["GET"])
@@ -33,12 +40,29 @@ def get_books(request):
 # 평론가의 평점 3.0점 이상인 책
 @api_view(["GET"])
 def get_high_rank_book_by_critic(request):
-    pass
+    users = get_list_or_404(User)
+    
+    critics = [user for user in users if user.is_critic == "Y"]
+    if critics:
+        random_critic = random.choice(critics)
+        print(f"선택된 평론가: {random_critic.username}")
+    else:
+        print("평론가가 없습니다.")
+
+    # 해당 평론가가 작성한 Thread 중 rank ≥ 3.0인 Book의 ID 추출
+    high_rank_book_ids = Thread.objects.filter(
+        user=random_critic,
+        rank__gte=3.0
+    ).values_list("book_id", flat=True).distinct()
+    
+    # 해당 책 목록 조회
+    books = Book.objects.filter(id__in=high_rank_book_ids)
+    serializer = BookListSerializer(instance=books, many=True)
+    return Response(serializer.data)
 
 # 쓰레드가 많은 책
 @api_view(["GET"])
 def get_many_threads_book(request):
-    print(request.user)
     books = Book.objects.annotate(thread_count=Count("book_threads")).order_by("-thread_count")
     serializer = BookListSerializer(instance=books, many=True)
     return Response(serializer.data)
@@ -46,7 +70,9 @@ def get_many_threads_book(request):
 # 평점이 3.5점 이상인 책
 @api_view(["GET"])
 def get_high_rank_book(request):
-    pass
+    books = Book.objects.filter(rank__gte=3.5)
+    serializer = BookListSerializer(instance=books, many=True)
+    return Response(serializer.data)
 
 # 책 상세 조회
 @api_view(["GET"])
@@ -86,10 +112,28 @@ def get_update_delete_thread(request, book_pk, thread_pk):
 # 쓰레드 생성
 @api_view(["POST"])
 def create_thread(request, book_pk):
+    # 일단 저장
     book = get_object_or_404(Book, pk=book_pk)
     serializer = ThreadCreateSerializer(data=request.data)
+    content = request.data.get("content")
     if serializer.is_valid(raise_exception=True):
-        serializer.save(book=book)
+        thread = serializer.save(book=book)
+        cover_url = get_thread_cover_img(content)
+        print(cover_url)
+        if is_valid_url(cover_url):
+            try:
+                response = requests.get(cover_url, stream=True, timeout=5)
+                if response.status_code == 200 and 'image' in response.headers.get("Content-Type", ""):
+                    img = Image.open(response.raw)
+                    buffer = BytesIO()
+                    img.save(buffer, format="PNG")
+                    thread.cover_img_url.save(
+                        f"{thread.title[:10]}_cover.png", 
+                        ContentFile(buffer.getvalue()), 
+                    )
+            except (requests.RequestException, UnidentifiedImageError) as e:
+                print(f"[cover 저장 실패] {cover_url} - {e}")
+
         # 책 평점 재계산
         update_book_rank(book_pk)
         return Response(serializer.data, status=status.HTTP_201_CREATED)

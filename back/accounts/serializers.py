@@ -1,8 +1,5 @@
 from dj_rest_auth.registration.serializers import RegisterSerializer
-from dj_rest_auth.serializers import UserDetailsSerializer
 from rest_framework import serializers
-
-from accounts.models import User
 
 class CustomRegisterSerializer(RegisterSerializer):
     age = serializers.IntegerField(required=False,)
@@ -32,22 +29,3 @@ class CustomRegisterSerializer(RegisterSerializer):
         user.is_critic = self.validated_data.get("is_critic", "N")
         user.save()
         return user
-
-class CustomUserDetailsSerializer(UserDetailsSerializer):
-    age = serializers.IntegerField(allow_null=True,)
-    gender = serializers.CharField(allow_blank=True, allow_null=True,)
-    annual_reading_amount = serializers.IntegerField(allow_null=True,)
-    weekly_avg_reading_time = serializers.IntegerField(allow_null=True,)
-    profile_img_url = serializers.ImageField()
-    is_critic = serializers.CharField()
-    keyword = serializers.PrimaryKeyRelatedField(many=True, read_only=True,)
-    category = serializers.PrimaryKeyRelatedField(many=True, read_only=True,)
-    following = serializers.PrimaryKeyRelatedField(many=True, read_only=True,)
-
-    class Meta(UserDetailsSerializer.Meta):
-        model = User
-        fields = (
-            "id", "username", "email", "first_name", "last_name",
-            "age", "gender", "annual_reading_amount", "weekly_avg_reading_time",
-            "profile_img_url", "is_critic", "keyword", "category", "following",
-        )
