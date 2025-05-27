@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Category, Book, Thread, Comment, Keyword
+from accounts.models import User
 
 class CategoryListSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,37 +17,52 @@ class KeywordListSerializer(serializers.ModelSerializer):
 
 
 class BookListSerializer(serializers.ModelSerializer):
-    thread_count = serializers.SerializerMethodField()
+    thread_count = serializers.IntegerField(read_only=True)
+    keywords = serializers.SerializerMethodField()
+    categories = serializers.SerializerMethodField()
 
-    def get_thread_count(self, obj):
-        return obj.book_threads.count()
-    
     class Meta:
         model = Book
-        fields = "__all__"
+        fields = (
+            "id", "title", "description", "isbn", "cover_img_url",
+            "background_img_url", "publisher", "pub_date", "author_name",
+            "author_info", "author_profile_img_url", "audio_file", "rank",
+            "thread_count", "keywords", "categories",
+        )
+
+    def get_keywords(self, obj):
+        return [keyword.name for keyword in obj.keyword.all()]
+    def get_categories(self, obj):
+        return [category.name for category in obj.category.all()]
 
 
 
 class ThreadListSerializer(serializers.ModelSerializer):
-    comment_count = serializers.SerializerMethodField()
-    like_count = serializers.SerializerMethodField()
-
-    def get_comment_count(self, obj):
-        return obj.thread_comments.count()
-    def get_like_count(self, obj):
-        return obj.like_users.count()
+    comment_count = serializers.IntegerField(read_only=True)
+    like_count = serializers.IntegerField(read_only=True)
+    username = serializers.CharField(source="user.username", read_only=True)
     
     class Meta:
         model = Thread
-        fields = "__all__"
+        fields = (
+            "book",
+            "user",
+            "username",
+            "like_count",
+            "comment_count",
+            "title",
+            "content",
+            "cover_img_url",
+            "reading_date",
+            "created_at",
+            "updated_at",
+            "rank",
+        )
 
 
 
-class CommentListSerializer(serializers.ModelSerializer):        
-    like_count = serializers.SerializerMethodField()
-
-    def get_like_count(self, obj):
-        return obj.comment_like_set.count()
+class CommentListSerializer(serializers.ModelSerializer):
+    like_count = serializers.IntegerField(read_only=True)
     
     class Meta:
         model = Comment
@@ -71,3 +87,26 @@ class CommentCreateSerializer(serializers.ModelSerializer):
         fields = (
             "content",
         )
+
+
+
+class UserFollowCountSerializer(serializers.ModelSerializer):
+    follower_count = serializers.SerializerMethodField()
+    following_count = serializers.SerializerMethodField()
+
+    class Meta:
+        model = User
+        fields = (
+            "id",
+            "username",
+            "follower_count",
+            "following_count",
+        )
+
+    def get_follower_count(self, obj):
+        # 해당 유저를 follow하는 사람 수
+        return obj.followers.count()
+
+    def get_following_count(self, obj):
+        # 해당 유저가 follow하는 사람 수
+        return obj.followings.count()

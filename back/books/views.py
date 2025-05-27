@@ -1,9 +1,11 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.decorators import authentication_classes
+from rest_framework.authentication import TokenAuthentication
 
 from django.shortcuts import get_object_or_404, get_list_or_404
-from django.db.models import Count, Q
+from django.db.models import Count
 from django.core.files.base import ContentFile
 
 import requests
@@ -12,7 +14,7 @@ from io import BytesIO
 from PIL import Image, UnidentifiedImageError
 
 from .models import Category, Book, Thread, Comment, Keyword
-from .serializers import CategoryListSerializer, KeywordListSerializer, BookListSerializer, ThreadListSerializer, CommentListSerializer, ThreadCreateSerializer, CommentCreateSerializer
+from .serializers import CategoryListSerializer, KeywordListSerializer, BookListSerializer, ThreadListSerializer, CommentListSerializer, ThreadCreateSerializer, CommentCreateSerializer, UserFollowCountSerializer
 from .utils import get_thread_cover_img, update_book_rank, is_valid_url
 from accounts.models import User
 
@@ -39,7 +41,7 @@ def get_books(request):
 
 # 평론가의 평점 3.0점 이상인 책
 @api_view(["GET"])
-def get_high_rank_book_by_critic(request):
+def get_high_rank_books_by_critic(request):
     users = get_list_or_404(User)
     
     critics = [user for user in users if user.is_critic == "Y"]
@@ -58,19 +60,22 @@ def get_high_rank_book_by_critic(request):
     # 해당 책 목록 조회
     books = Book.objects.filter(id__in=high_rank_book_ids)
     serializer = BookListSerializer(instance=books, many=True)
-    return Response(serializer.data)
+    return Response({
+        "critic_username": random_critic.username,
+        "books": serializer.data,
+    })
 
 # 쓰레드가 많은 책
 @api_view(["GET"])
-def get_many_threads_book(request):
+def get_many_threads_books(request):
     books = Book.objects.annotate(thread_count=Count("book_threads")).order_by("-thread_count")
     serializer = BookListSerializer(instance=books, many=True)
     return Response(serializer.data)
 
 # 평점이 3.5점 이상인 책
 @api_view(["GET"])
-def get_high_rank_book(request):
-    books = Book.objects.filter(rank__gte=3.5)
+def get_high_rank_books(request):
+    books = Book.objects.filter(rank__gte=3.5).order_by("-rank")
     serializer = BookListSerializer(instance=books, many=True)
     return Response(serializer.data)
 
@@ -85,7 +90,15 @@ def get_book(request, book_pk):
 @api_view(["GET"])
 def get_threads(request, book_pk):
     book = get_object_or_404(Book, pk=book_pk)
-    threads = get_list_or_404(Thread, book=book)
+    # 댓글 수, 좋아요 수를 annotate로 포함
+    threads = (
+        Thread.objects
+        .filter(book=book)
+        .annotate(
+            comment_count=Count("thread_comments", distinct=True),
+            like_count=Count("like_users", distinct=True),
+        )
+    )
     serializer = ThreadListSerializer(instance=threads, many=True)
     return Response(serializer.data)
 
@@ -111,13 +124,13 @@ def get_update_delete_thread(request, book_pk, thread_pk):
 
 # 쓰레드 생성
 @api_view(["POST"])
+@authentication_classes([TokenAuthentication])
 def create_thread(request, book_pk):
-    # 일단 저장
     book = get_object_or_404(Book, pk=book_pk)
     serializer = ThreadCreateSerializer(data=request.data)
     content = request.data.get("content")
     if serializer.is_valid(raise_exception=True):
-        thread = serializer.save(book=book)
+        thread = serializer.save(book=book, user=request.user)
         cover_url = get_thread_cover_img(content)
         print(cover_url)
         if is_valid_url(cover_url):
@@ -164,14 +177,49 @@ def delete_comment(request, book_pk, thread_pk, comment_pk):
     comment.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)
 
-# 검색
-# @api_view(["GET"])
-# def search_books(request):
-#     query = request.GET.get("query", "")
-#     if not query:
-#         return Response({"message": "검색어를 입력해주세요."}, status=status.HTTP_400_BAD_REQUEST)
-#     books = Book.objects.filter(
-#         Q(title__icontains=query) | Q(author__icontains=query),
-#     )
-#     serializer = BookListSerializer(books, many=True)
-#     return Response(serializer.data)
+# 좋아요 순으로 쓰레드 목록 조회
+@api_view(["GET"])
+def get_threads_ordered_by_likes(request):
+    threads = Thread.objects.annotate(like_count=Count("thread_like")).order_by("-like_count", "-created_at")
+    serializer = ThreadListSerializer(instance=threads, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+# 팔로워, 팔로잉 카운트
+@api_view(["GET"])
+def get_user_follow_counts(request):
+    user = get_object_or_404(User, pk=request.user.id)
+    serializer = UserFollowCountSerializer(instance=user)
+    return Response(serializer.data)
+
+# 마지막 쓰레드 키워드로 도서 목록 조회
+@api_view(["GET"])
+def get_keywords_recommend_books_by_last_thread(request):
+    user = request.user
+    thread = Thread.objects.filter(user=user).order_by("-created_at").first()
+    if not thread:
+        return Response({"message": "작성한 쓰레드가 없습니다."}, status=404)
+    keywords = thread.book.keyword.all()
+    books = Book.objects.filter(keyword__in=keywords).exclude(id=thread.book.id).distinct()
+    serializer = BookListSerializer(instnace=books, many=True)
+    return Response(serializer.data)
+
+# 해당 책의 키워드로 도서 목록 조회
+@api_view(["GET"])
+def get_keywords_books(request, book_pk):
+    book = get_object_or_404(Book, pk=book_pk)
+    keywords = book.keyword.all()
+    books = Book.objects.filter(keyword__in=keywords).exclude(id=book.id).distinct()
+    serializer = BookListSerializer(instance=books, many=True)
+    return Response(serializer.data)
+
+# 팔로잉들의 쓰레드 목록 조회
+@api_view(["GET"])
+def get_followings_threads(request):
+    user = request.user
+    following_ids = user.followings.values_list("following_id", flat=True)
+    threads = Thread.objects.filter(user_id__in=following_ids).annotate(
+        comment_count=Count("thread_comments"),
+        like_count=Count("like_users")
+    ).order_by("-created_at")
+    serializer = ThreadListSerializer(instance=threads, many=True)
+    return Response(serializer.data)
