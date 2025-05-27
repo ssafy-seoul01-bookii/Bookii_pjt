@@ -4,8 +4,12 @@
     <!-- Main -->
     <div class="book-main">
       <div class="main-banner">
-        <img src="@/assets/dummy-banner.jpeg" alt="배경 이미지" class="bg-image" />
-
+        <img
+          :src="`${currentBook.background_img_url}`"
+          alt="배경 이미지"
+          class="bg-image"
+          @error="e => console.log('배경 이미지 로드 실패', e.target.src)"
+        />
         <!-- 쓰레드 작성 버튼 -->
         <button
           v-if="isLoggedIn"

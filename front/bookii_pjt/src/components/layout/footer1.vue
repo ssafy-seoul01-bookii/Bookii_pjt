@@ -17,10 +17,10 @@ const userStore = useUserStore()
 
 // 무작위 하나 선택
 const randomThread = computed(() => {
-  const threads = threadStore.threads
-  const users = userStore.users
+  const threads = threadStore.threads.value
+  const users = userStore.users.value
 
-  if (!threads.length) return null
+  if (!threads || threads.length === 0) return null
 
   const selected = threads[Math.floor(Math.random() * threads.length)]
   const user = users.find(user => user.id === selected.user_id)
