@@ -5,7 +5,10 @@
     <!-- 왼쪽: 이미지 -->
     <!-- 책 제목 + 저자 추가 -> BookDetail 이동 -->
     <div class="thread-left">
-      <img :src="thread?.cover_img_url" :alt="thread?.title" />
+    <img
+      :src="thread?.cover_img_url"
+      :alt="thread?.title"
+    />
 
       <!-- 책 정보 오버레이 -->
       <div class="book-overlay">
@@ -19,10 +22,10 @@
         </router-link>
       
         <!-- 좋아요 버튼 -->
-        <div class="like-overlay">
+        <!-- <div class="like-overlay">
           <button class="heart" :class="{ active: isLiked }" @click="toggleLike">❤️</button>
           <span class="count">{{ likeCount }}</span>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -31,7 +34,7 @@
       <div class="scroll-area">
         <!-- 작성자 정보 -->
         <div class="header">
-          <span class="username">@{{ user?.username }}</span>
+          <span class="username">@{{ thread?.username }}</span>
           <h3 class="title">{{ thread?.title }}</h3>
           
           <!-- 쓰레드 수정 버튼 -->
@@ -50,7 +53,7 @@
         </div>
   
         <!-- 댓글 리스트 -->
-        <CommentList v-if="thread" :thread-id="thread.id"></CommentList>
+        <CommentList v-if="thread" :thread-id="thread.id" :thread-user="user"></CommentList>
       </div>
 
       <!-- 댓글작성 -->
@@ -62,12 +65,13 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useThreadStore } from '@/stores/thread'
 import { useUserStore } from '@/stores/user'
 import { useBookStore } from '@/stores/book'
 import { useFollowStore } from '@/stores/follow'
+import { useCommentStore } from '@/stores/comment'
 
 import CommentList from '@/components/comment/CommentList.vue'
 import CommentCreate from '@/components/comment/CommentCreateForm.vue'
@@ -80,10 +84,14 @@ const threadStore = useThreadStore()
 const userStore = useUserStore()
 const bookStore = useBookStore()
 const followStore = useFollowStore()
+const commentStore = useCommentStore()
 
 const thread = computed(() => threadStore.threads.find(t => t.id === threadId))
-const user = computed(() => userStore.users.find(u => u.id === thread.value?.user_id))
-const book = computed(() => bookStore.books.find(b => b.id === thread.value?.book_id))
+// const user = computed(() => userStore.users.find(u => u.id === thread.value?.user_id))
+// const book = computed(() => bookStore.books.find(b => b.id === thread.value?.book_id))
+const user = computed(() => userStore.users.find(u => u.id === thread.value?.user))
+const book = computed(() => bookStore.books.find(b => b.id === thread.value?.book))
+const bookId = Number(route.query.bookId)
 
 // 좋아요 갯수 증가
 const isLiked = ref(false)
@@ -111,6 +119,16 @@ const isMine = computed(() =>
 const goToEditThread = () => {
   router.push({ name: 'thread-edit', params: { id: threadId } })
 }
+
+onMounted(async () => {
+  if (!thread.value) {
+    await threadStore.fetchThreadById(threadId, bookId)
+  }
+
+  if (threadId && bookId) {
+    await commentStore.fetchComments(threadId, bookId)
+  }
+})
 </script>
 
 <style scoped>

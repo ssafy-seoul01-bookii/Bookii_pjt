@@ -4,7 +4,7 @@
   <nav class="navbar2">
     <!-- 좌측: 햄버거 + 로고 -->
     <div class="left">
-      <button class="hamburger" @click="toggleMenu">☰</button>
+      <!-- <button class="hamburger" @click="toggleMenu">☰</button> -->
       <router-link :to="{ name: 'home' }">
         <img src="@/assets/004.png" alt="Bookii" class="logo" />
       </router-link>

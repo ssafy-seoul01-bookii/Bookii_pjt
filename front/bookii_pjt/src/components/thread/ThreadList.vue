@@ -5,13 +5,13 @@
     <div class="scroll-wrapper">
       <button class="scroll-btn left" @click="prev" :disabled="currentIndex <= 0">〈</button>
 
-      <div class="thread-list-items">
+      <ul class="thread-list-items">
         <ThreadListItem
           v-for="thread in visibleThreads"
           :key="thread.id"
           :thread="thread"
-        />
-      </div>
+       />
+      </ul>
 
       <button
         class="scroll-btn right"
@@ -59,15 +59,17 @@ const prev = () => {
 }
 
 .thread-list {
+  width: 100%; 
   margin: 1rem 0;
 }
 
 .thread-list-items {
   display: flex;
+  flex: 1;
+  flex-wrap: nowrap;
+  width: 100%;
   gap: 1rem;
   overflow-x: auto;
-  padding: 0;
-  margin: 0;
 }
 
 .scroll-btn {

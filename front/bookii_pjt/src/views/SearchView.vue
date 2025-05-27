@@ -81,25 +81,44 @@ const searchedBooks = computed(() =>
 )
 
 // 태그로 거르기
+// const filteredBooks = computed(() => {
+//   return searchedBooks.value.filter(book => {
+//     const bookCategories = book.category ?? []
+//     const bookKeywords = book.keyword ?? []
+
+//     // 카테고리 필터
+//     const categoryMatch =
+//       selectedCategories.value.length === 0 ||
+//       selectedCategories.value.every(catId => bookCategories.includes(catId))
+
+//     // 키워드 필터
+//     const keywordMatch =
+//       selectedKeywords.value.length === 0 ||
+//       selectedKeywords.value.every(keyId => bookKeywords.includes(keyId))
+
+//     return categoryMatch && keywordMatch
+//   })
+// })
 const filteredBooks = computed(() => {
+  // 선택된 카테고리와 키워드를 숫자로 변환
+  const selectedCatIds = selectedCategories.value.map(Number)
+  const selectedKeyIds = selectedKeywords.value.map(Number)
+
   return searchedBooks.value.filter(book => {
     const bookCategories = book.category ?? []
     const bookKeywords = book.keyword ?? []
 
-    // 카테고리 필터
     const categoryMatch =
-      selectedCategories.value.length === 0 ||
-      selectedCategories.value.every(catId => bookCategories.includes(catId))
+      selectedCatIds.length === 0 ||
+      selectedCatIds.every(catId => bookCategories.includes(catId))
 
-    // 키워드 필터
     const keywordMatch =
-      selectedKeywords.value.length === 0 ||
-      selectedKeywords.value.every(keyId => bookKeywords.includes(keyId))
+      selectedKeyIds.length === 0 ||
+      selectedKeyIds.every(keyId => bookKeywords.includes(keyId))
 
     return categoryMatch && keywordMatch
   })
 })
-
 
 onMounted(() => {
   bookStore.fetchBooks()
