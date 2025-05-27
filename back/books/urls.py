@@ -38,4 +38,5 @@ urlpatterns = [
     path("insert_book_ranks/", creates.insert_book_ranks),
     path("insert_book_background_img/", creates.insert_book_background_img),
     path("change_book_background_img_file_name/", creates.change_book_background_img_file_name),
+    path("change_book_background_img_file_name_again/", creates.change_book_background_img_file_name_again),
 ]
