@@ -8,7 +8,7 @@ export const useKeywordStore = defineStore('keyword', () => {
 
   const fetchKeywords = async () => {
     try {
-      const res = await api.get('/keywords/')
+      const res = await api.get('/books/keywords/')
       keywords.value = res.data
     } catch (err) {
       console.error('키워드 불러오기 실패:', err)

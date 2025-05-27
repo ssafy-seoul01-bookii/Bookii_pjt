@@ -1,60 +1,9 @@
-// ✅ User Store
-// import { defineStore } from 'pinia'
-// import { ref, computed } from 'vue'
-// import api from '@/lib/axios'
-
-// export const useUserStore = defineStore('user', () => {
-//   const users = ref([])
-//   const accessToken = ref(null)
-//   const userInfo = ref(null)
-//   const isLoggedIn = computed(() => !!accessToken.value)
-
-//   const fetchUsers = async () => {
-//     try {
-//       const res = await api.get('/users/')
-//       users.value = res.data
-//     } catch (err) {
-//       console.error('유저 불러오기 실패:', err)
-//     }
-//   }
-
-//   const setAccessToken = (token) => {
-//     accessToken.value = token
-//   }
-
-//   const clearSession = () => {
-//     accessToken.value = null
-//     userInfo.value = null
-//   }
-
-//   const login = async ({ username, password }) => {
-//     const foundUser = users.value.find(
-//       (user) => user.username === username && user.password === password
-//     )
-
-//     if (foundUser) {
-//       accessToken.value = 'dummy_token_' + foundUser.id
-//       userInfo.value = foundUser
-//     } else {
-//       throw new Error('아이디 또는 비밀번호가 일치하지 않습니다.')
-//     }
-//   }
-
-//   return {
-//     users,
-//     accessToken,
-//     isLoggedIn,
-//     userInfo,
-//     login,
-//     fetchUsers,
-//     setAccessToken,
-//     clearSession
-//   }
-// })
 // ✅ User Store (백엔드 연동)
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import api from '@/lib/axios'
+import auth from '@/lib/auth_axios'
+import axios from 'axios'
 
 export const useUserStore = defineStore('user', () => {
   const users = ref([])
@@ -67,7 +16,7 @@ export const useUserStore = defineStore('user', () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await api.get('/users/')
+      const res = await auth.get('/accounts/user/')
       users.value = res.data
     } catch (err) {
       console.error('유저 불러오기 실패:', err)
@@ -76,9 +25,12 @@ export const useUserStore = defineStore('user', () => {
 
   const login = async ({ username, password }) => {
     try {
-      const res = await api.post('/auth/login/', { username, password })
-      accessToken.value = res.data.access_token
-      userInfo.value = res.data.user
+      const res = await auth.post('/accounts/login/', { username, password })
+      
+      console.log(accessToken.value);
+      accessToken.value = res.data.key
+      console.log("로그인 성공");
+      console.log(accessToken.value);
       localStorage.setItem('accessToken', res.data.access_token)
     } catch (err) {
       console.error('로그인 실패:', err)
@@ -88,7 +40,7 @@ export const useUserStore = defineStore('user', () => {
 
   const signup = async (payload) => {
     try {
-      const res = await api.post('/auth/signup/', payload)
+      const res = await api.post('/accounts/signup/', payload)
       return res.data
     } catch (err) {
       console.error('회원가입 실패:', err)

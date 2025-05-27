@@ -1,25 +1,4 @@
 // stores/Book.js
-// import { defineStore } from 'pinia'
-// import { ref } from 'vue'
-// import api from '@/lib/axios'
-
-// export const useBookStore = defineStore('book', () => {
-//   const books = ref([])
-
-//   const fetchBooks = async () => {
-//     try {
-//       const res = await api.get('/books/')  
-//       books.value = res.data
-//     } catch (err) {
-//       console.error('책 불러오기 실패:', err)
-//     }
-//   }
-
-//   return {
-//     books,
-//     fetchBooks
-//   }
-// })
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import api from '@/lib/axios'

@@ -139,9 +139,13 @@ function startAutoSlide() {
   }, 5000)
 }
 
-onMounted(() => {
-  bookStore.fetchBooks()
-  threadStore.fetchThreads()
+// 필수인자_bookId 추가
+onMounted(async () => {
+  await bookStore.fetchBooks()
+  const bookId = books.value[0]?.id
+  if (bookId) {
+    await threadStore.fetchThreads(bookId)
+  }
   startAutoSlide()
 })
 

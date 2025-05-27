@@ -5,9 +5,9 @@
       <h3>태그검색</h3>
       <div class="filter-group">
         <p class="filter-title">카테고리</p>
-        <div v-for="genre in categoryStore.categories" :key="genre.id">
-          <input type="checkbox" :value="genre.name" v-model="selectedTags" />
-          <label>{{ genre.name }}</label>
+        <div v-for="category in categoryStore.categories" :key="category.id">
+          <input type="checkbox" :value="category.id" v-model="selectedCategories" />
+          <label>{{ category.name }}</label>
         </div>
       </div>
 
@@ -16,7 +16,7 @@
       <div class="filter-group">
         <p class="filter-title">키워드</p>
         <div v-for="keyword in keywordStore.keywords" :key="keyword.id">
-          <input type="checkbox" :value="keyword.name" v-model="selectedTags" />
+          <input type="checkbox" :value="keyword.id" v-model="selectedKeywords" />
           <label>{{ keyword.name }}</label>
         </div>
       </div>
@@ -57,7 +57,8 @@ const categoryStore = useCategoryStore()
 const keywordStore = useKeywordStore()
 
 const query = ref(route.query.q || '')
-const selectedTags = ref([])
+const selectedCategories = ref([])
+const selectedKeywords = ref([])
 
 // 검색어 반영
 watch(
@@ -67,19 +68,38 @@ watch(
   }
 )
 
+// search로 거르기
 const searchedBooks = computed(() =>
-  bookStore.books.filter(book =>
-    book.title.toLowerCase().includes(query.value.toLowerCase())
-  )
+  bookStore.books.filter(book => {
+    const lowerQuery = query.value.toLowerCase()
+    return (
+      (book.title ?? '').toLowerCase().includes(lowerQuery) ||
+      (book.author_name ?? '').toLowerCase().includes(lowerQuery) ||
+      (book.description ?? '').toLowerCase().includes(lowerQuery)
+    )
+  })
 )
 
+// 태그로 거르기
 const filteredBooks = computed(() => {
-  if (selectedTags.value.length === 0) return searchedBooks.value
+  return searchedBooks.value.filter(book => {
+    const bookCategories = book.category ?? []
+    const bookKeywords = book.keyword ?? []
 
-  return searchedBooks.value.filter(book =>
-    selectedTags.value.every(tag => (book.tags ?? []).includes(tag))
-  )
+    // 카테고리 필터
+    const categoryMatch =
+      selectedCategories.value.length === 0 ||
+      selectedCategories.value.every(catId => bookCategories.includes(catId))
+
+    // 키워드 필터
+    const keywordMatch =
+      selectedKeywords.value.length === 0 ||
+      selectedKeywords.value.every(keyId => bookKeywords.includes(keyId))
+
+    return categoryMatch && keywordMatch
+  })
 })
+
 
 onMounted(() => {
   bookStore.fetchBooks()
