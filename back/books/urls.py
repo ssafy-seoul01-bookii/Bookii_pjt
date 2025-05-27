@@ -14,7 +14,6 @@ urlpatterns = [
     # 로그인 상태일 때
     path("get_threads_ordered_by_likes/", views.get_threads_ordered_by_likes),
     path("get_keywords_recommend_books_by_last_thread/", views.get_keywords_recommend_books_by_last_thread),
-    # path("get_greatest_recommendation/", views.get_greatest_recommendation),
 
     # 책 상세 페이지
     path("<int:book_pk>/get_keywords_books/", views.get_keywords_books),
