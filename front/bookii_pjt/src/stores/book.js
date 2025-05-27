@@ -21,6 +21,8 @@ export const useBookStore = defineStore('book', () => {
         cover_img_url: book.cover_img_url ? baseUrl + book.cover_img_url : '',
         background_img_url: book.background_img_url ? baseUrl + book.background_img_url : '',
         author_profile_img_url: book.author_profile_img_url ? baseUrl + book.author_profile_img_url : '',
+        category: (book.category || []).map(cat => cat.id),  
+        keyword: (book.keyword || []).map(kw => kw.id),      
       }))
     } catch (err) {
       console.error('책 불러오기 실패:', err)

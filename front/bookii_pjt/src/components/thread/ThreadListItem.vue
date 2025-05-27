@@ -2,7 +2,7 @@
 
 <template>
   <li class="thread-card" @click="openThreadDetail">
-    <p class="quote-icon">“</p>
+    <p class="quote-icon">"</p>
     <p class="username">From_{{ thread.username || 'Unknown' }}</p>
     <p class="content">{{ thread.content }}</p>
     <div class="meta">
@@ -28,26 +28,34 @@ const router = useRouter()
 const ui = useUIStore()
 
 const openThreadDetail = async () => {
+  console.log(props.thread.id);
+  
   ui.setBackgroundRoute(router.currentRoute.value.fullPath)
   await nextTick()
-  router.push({ name: 'thread-detail', params: { id: props.thread.id } })
+  // router.push({ name: 'thread-detail', params: { id: props.thread.id } })
+  // router.push({ name: 'thread-detail', params: { id: thread.id }, query: { bookId: thread.book } })
+  router.push({ 
+  name: 'thread-detail', 
+  params: { id: props.thread.id }, 
+  query: { bookId: props.thread.book }  // ✅ 올바르게 props에서 꺼냄
+})
+
 }
 </script>
 
 <style scoped>
 .thread-card {
-  width: 220px;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+  list-style-type: none;
+  flex: 1;
+  min-width: 220px;
+  max-width: 320px;
+  margin-right: 2rem; 
 }
+
+.thread-list-items > :last-child {
+  margin-right: 0 !important; 
+}
+
 .thread-card:hover {
   transform: translateY(-4px);
 }

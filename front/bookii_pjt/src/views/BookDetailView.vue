@@ -121,13 +121,16 @@ const goToCreateThread = () => {
 }
 
 onMounted(async () => {
+  await threadStore.fetchThreads(bookId)
   await keywordStore.fetchBookKeywords(bookId)
 })
 
 // 진짜 키워드 뽑아내기
 const bookKeywordTags = computed(() => {
-  const allTags = keywordStore.bookKeywords.flatMap(book => book.keywords || [])
-  return [...new Set(allTags)]  // 중복 제거
+  return keywordStore.bookKeywords
+    .flatMap(book => book.keywords || [])
+    .filter(Boolean)  // falsy 값 제거
+    .filter((v, i, self) => self.indexOf(v) === i)  // 중복 제거
 })
 </script>
 
