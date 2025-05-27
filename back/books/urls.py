@@ -9,6 +9,7 @@ urlpatterns = [
     path("get_high_rank_book_by_critic/", views.get_high_rank_book_by_critic),
     path("get_many_threads_book/", views.get_many_threads_book),
     path("get_high_rank_book/", views.get_high_rank_book),
+    path("get_high_rank_book_by_critic/", views.get_high_rank_book),
     path("<int:book_pk>/", views.get_book),
     path("<int:book_pk>/threads/", views.get_threads),
     path("<int:book_pk>/threads/create_thread/", views.create_thread),

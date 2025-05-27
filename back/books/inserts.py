@@ -1,6 +1,3 @@
-from django.core.validators import URLValidator
-from django.core.exceptions import ValidationError
-
 from openai import OpenAI
 from pydantic import BaseModel
 from gtts import gTTS
@@ -21,14 +18,6 @@ class Author_info(BaseModel):
     books: list[str]
     summary: str
     thumbnail: str
-
-def is_valid_url(url):
-    validate = URLValidator()
-    try:
-        validate(url)
-        return True
-    except ValidationError:
-        return False
 
 def get_author_info(author_name):
     wiki_api_url = f"https://ko.wikipedia.org/api/rest_v1/page/summary/{author_name}"
