@@ -178,6 +178,16 @@ CORS_ALLOW_CREDENTIALS = True
 
 # dj-rest-auth
 SITE_ID = 1
+REST_FRAMEWORK = {
+    # Authentication
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    # permission
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+}
 
 
 

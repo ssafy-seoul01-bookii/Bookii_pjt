@@ -10,8 +10,9 @@ from PIL import Image, UnidentifiedImageError
 import os
 import re
 
-from .models import Category, Book, Keyword, Book_category, Book_keyword, Thread
-from .inserts import get_bestseller_list, get_item_new_special_list, get_new_category, get_keyword_list, get_author_info, get_book_audio_file, is_valid_url, get_thread_cover_img, insert_book_keyword, insert_book_category
+from .models import Category, Book, Keyword, Thread
+from .inserts import get_bestseller_list, get_item_new_special_list, get_new_category, get_keyword_list, get_author_info, get_book_audio_file, get_thread_cover_img, insert_book_keyword, insert_book_category
+from .utils import is_valid_url
 
 category_items = [
     "소설/시/희곡", "경제/경영", "자기계발", "인문/교양",

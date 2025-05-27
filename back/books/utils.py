@@ -2,6 +2,8 @@ from openai import OpenAI
 
 import os
 
+from django.core.validators import URLValidator
+from django.core.exceptions import ValidationError
 from django.shortcuts import get_object_or_404, get_list_or_404
 
 from .models import Book, Thread
@@ -9,6 +11,14 @@ from .models import Book, Thread
 OPENAI_API_KEY= os.environ.get("GPT_API_KEY")
 TTB_KEY = os.environ.get("ALADDIN_API_KEY")
 client = OpenAI(api_key=OPENAI_API_KEY)
+
+def is_valid_url(url):
+    validate = URLValidator()
+    try:
+        validate(url)
+        return True
+    except ValidationError:
+        return False
 
 def get_ai_thread_kw(context):
     thread_context = """
