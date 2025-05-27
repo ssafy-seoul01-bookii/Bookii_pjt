@@ -15,7 +15,7 @@ from PIL import Image, UnidentifiedImageError
 
 from .models import Category, Book, Thread, Comment, Keyword
 from .serializers import CategoryListSerializer, KeywordListSerializer, BookListSerializer, ThreadListSerializer, CommentListSerializer, ThreadCreateSerializer, CommentCreateSerializer, UserFollowCountSerializer
-from .utils import get_thread_cover_img, update_book_rank, is_valid_url
+from .utils import get_thread_cover_img, update_book_rank, is_valid_url, get_greatest_recommendation
 from accounts.models import User
 
 # 카테고리 목록 조회
@@ -124,7 +124,6 @@ def get_update_delete_thread(request, book_pk, thread_pk):
 
 # 쓰레드 생성
 @api_view(["POST"])
-@authentication_classes([TokenAuthentication])
 def create_thread(request, book_pk):
     book = get_object_or_404(Book, pk=book_pk)
     serializer = ThreadCreateSerializer(data=request.data)
@@ -180,14 +179,20 @@ def delete_comment(request, book_pk, thread_pk, comment_pk):
 # 좋아요 순으로 쓰레드 목록 조회
 @api_view(["GET"])
 def get_threads_ordered_by_likes(request):
-    threads = Thread.objects.annotate(like_count=Count("thread_like")).order_by("-like_count", "-created_at")
+    threads = Thread.objects.annotate(
+        like_count=Count("like_users"),
+        comment_count=Count("thread_comments"),
+    ).order_by(
+        "-like_count",
+        "-created_at",
+    )
     serializer = ThreadListSerializer(instance=threads, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 # 팔로워, 팔로잉 카운트
 @api_view(["GET"])
-def get_user_follow_counts(request):
-    user = get_object_or_404(User, pk=request.user.id)
+def get_user_follow_counts(request, user_pk):
+    user = get_object_or_404(User, pk=user_pk)
     serializer = UserFollowCountSerializer(instance=user)
     return Response(serializer.data)
 
@@ -223,3 +228,22 @@ def get_followings_threads(request):
     ).order_by("-created_at")
     serializer = ThreadListSerializer(instance=threads, many=True)
     return Response(serializer.data)
+
+# 프로필 페이지 쓰레드 목록 조회
+@api_view(["GET"])
+def get_user_threads(request, user_pk):
+    user = get_object_or_404(User, pk=user_pk)
+    threads = Thread.objects.filter(user=user)
+    serializer = ThreadListSerializer(instance=threads, many=True)
+    return Response(serializer.data)
+
+# 로그인 한 상태에서 사용자 맞춤 책 추천 목록
+# @api_view(["GET"])
+# def get_greatest_recommendation(request):
+#     books = get_list_or_404(Book)
+#     user = request.user
+#     print(user.username)
+#     print(user.age)
+    # recommendation_books = get_greatest_recommendation(books, user)
+    # serializer = BookListSerializer(instance=recommendation_books, many=True)
+    # return Response()
