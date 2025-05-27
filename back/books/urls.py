@@ -5,6 +5,7 @@ from . import creates
 urlpatterns = [
     path("get_user_follow_count/<int:user_pk>/", views.get_user_follow_counts),
     path("get_user_threads/<int:user_pk>/", views.get_user_threads),
+    path("users/<int:user_pk>/", views.get_user_info),
     
     # 로그인 안 한 상태일 때
     path("get_many_threads_book/", views.get_many_threads_books),

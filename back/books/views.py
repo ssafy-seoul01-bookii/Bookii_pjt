@@ -244,7 +244,7 @@ def get_user_threads(request, user_pk):
     serializer = ThreadListSerializer(instance=threads, many=True)
     return Response(serializer.data)
 
-# 
+# 키워드에 맞춘 책 추천
 @api_view(["GET"])
 def get_related_books_by_keywords(request, book_pk):
     try:
