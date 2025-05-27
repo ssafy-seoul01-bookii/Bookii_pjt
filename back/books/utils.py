@@ -1,7 +1,6 @@
 from openai import OpenAI
 
 import os
-import json
 
 from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
@@ -73,25 +72,3 @@ def update_book_rank(book_pk):
             cnt += 1
         book.rank = round(total_rank / cnt, 2)
         book.save()
-
-# def get_greatest_recommendation(books, user):
-#     prompt = f"books: {books}, user: {user}"
-#     response = client.chat.completions.create(
-#         model="gpt-4o-mini",
-#         messages=[
-#             {
-#                 "role": "system",
-#                 "content":
-#                 """
-#                 """
-#             },
-#             {
-#                 "role": "user",
-#                 "content": prompt,
-#             },
-#         ],
-#         temperature=1,
-#         max_tokens=256,
-#     )
-#     book_list = response.choices[0].message.content
-#     return book_list
