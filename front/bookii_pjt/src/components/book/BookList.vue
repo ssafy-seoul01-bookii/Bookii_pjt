@@ -59,13 +59,16 @@ const prev = () => {
   position: relative;
 }
 
+.book-list {
+  width: 100%; // ✅ 부모도 꽉 차도록
+}
+
 .book-list-items {
   display: flex;
+  flex: 1;
+  flex-wrap: nowrap; // ✅ 수평 슬라이드 유지
   gap: 1.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
+  width: 100%;
 }
 
 .scroll-btn {

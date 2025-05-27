@@ -64,10 +64,20 @@ class ThreadListSerializer(serializers.ModelSerializer):
 
 class CommentListSerializer(serializers.ModelSerializer):
     like_count = serializers.IntegerField(read_only=True)
-    
+    username = serializers.CharField(source="user.username", read_only=True,)
+
     class Meta:
         model = Comment
-        fields = "__all__"
+        fields = (
+            "id",
+            "like_count",
+            "thread",
+            "user",
+            "username",
+            "content",
+            "created_at",
+            "updated_at",
+        )
 
 
 

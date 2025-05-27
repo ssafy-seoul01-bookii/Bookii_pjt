@@ -6,6 +6,7 @@
       v-for="comment in filteredComments"
       :key="comment.id"
       :comment="comment"
+      :thread-user="threadUser"
     />
   </div>
 </template>
@@ -19,14 +20,15 @@ const props = defineProps({
   threadId: {
     type: Number,
     required: true
-  }
+  },
+  threadUser: Object,
 })
 
 const commentStore = useCommentStore()
 
 const filteredComments = computed(() => {
   if (!props.threadId) return []
-  return commentStore.comments.filter(c => c.thread_id === props.threadId)
+  return commentStore.comments.filter(c => c.thread === props.threadId)
 })
 </script>
 

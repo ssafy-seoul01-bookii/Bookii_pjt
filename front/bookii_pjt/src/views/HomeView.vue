@@ -13,7 +13,7 @@
         <div class="left-quote">
           <p class="quote-mark">“</p>
           <p class="quote-text">{{ currentThread?.content || '내용 없음' }}</p>
-          <p class="quote-author">@{{ currentThread?.user_name || '익명' }}</p>
+          <p class="quote-author">@{{ currentThread?.username || '익명' }}</p>
         </div>
         
         <!-- 중앙: 책 커버 -->
@@ -78,7 +78,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useUIStore } from '@/stores/ui'
 import { useUserStore } from '@/stores/user'
@@ -116,7 +116,7 @@ const index = ref(0)
 const currentThread = computed(() => {
   if (!currentBook.value?.id) return null
   return threadStore.threads
-    .filter(t => t.book_id === currentBook.value.id)
+    .filter(t => t.book === currentBook.value.id)
     .sort((a, b) => b.like_count - a.like_count)[0]
 })
 
@@ -140,17 +140,38 @@ function startAutoSlide() {
 }
 
 // 필수인자_bookId 추가
+// onMounted(async () => {
+//   await bookStore.fetchBooks()
+//   await bookStore.fetchCriticBooks()
+//   await bookStore.fetchManyThreadBooks()
+//   const bookId = books.value[0]?.id
+//   if (bookId) {
+//     await threadStore.fetchThreads(bookId)
+//   }
+
+//   await threadStore.fetchSortedThreads()
+//   startAutoSlide()
+// })
 onMounted(async () => {
   await bookStore.fetchBooks()
   await bookStore.fetchCriticBooks()
   await bookStore.fetchManyThreadBooks()
-  const bookId = books.value[0]?.id
-  if (bookId) {
-    await threadStore.fetchThreads(bookId)
+
+  const firstBookId = books.value[0]?.id
+  if (firstBookId) {
+    await threadStore.fetchThreads(firstBookId)
   }
 
   await threadStore.fetchSortedThreads()
   startAutoSlide()
+})
+
+watch(currentBook, async (newBook) => {
+  if (!newBook) return
+  const exists = threadStore.threads.some(t => t.book === newBook.id)
+  if (!exists) {
+    await threadStore.fetchThreads(newBook.id)
+  }
 })
 
 onBeforeUnmount(() => {
@@ -160,9 +181,9 @@ onBeforeUnmount(() => {
 
 <style lang="scss" scoped>
 .section {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  width: 100%;
+  padding: 2rem 4vw; // 좌우 여백만 주고 중앙 정렬 해제
+  box-sizing: border-box;
 }
 
 // main용
@@ -201,9 +222,18 @@ onBeforeUnmount(() => {
   font-weight: bold;
   margin-top: 0.5rem;
 }
+.book-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
 .book-image img {
-  max-width: 250px;
-  border-radius: 8px;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 .book-info {
   width: 200px;

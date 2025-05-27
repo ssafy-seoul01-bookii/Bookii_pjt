@@ -19,7 +19,7 @@ export const useKeywordStore = defineStore('keyword', () => {
   const fetchBookKeywords = async (bookId) => {
     try {
       const res = await api.get(`/books/${bookId}/get_keywords_books/`)
-      bookKeywords.value = res.data.keywords ?? []
+      bookKeywords.value = res.data ?? []  // ❌ res.data.keywords → ✅ res.data
     } catch (err) {
       console.error('키워드 기반 추천 책 불러오기 실패:', err)
     }

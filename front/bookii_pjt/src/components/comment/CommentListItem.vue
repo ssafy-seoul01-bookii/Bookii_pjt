@@ -3,9 +3,10 @@
 <template>
   <div class="comment-item">
     <!-- 좌측 : 프로필 + 내용 -->
-    <img :src="user?.profile_img_url" alt="프로필 이미지" class="avatar" />
+    <img :src="defaultProfileImg" alt="프로필 이미지" class="avatar" />
     <div class="comment-body">
-      <p class="username">@{{ user?.username }}</p>
+      <!-- back -> serializer 수정 필요 -->
+      <p class="username">@{{ comment.username }}</p>
       <p class="content">{{ comment.content }}</p>
       <p class="date">{{ comment.created_at }}</p>
     </div>
@@ -22,6 +23,7 @@
 import { ref, computed } from 'vue'
 import { useUserStore } from '@/stores/user'
 import  { useCommentStore } from '@/stores/comment'
+import defaultProfileImg from '@/assets/default_img.png'
 
 const props = defineProps({
   comment: {
@@ -32,9 +34,6 @@ const props = defineProps({
 
 const userStore = useUserStore()
 const commentStore = useCommentStore()
-const user = computed(() => {
-  return userStore.users.find(u => u.id === props.comment.user_id) || {}
-})
 
 const isLiked = ref(false)
 const likeCount = ref(Math.floor(Math.random() * 10) + 1) // 💡 더미용 랜덤
