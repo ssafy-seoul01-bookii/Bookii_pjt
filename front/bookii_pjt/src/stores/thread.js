@@ -5,14 +5,30 @@ import api from '@/lib/axios'
 
 export const useThreadStore = defineStore('thread', () => {
   const threads = ref([])
+  const bookThreads = ref([]) // bookId 기준 쓰레드
+  const followingThreads = ref([]) // 팔로잉 유저 쓰레드
+  const sortedThreads = ref([]) // 전체 쓰레드
 
   // 전체 쓰레드 불러오기
-  const fetchThreads = async () => {
+  const fetchThreads = async (bookId, followingUserIds = []) => {
     try {
-      const res = await api.get('/threads/')
+      const res = await api.get(`/books/${bookId}/threads/`)
       threads.value = res.data
+      followingThreads.value = res.data.filter(t =>
+        followingUserIds.includes(t.user_id)
+      )
     } catch (err) {
       console.error('쓰레드 불러오기 실패:', err)
+    }
+  }
+
+  // 좋아요 순 쓰레드 불러오기
+  const fetchSortedThreads = async () => {
+    try {
+      const res = await api.get('/books/get_threads_ordered_by_likes/')
+      sortedThreads.value = res.data
+    } catch (err) {
+      console.error('정렬된 쓰레드 불러오기 실패:', err)
     }
   }
 
@@ -32,8 +48,12 @@ export const useThreadStore = defineStore('thread', () => {
 
   return {
     threads,
+    bookThreads,
+    followingThreads,
+    sortedThreads,
     fetchThreads,
     addThread,
     updateThread,
+    fetchSortedThreads,
   }
 })

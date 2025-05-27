@@ -55,7 +55,7 @@
 
 <script setup>
 import { useRoute, useRouter } from 'vue-router'
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { useUserStore } from '@/stores/user'
 import { useThreadStore } from '@/stores/thread'
 import { useFollowStore } from '@/stores/follow'
@@ -68,6 +68,13 @@ const userStore = useUserStore()
 const threadStore = useThreadStore()
 const followStore = useFollowStore()
 const uiStore = useUIStore()
+
+// user 추가
+onMounted(async () => {
+  if (userStore.users.length === 0) {
+    await userStore.fetchUsers()
+  }
+})
 
 // 현재 URL의 사용자
 const username = route.params.username

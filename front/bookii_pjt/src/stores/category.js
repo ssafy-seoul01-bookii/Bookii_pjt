@@ -8,7 +8,7 @@ export const useCategoryStore = defineStore('category', () => {
 
   const fetchCategories = async () => {
     try {
-      const res = await api.get('/categories/')
+      const res = await api.get('/books/categories/')
       categories.value = res.data
     } catch (err) {
       console.error('카테고리 불러오기 실패:', err)

@@ -47,6 +47,7 @@
 
 <script setup>
 import { reactive, ref, watch } from 'vue'
+import axios from "axios"
 
 const emit = defineEmits(['submit', 'go-signup', 'error'])
 const props = defineProps({
@@ -61,6 +62,25 @@ const form = reactive({
 function handleSubmit() {
   emit('submit', { ...form })
 }
+// const myToken = ref("")
+// function handleSubmit(){
+//   axios({
+//     method: "POST",
+//     url: "http://127.0.0.1:8000/accounts/login/",
+//     data: {
+//       username: form.username,
+//       password: form.password,
+//     },
+//   })
+//     .then(res => {
+//       console.log("로그인 성공");
+//       myToken.value = res.data.key
+//       console.log(myToken.value);
+//     })
+//     .catch(err => {
+//       console.log(err);
+//     })
+//   }
 </script>
 
 <style scoped>
